@@ -1,0 +1,115 @@
+// --------------------------------------------------------------------------
+// Base Setup
+// --------------------------------------------------------------------------
+
+$use-base-typography: true !default;
+
+
+
+// --------------------------------------------------------------------------
+// Element Setup
+// --------------------------------------------------------------------------
+
+// $use-element-type: true !default;
+
+
+
+// --------------------------------------------------------------------------
+// Component Setup
+// --------------------------------------------------------------------------
+
+$use-component-grid: true !default;
+$show-grid: true !default;
+
+
+
+// --------------------------------------------------------------------------
+// Colour Variables
+// --------------------------------------------------------------------------
+
+$Colour-black: #000 !default;
+$Colour-white: #fff !default;
+
+
+// Semantic colour naming
+$Colour-base: #444 !default;
+$Colour-baseFont: $Colour-base !default;
+
+$Colour-border: #ddd !default;
+
+
+
+// --------------------------------------------------------------------------
+// Spacing Variables
+// --------------------------------------------------------------------------
+
+$Leading: 6px;
+
+
+
+// --------------------------------------------------------------------------
+// Grid Variables
+// --------------------------------------------------------------------------
+
+$Row-namespace: Grid-row;
+$Row-maxWidth: false !default;
+$Row-margin: 0 auto !default;
+$Row-gutter: false !default; // If not false then set gutter value
+
+$Column-namespace: Grid-column;
+$ColumnCover-namespace: GridCover-column;
+$Column-padding: 0 ($Leading * 4) !default;
+$Column-gutter: ($Leading * 4);
+
+$Offset-namespace: Grid-offset;
+
+
+
+// --------------------------------------------------------------------------
+// Type Variables
+// --------------------------------------------------------------------------
+
+$FontFamily-heading: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$FontFamily-copy: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$FontFamily-mono: Consolas, "Andale Mono WT", "Andale Mono", Courier, monospace !default;
+
+$FontSize-h1: 44px !default;
+$LineHeight-h1: 1.25 !default;
+
+$FontSize-h2: 36px !default;
+$LineHeight-h2: 1.3 !default;
+
+$FontSize-h3: 27px !default;
+$LineHeight-h3: 1.4 !default;
+
+$FontSize-h4: 22px !default;
+$LineHeight-h4: 1.5 !default;
+
+$FontSize-h5: 14px !default;
+$LineHeight-h5: 1.5 !default;
+
+$FontSize-b: 14px !default;
+$LineHeight-b: 1.5 !default;
+
+$Margin-heading: 0.67em 0 !default;
+$Margin-copy: 0.67em 0 !default;
+
+
+
+
+
+// --------------------------------------------------------------------------
+// Normalize Variables
+// --------------------------------------------------------------------------
+
+$Norm-FontFamily-copy: $FontFamily-copy !default;
+
+$Norm-FontSize-h1: $FontSize-h1 !default;
+$Norm-Margin-h1: $Margin-heading !default;
+
+$Norm-FontSize-small: 80% !default;
+$Norm-FontSize-sub: 75% !default;
+
+$Norm-Colour-baseFont: $Colour-base !default;
+
+$Norm-figure-margin: 1em 40px !default;

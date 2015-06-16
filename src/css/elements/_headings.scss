@@ -1,0 +1,32 @@
+// --------------------------------------------------------------------------
+// Typography setup
+// --------------------------------------------------------------------------
+
+@if $use-base-typography == true {
+
+	h1 {
+		@extend %typeHeading;
+		@extend %typeHeading-1;
+	}
+
+	h2 {
+		@extend %typeHeading;
+		@extend %typeHeading-2;
+	}
+
+	h3 {
+		@extend %typeHeading;
+		@extend %typeHeading-3;
+	}
+
+	h4 {
+		@extend %typeHeading;
+		@extend %typeHeading-4;
+	}
+
+	h5 {
+		@extend %typeHeading;
+		@extend %typeHeading-5;
+	}
+
+}

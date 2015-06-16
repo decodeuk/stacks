@@ -1,0 +1,92 @@
+// --------------------------------------------------------------------------
+// Typography setup
+// --------------------------------------------------------------------------
+
+@if $use-base-typography == true {
+
+	/**
+	 * typeHeading Notes
+	 * - Default typeHeading styles that is used to add constant
+	 * styling to typeHeadings
+	 */
+
+	.typeHeading,
+	%typeHeading {
+		font-family: $FontFamily-heading;
+		margin: $Margin-heading;
+	}
+
+	
+	/**
+	 * H1 Notes
+	 * - Font size set by Normalize
+	 * - Margin set by Normalize
+	 */
+
+	.typeHeading-1,
+	%typeHeading-1 {
+		line-height: $LineHeight-h1;
+	}
+
+
+	/**
+	 * H2 Notes
+	 *
+	 */
+
+	.typeHeading-2,
+	%typeHeading-2 {
+		font-size: $FontSize-h2;
+		line-height: $LineHeight-h2;
+	}
+
+
+	/**
+	 * H3 Notes
+	 *
+	 */
+
+	.typeHeading-3,
+	%typeHeading-3 {
+		font-size: $FontSize-h3;
+		line-height: $LineHeight-h3;
+	}
+
+
+	/**
+	 * H4 Notes
+	 *
+	 */
+
+	.typeHeading-4,
+	%typeHeading-4 {
+		font-size: $FontSize-h4;
+		line-height: $LineHeight-h4;
+	}
+
+
+	/**
+	 * H5 Notes
+	 *
+	 */
+
+	.typeHeading-5,
+	%typeHeading-5 {
+		font-size: $FontSize-h5;
+		line-height: $LineHeight-h5;
+	}
+
+
+	/**
+	 * Copy Notes
+	 *
+	 */
+
+	.typeCopy,
+	%typeCopy {
+		font-size: $FontSize-b;
+		line-height: $LineHeight-b;
+		margin: $Margin-copy;
+	}
+
+}

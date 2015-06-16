@@ -1,0 +1,154 @@
+// --------------------------------------------------------------------------
+// Grid component MIXINS
+// --------------------------------------------------------------------------
+
+/**
+ * showGrid Notes
+ * - Adds styling to make the grid visibile
+ */
+
+
+/**
+ * showGrid Mixin Notes
+ * - Adds styling to make the grid visibile
+ */
+
+@mixin showGrid($Prefix: $Column-namespace, $Prefix-2: $ColumnCover-namespace) {
+	[class*="#{$Prefix}"],
+	[class*="#{$Prefix-2}"] {
+		background-color: darken($Colour-white, 1%);
+		position: relative;
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: $Column-gutter;
+			background-color: darken($Colour-white, 4%);
+		}
+
+		&:before {
+			left: 0;
+		}
+
+		&:after {
+			right: 0;
+		}
+	}
+}
+
+
+
+// --------------------------------------------------------------------------
+// Grid component
+// --------------------------------------------------------------------------
+
+@if $use-component-grid == true {
+	
+	/**
+	 * Row Notes
+	 * - Extends clearfix to stop floated children collapsing the container
+	 * - Sets a max width if set and also adds left and right margins to center align
+	 * - Adds a row gutter if set
+	 */
+
+	.#{$Row-namespace} {
+		@extend %clearfix;
+
+		@if $Row-maxWidth != false {
+			max-width: $Row-maxWidth;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@if $Row-gutter != false {
+			padding-left: $Row-gutter;
+			padding-right: $Row-gutter;
+		}	
+	}
+
+
+	/**
+	 * Column Notes
+	 * - Floats left to horizontally align multiple columns
+	 * - Sets a default width so there is no need to add additional classes for full width columns
+	 * - Adds a column gutter
+	 */
+
+	.#{$Column-namespace} {
+		@extend %oneWhole;
+
+		float: left;
+		padding: $Column-padding;
+		box-sizing: border-box;
+	}
+	
+
+	/**
+	 * Offset Notes
+	 * - Adds a left margin matching the width of the modifier
+	 */
+
+	.#{$Offset-namespace} {
+		margin-left: 50%;
+	}
+
+
+
+	/**
+	 * Row Notes
+	 * - Extends clearfix to stop floated children collapsing the container
+	 * - Sets a max width if set and also adds left and right margins to center align
+	 * - Adds a row gutter if set
+	 */
+
+	.GridCover-row {
+		@extend %clearfix;
+
+		display: table;
+		vertical-align: top;	
+	}
+
+	.GridCover-row--middle {
+		vertical-align: middle;
+	}
+
+	.GridCover-row--bottom {
+		vertical-align: bottom;
+	}
+
+	/**
+	 * Column Notes
+	 * - Floats left to horizontally align multiple columns
+	 * - Sets a default width so there is no need to add additional classes for full width columns
+	 * - Adds a column gutter
+	 */
+
+	.GridCover-column {
+		@extend %oneWhole;
+
+		display: table-cell;
+		vertical-align: inherit;
+		padding: $Column-padding;
+		box-sizing: border-box;
+	}
+
+	.GridCover-column--middle {
+		vertical-align: middle;
+	}
+
+	.GridCover-column--bottom {
+		vertical-align: bottom;
+	}
+}
+
+
+// --------------------------------------------------------------------------
+// Show Grid
+// --------------------------------------------------------------------------
+
+@if $show-grid == true {
+	@include showGrid();
+}
