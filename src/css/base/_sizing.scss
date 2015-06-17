@@ -1,5 +1,24 @@
 // --------------------------------------------------------------------------
-// Sizing VARIABLES
+// SIZING BASE
+// --------------------------------------------------------------------------
+
+/**
+ * Intro text
+ *
+ *
+ * DEPENDENCIES
+ * - 
+ *
+ *
+ * USED WITH
+ * -
+ * 
+ */
+
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
 // --------------------------------------------------------------------------
 
 $Column-gutter: 20px !default;
@@ -17,20 +36,21 @@ $Row-margin: 0 auto !default;
 
 
 // --------------------------------------------------------------------------
-// Sizing FUNCTIONS 
+// FUNCTIONS 
 // --------------------------------------------------------------------------
 
 
 
 
 // --------------------------------------------------------------------------
-// Sizing MIXINS
+// MIXINS
 // --------------------------------------------------------------------------
-//
-// Generate columns
-// Generates symmetric and asymetric grids using the $columns varible
-// The Propert aug allows the generator to be used to create columns and column offsets
-//
+
+/*
+* Generate columns
+* Generates symmetric and asymetric grids using the $columns varible
+* The Propert aug allows the generator to be used to create columns and column offsets
+*/
 
 @mixin columnGenerator($Columns: $Column-count, $Prefix: $Column-prefix, $Property: 'width') {
 
@@ -59,6 +79,11 @@ $Row-margin: 0 auto !default;
 
 }
 
+
+/*
+ * Generate columns
+ */
+
 @mixin generateColumns($Columns: $Column-count, $Prefix: $Column-prefix) {
 
 	@include columnGenerator($Columns, $Prefix, 'width');
@@ -66,11 +91,10 @@ $Row-margin: 0 auto !default;
 }
 
 
-
-//
-// Generate columns offsets
-// Generates symmetric and asymetric grid offsets using the $columns varible
-//
+/*
+* Generate columns offsets
+* Generates symmetric and asymetric grid offsets using the $columns varible
+*/
 
 @mixin generateOffsets($Columns: $Column-count, $Prefix: $Column-offsetSelector) {
 
@@ -81,7 +105,13 @@ $Row-margin: 0 auto !default;
 
 
 // --------------------------------------------------------------------------
-// Sizing base
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
 // --------------------------------------------------------------------------
 
 .oneWhole,

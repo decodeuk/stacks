@@ -1,0 +1,52 @@
+// --------------------------------------------------------------------------
+// Colour Variables
+// --------------------------------------------------------------------------
+
+$Colour-black: #000 !default;
+$Colour-white: #fff !default;
+
+
+// Semantic colour naming
+$Colour-base: #444 !default;
+$Colour-baseFont: $Colour-base !default;
+
+$Colour-border: #ddd !default;
+
+
+
+// --------------------------------------------------------------------------
+// Type Variables
+// --------------------------------------------------------------------------
+
+$FontFamily-heading: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$FontFamily-copy: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$FontFamily-mono: Consolas, "Andale Mono WT", "Andale Mono", Courier, monospace !default;
+
+$FontSize-h1: 44px !default;
+$LineHeight-h1: 1.25 !default;
+
+$FontSize-h2: 36px !default;
+$LineHeight-h2: 1.3 !default;
+
+$FontSize-h3: 27px !default;
+$LineHeight-h3: 1.4 !default;
+
+$FontSize-h4: 22px !default;
+$LineHeight-h4: 1.5 !default;
+
+$FontSize-h5: 14px !default;
+$LineHeight-h5: 1.5 !default;
+
+$FontSize-b: 14px !default;
+$LineHeight-b: 1.5 !default;
+
+$Margin-heading: 0.67em 0 !default;
+$Margin-copy: 0.67em 0 !default;
+
+
+
+// --------------------------------------------------------------------------
+// Spacing Variables
+// --------------------------------------------------------------------------
+
+$Leading: 6px;

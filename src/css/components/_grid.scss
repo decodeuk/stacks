@@ -1,15 +1,51 @@
 // --------------------------------------------------------------------------
-// Grid component MIXINS
+// GRID COMPONENT
 // --------------------------------------------------------------------------
 
 /**
- * showGrid Notes
- * - Adds styling to make the grid visibile
+ * The grid is used for layout and structure. It should ideally be used to
+ * wrap elements rather than alongside elements/components.
+ *
+ * DEPENDENCIES
+ * - base/clearfix
+ *
+ * USED WITH
+ * - base/sizing
+ *
  */
 
 
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$Row-namespace: Grid-row !default;
+$Row-maxWidth: false !default;
+$Row-margin: 0 auto !default;
+$Row-gutter: false !default; // If not false then set gutter value
+
+$Column-namespace: Grid-column !default;
+$ColumnCover-namespace: GridCover-column !default;
+$Column-padding: 0 ($Leading * 4) !default;
+$Column-gutter: ($Leading * 4) !default;
+
+$Offset-namespace: Grid-offset !default;
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
 /**
- * showGrid Mixin Notes
+ * showGrid Mixin
  * - Adds styling to make the grid visibile
  */
 
@@ -42,8 +78,19 @@
 
 
 // --------------------------------------------------------------------------
-// Grid component
+// EXTENDABLES
 // --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+/**
+ * GRID COMPONENT STYLING
+ * - Extends clearfix to stop floated children collapsing the container
+ */
 
 @if $use-component-grid == true {
 	
@@ -95,7 +142,18 @@
 		margin-left: 50%;
 	}
 
+}
 
+
+/**
+ * GRID COVER COMPONENT STYLING
+ * Creates a grid which expands column heights to that of the highest.
+ * Provides the ability to vertically align columns.
+ *
+ * - Extends clearfix to stop floated children collapsing the container
+ */
+
+@if $use-component-gridCover == true {
 
 	/**
 	 * Row Notes
@@ -118,6 +176,7 @@
 	.GridCover-row--bottom {
 		vertical-align: bottom;
 	}
+
 
 	/**
 	 * Column Notes
@@ -142,12 +201,14 @@
 	.GridCover-column--bottom {
 		vertical-align: bottom;
 	}
+
 }
 
 
-// --------------------------------------------------------------------------
-// Show Grid
-// --------------------------------------------------------------------------
+/**
+ * SHOW GRID STYLING
+ * Provides styling that makes the columns and gutters visible.
+ */
 
 @if $show-grid == true {
 	@include showGrid();

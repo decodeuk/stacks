@@ -1,5 +1,89 @@
 // --------------------------------------------------------------------------
-// Typography setup
+// TYPE BASE
+// --------------------------------------------------------------------------
+
+/**
+ * Intro text
+ *
+ *
+ * DEPENDENCIES
+ * - 
+ *
+ *
+ * USED WITH
+ * -
+ * 
+ */
+
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+%typeHeading {
+	font-family: $FontFamily-heading;
+	margin: $Margin-heading;
+}
+
+
+%typeHeading-1 {
+	line-height: $LineHeight-h1;
+}
+
+
+%typeHeading-2 {
+	font-size: $FontSize-h2;
+	line-height: $LineHeight-h2;
+}
+
+
+%typeHeading-3 {
+	font-size: $FontSize-h3;
+	line-height: $LineHeight-h3;
+}
+
+
+%typeHeading-4 {
+	font-size: $FontSize-h4;
+	line-height: $LineHeight-h4;
+}
+
+
+%typeHeading-5 {
+	font-size: $FontSize-h5;
+	line-height: $LineHeight-h5;
+}
+
+
+%typeCopy {
+	font-size: $FontSize-b;
+	line-height: $LineHeight-b;
+	margin: $Margin-copy;
+}
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
 // --------------------------------------------------------------------------
 
 @if $use-base-typography == true {
@@ -10,10 +94,8 @@
 	 * styling to typeHeadings
 	 */
 
-	.typeHeading,
-	%typeHeading {
-		font-family: $FontFamily-heading;
-		margin: $Margin-heading;
+	.typeHeading {
+		@extend %typeHeading;
 	}
 
 	
@@ -23,9 +105,8 @@
 	 * - Margin set by Normalize
 	 */
 
-	.typeHeading-1,
-	%typeHeading-1 {
-		line-height: $LineHeight-h1;
+	.typeHeading-1 {
+		@extend %typeHeading-1;
 	}
 
 
@@ -34,10 +115,8 @@
 	 *
 	 */
 
-	.typeHeading-2,
-	%typeHeading-2 {
-		font-size: $FontSize-h2;
-		line-height: $LineHeight-h2;
+	.typeHeading-2 {
+		@extend %typeHeading-2;
 	}
 
 
@@ -46,22 +125,17 @@
 	 *
 	 */
 
-	.typeHeading-3,
-	%typeHeading-3 {
-		font-size: $FontSize-h3;
-		line-height: $LineHeight-h3;
+	.typeHeading-3 {
+		@extend %typeHeading-3;
 	}
-
 
 	/**
 	 * H4 Notes
 	 *
 	 */
 
-	.typeHeading-4,
-	%typeHeading-4 {
-		font-size: $FontSize-h4;
-		line-height: $LineHeight-h4;
+	.typeHeading-4 {
+		@extend %typeHeading-4;
 	}
 
 
@@ -70,10 +144,8 @@
 	 *
 	 */
 
-	.typeHeading-5,
-	%typeHeading-5 {
-		font-size: $FontSize-h5;
-		line-height: $LineHeight-h5;
+	.typeHeading-5 {
+		@extend %typeHeading-5;
 	}
 
 
@@ -82,11 +154,8 @@
 	 *
 	 */
 
-	.typeCopy,
-	%typeCopy {
-		font-size: $FontSize-b;
-		line-height: $LineHeight-b;
-		margin: $Margin-copy;
+	.typeCopy {
+		@extend %typeCopy;
 	}
 
 }
