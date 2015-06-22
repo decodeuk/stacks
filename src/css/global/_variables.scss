@@ -1,3 +1,8 @@
+// TODO: Add more global shared variables for thinks like link text decoration
+// which if you set all links to text decoration none removes the nav list
+// text decoration removal....
+
+
 // --------------------------------------------------------------------------
 // Colour Variables
 // --------------------------------------------------------------------------
@@ -16,7 +21,8 @@ $Colour-base: #444 !default;
 $Colour-baseFont: $Colour-base !default;
 $Colour-baseFont--light: lighten($Colour-base, 30%) !default;
 
-$Colour-primary: orange !default;
+$Colour-primary: #549CEF !default;
+$Colour-primary--darken: #4784CB !default;
 
 $Colour-border: #ddd !default;
 
@@ -33,23 +39,25 @@ $FontFamily-mono: Consolas, "Andale Mono WT", "Andale Mono", Courier, monospace 
 $FontWeight-bold: 700;
 $FontWeight-normal: 400;
 
-$FontSize-h1: 44px !default;
+$FontSize-h1: 48px !default;
 $LineHeight-h1: 1.25 !default;
 
 $FontSize-h2: 36px !default;
 $LineHeight-h2: 1.3 !default;
 
-$FontSize-h3: 27px !default;
+$FontSize-h3: 24px !default;
 $LineHeight-h3: 1.4 !default;
 
-$FontSize-h4: 22px !default;
+$FontSize-h4: 20px !default;
 $LineHeight-h4: 1.5 !default;
 
-$FontSize-h5: 14px !default;
+$FontSize-h5: 18px !default;
 $LineHeight-h5: 1.5 !default;
 
 $FontSize-b: 14px !default;
 $LineHeight-b: 1.5 !default;
+
+$FontSize-small: 11px !default;
 
 $Margin-heading: 0.67em 0 !default;
 $Margin-copy: 0.67em 0 !default;

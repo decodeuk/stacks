@@ -1,55 +1,81 @@
 // --------------------------------------------------------------------------
-// Setup 
+// MEDIA ELEMENT COMPONENT
 // --------------------------------------------------------------------------
 
-@import "_setup.scss";
-
-
-
-// --------------------------------------------------------------------------
-// Global 
-// --------------------------------------------------------------------------
-
-@import "global/_variables.scss";
-@import "global/_function.scss";
-@import "global/_mixins.scss";
-
-
-
-// --------------------------------------------------------------------------
-// Base 
-// --------------------------------------------------------------------------
-
-@import "base/_normalize.scss";
-
-@import "base/_aspect.scss";
-@import "base/_buttons.scss";
-@import "base/_clearfix.scss";
-@import "base/_formfields.scss";
-@import "base/_lists.scss";
-@import "base/_type.scss";
-@import "base/_sizing.scss";
+/**
+ * Intro text
+ *
+ *
+ * DEPENDENCIES
+ * - 
+ *
+ *
+ * USED WITH
+ * -
+ * 
+ */
 
 
 
 // --------------------------------------------------------------------------
-// Element 
+// VARIABLES
 // --------------------------------------------------------------------------
 
-@import "elements/_base.scss";
-@import "elements/_forms.scss";
-@import "elements/_headings.scss";
-@import "elements/_links.scss";
-@import "elements/_lists.scss";
-@import "elements/_paragraph.scss";
+$mediaElement-margin: $Leading * 2 !default;
 
 
 
 // --------------------------------------------------------------------------
-// Component 
+// FUNCTIONS
 // --------------------------------------------------------------------------
 
-@import "components/_grid.scss";
-@import "components/_media-element.scss";
-@import "components/_nav.scss";
-@import "components/_stacks.scss";
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+@if $use-component-mediaElement == true {
+
+	// .Media {
+	// 	margin: $mediaElement-margin;
+	// }
+
+	.Media,
+	.Media-body {
+		overflow: hidden;
+		_overflow: visible;
+		zoom: 1;
+	}
+
+	.Media-img,
+	.Media-imgAlt {
+		img {
+			display: block;
+		}
+	}
+
+	.Media-img {
+		float: left;
+		margin-right: $mediaElement-margin;
+	}
+
+	.Media-imgAlt {
+		float: right;
+		margin-left: $mediaElement-margin;
+	}
+
+
+}

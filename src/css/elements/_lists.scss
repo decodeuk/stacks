@@ -28,7 +28,8 @@ $c-list-paddingLeft: false !default;
 $c-list-marginTop: false !default;
 $c-list-marginBottom: false !default;
 
-$c-listElement-marginTop: ($Leading / 2) !default;
+$c-listElement-paddingTop: ($Leading / 2) !default;
+$c-listElement-paddingBottom: ($Leading / 2) !default;
 
 
 
@@ -59,11 +60,12 @@ $c-listElement-marginTop: ($Leading / 2) !default;
 	ul {
 		@include conditional( $c-list-ulStyle ) { list-style: $c-list-ulStyle; }
 	}
+	
 
 	ol {
 		@include conditional( $c-list-olStyle ) { list-style: $c-list-olStyle; }
-
 	}
+	
 
 	ol,
 	ul {
@@ -71,9 +73,11 @@ $c-listElement-marginTop: ($Leading / 2) !default;
 		@include conditional( $c-list-marginBottom ) { margin-bottom: $c-list-marginBottom; }
 		@include conditional( $c-list-paddingLeft ) { padding-left: $c-list-paddingLeft; }
 	}
+	
 
 	li {
-		@include conditional( $c-listElement-marginTop ) { margin-top: $c-listElement-marginTop; }
+		@include conditional( $c-listElement-paddingTop ) { padding-top: $c-listElement-paddingTop; }
+		@include conditional( $c-listElement-paddingBottom ) { padding-bottom: $c-listElement-paddingBottom; }
 	}
 
 }

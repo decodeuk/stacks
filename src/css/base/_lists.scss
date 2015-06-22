@@ -1,15 +1,13 @@
 // --------------------------------------------------------------------------
-// ASPECT BASE
+// LISTS BASE
 // --------------------------------------------------------------------------
 
 /**
- * Aspect ratios for scaling media whilst keeping aspect ratios
- *
- * TODO: Create a generator mixin which can be used to create custom aspects
+ * Intro text
  *
  *
  * DEPENDENCIES
- * - base/sizing
+ * - 
  *
  *
  * USED WITH
@@ -22,6 +20,8 @@
 // --------------------------------------------------------------------------
 // VARIABLES
 // --------------------------------------------------------------------------
+
+$listInline-verticalAlign: top !default;
 
 
 
@@ -41,25 +41,51 @@
 // EXTENDABLES
 // --------------------------------------------------------------------------
 
+%list-noBullet {
+	padding-left: 0;
+	list-style: none;
+}
+
+
+%list-inline {
+	@extend %clearfix;
+
+	li {
+		display: inline-block;
+		vertical-align: $listInline-verticalAlign;
+		margin-right: $Leading * 2;
+	}
+}
+
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
-@if $use-base-aspect == true {
-	.aspect {
-		@extend %oneWhole;
-		height: auto;
+@if $use-base-lists == true {
+
+	@if $use-base-lists--noBullet == true {
+	
+		/*
+		 * noBullet list
+		 */
+
+		.list-noBullet {
+			@extend %list-noBullet;
+		}
 	}
 
-	.aspect--portrait {
-		width: auto;
-		height: 100%;
-	}
 
-	.aspect--wide {
-		width: auto;
-		height: 100%;
+	
+	@if $use-base-lists--inline == true {
+		
+		/*
+		 * inline list
+		 */
+
+		.list-inline {
+			@extend %list-inline;
+		}
 	}
 }

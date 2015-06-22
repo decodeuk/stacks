@@ -5,6 +5,11 @@
 $use-base-aspect: true !default;
 $use-base-buttons: true !default;
 $use-base-formfields: true !default;
+
+$use-base-lists: true !default;
+$use-base-lists--noBullet: true !default;
+$use-base-lists--inline: true !default;
+
 $use-base-normalize: true !default;
 $use-base-sizing: true !default;
 $use-base-typography: true !default;
@@ -15,6 +20,7 @@ $use-base-typography: true !default;
 // Element Setup
 // --------------------------------------------------------------------------
 
+$use-element-links: true !default;
 $use-element-lists: true !default;
 
 
@@ -25,4 +31,12 @@ $use-element-lists: true !default;
 
 $use-component-grid: true !default;
 $use-component-gridCover: true !default;
-$show-grid: true !default;
+$show-grid: false !default;
+
+$use-component-mediaElement: true !default;
+
+$use-component-nav: true !default;
+$use-component-navList: true !default;
+$use-component-navList--inline: true !default;
+$use-component-navBar: true !default;
+$use-component-navTabs: true !default;

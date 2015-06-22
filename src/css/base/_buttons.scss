@@ -22,16 +22,17 @@
 // --------------------------------------------------------------------------
 
 $Button-padding: ($Leading * 1.5) ($Leading * 4.5) !default;
-$Button-textColour: $Colour-base !default;
-$c-Button-textColour--hover: $Colour-black !default;
-$Button-fontSize: 11px !default;
+$Button-textColour: $Colour-primary !default;
+$c-Button-textColour--hover: $Colour-base !default;
+$Button-fontSize: $FontSize-small !default;
 $Button-fontWeight: $FontWeight-bold !default;
 $Button-lineHeight: 1 !default;
 $c-Button-textCase: uppercase !default;
 $Button-backgroundColour: transparent !default;
 $c-Button-borderRadius: 4px !default;
-$Button-border: 1px solid $Colour-base !default;
-$c-Button-borderColour--hover: $Colour-black !default;
+$Button-border: 1px solid $Colour-primary !default;
+$c-Button-borderColour--hover: false !default;
+$c-Button-outline: 0 !default;
 
 $c-Button-textColour--primary: $Colour-white !default;
 $c-Button-textColour--primaryHover: $Colour-primary !default;
@@ -78,7 +79,7 @@ $c-Button-borderColour--primaryHover: $Colour-primary !default;
 
 	&:hover,
 	&:focus {
-		outline: 0;
+		@include conditional( $c-Button-outline ) { outline: $c-Button-outline; }
 
 		@include conditional( $c-Button-textColour--hover ) { color: $c-Button-textColour--hover; }
 		@include conditional( $c-Button-borderColour--hover ) { border-color: $c-Button-borderColour--hover; }

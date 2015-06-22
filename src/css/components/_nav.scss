@@ -1,0 +1,236 @@
+// --------------------------------------------------------------------------
+// NAV COMPONENT
+// --------------------------------------------------------------------------
+
+// TODO: rethink naming to make sure it is inline with other naming in stacks
+
+/**
+ * Intro text
+ *
+ *
+ * DEPENDENCIES
+ * - base/links
+ *
+ *
+ * USED WITH
+ * -
+ * 
+ */
+
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$c-nav-fontSize: $FontSize-small !default;
+$c-nav-fontWeight: $FontWeight-bold !default;
+$c-nav-textTransform: uppercase !default;
+
+$c-nav-textDecoration: none !default;
+$c-nav-textDecoration--hover: underline !default;
+
+$navLink-display: inline-block !default;
+$navLink-paddingTop: $Leading !default;
+$navLink-paddingBottom: $Leading !default;
+
+$navBar-padding: ($Leading * 2) ($Leading * 4) !default;
+$c-navBar-maxWidth: false !default;
+$c-navBar-fontSize: $FontSize-b !default;
+$c-navBar-marginRight: $Leading * 5 !default;
+$c-navBar-verticalAlign: middle !default;
+$c-navBar-brandFontSize: $FontSize-h3 !default;
+$c-navBar-brandColour: $Colour-base !default;
+$c-navBar-itemColour: false !default;
+
+$c-navBar-background: false !default;
+$c-navBar-borderTop: false !default;
+$c-navBar-borderRight: false !default;
+$c-navBar-borderBottom: false !default;
+$c-navBar-borderLeft: false !default;
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+/*
+ * Default nav styling
+ */
+
+@if $use-component-nav == true {
+	
+	/*
+	 * Default Nav styling
+	 */
+
+	.Nav {
+		@extend %list-noBullet;
+
+		@include conditional( $c-nav-fontSize ) { @include font-size($c-nav-fontSize) };
+		@include conditional( $c-nav-fontWeight ) { font-weight: $c-nav-fontWeight };
+		@include conditional( $c-nav-textTransform ) { text-transform: $c-nav-textTransform };
+
+		a {
+			display: $navLink-display;
+			padding-top: $navLink-paddingTop;
+			padding-bottom: $navLink-paddingBottom;
+
+			@include conditional( $c-nav-textDecoration ) { 
+				text-decoration: $c-nav-textDecoration;
+
+				&:hover,
+				&:focus {
+					text-decoration: $c-nav-textDecoration--hover;
+				}
+			}
+		}
+	}
+
+
+
+	/*
+	 * Nav list styling
+	 */
+
+	@if $use-component-navList == true {
+
+	}
+
+
+
+	/*
+	 * Nav list horizontal styling
+	 */
+
+	@if $use-component-navList--inline == true {
+		
+		.Nav-listInline {
+			@extend %list-inline;
+		}
+
+	}
+
+
+
+	/*
+	 * Nav bar styling
+	 */
+
+	@if $use-component-navBar == true {
+
+		.Nav-bar {
+			@extend %list-inline;
+			@include conditional( $c-navBar-fontSize ) { @include font-size($c-navBar-fontSize) };
+			
+			position: relative;
+			padding: $navBar-padding;
+			margin: 0;
+
+			@include conditional( $c-navBar-background ) { background: $c-navBar-background };
+			@include conditional( $c-navBar-borderTop ) { border-top: $c-navBar-borderTop };
+			@include conditional( $c-navBar-borderRight ) { border-right: $c-navBar-borderRight };
+			@include conditional( $c-navBar-borderBottom ) { border-bottom: $c-navBar-borderBottom };
+			@include conditional( $c-navBar-borderLeft ) { border-left: $c-navBar-borderLeft };
+
+			a {
+				@include conditional( $c-navBar-itemColour ) { color: $c-navBar-itemColour };
+			}
+
+			.Nav-item {
+				@include conditional( $c-navBar-marginRight ) { margin-right: $c-navBar-marginRight };
+				@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
+
+				display: none;
+
+				@include respond-to(760px) {
+					display: inline-block;
+				}
+			}
+
+			.Nav-itemBrand {
+				display: inline-block;
+				@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
+				@include conditional( $c-navBar-brandFontSize ) { @include font-size($c-navBar-brandFontSize) };
+				
+				a {
+					@include conditional( $c-navBar-brandColour ) { color: $c-navBar-brandColour };
+				}
+			}
+
+			.Nav-itemToggle {
+				display: block;
+				position: absolute;
+				top: $Leading * 4;
+				right: $Leading * 4;
+				margin-right: 0;
+			}
+
+		}
+
+		
+
+		.Nav-itemToggleCheck {
+			display: none;
+
+			&:checked {
+				+ .Nav-bar .Nav-item {
+					display: block;
+
+					&.Nav-itemToggle:before {
+						content: '×';
+						position: absolute;
+						left: $Leading * 3;
+						top: 50%;
+						margin-top: - $Leading * 1.7;
+					}
+
+					.Nav-itemToggleLabel {
+						padding-left: 2.75em;
+						padding-right: 1.75em;
+					}
+				}
+			}
+		}
+
+		.Nav-itemToggleLabel {
+			display: inline-block;
+			@extend %button;
+			@include conditional( $c-navBar-fontSize ) { @include font-size($c-navBar-fontSize) };
+
+			@include respond-to(760px) {
+				display: none;
+			}
+		}
+
+	}
+
+
+
+	 /*
+	 * Nav tabs styling
+	 */
+
+	@if $use-component-navTabs == true {
+
+	}
+}

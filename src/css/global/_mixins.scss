@@ -8,3 +8,12 @@
 		@content;
 	}
 }
+
+
+@mixin respond-to($Width, $Orientation: false) {
+	@if $Orientation == true {
+		@media only screen and (orientation: $Orientation) and (min-width : $Width) { @content; }
+	} @else {
+		@media only screen and (min-width : $Width) { @content; }
+	}
+}
