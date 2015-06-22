@@ -1,0 +1,73 @@
+// --------------------------------------------------------------------------
+// BODY ELEMENT
+// --------------------------------------------------------------------------
+
+/**
+ * Intro text
+ *
+ *
+ * DEPENDENCIES
+ * - global/mixins
+ *
+ *
+ * USED WITH
+ * -
+ * 
+ */
+
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$html-fontSize: 87.5% !default;
+
+$body-fontSize: $FontSize-b !default;
+$body-lineHeight: 1.6 !default;
+$body-fontWeight: 400 !default;
+$body-fontFamily: $FontFamily-copy !default;
+$body-fontColour: $Colour-base !default;
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: $html-fontSize;
+}
+
+body {
+	font-size: convert-to-em($body-fontSize, $body-fontSize);
+	line-height: $body-lineHeight;
+	font-weight: $body-fontWeight;
+	font-family: $body-fontFamily;
+	color: $body-fontColour;
+
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}

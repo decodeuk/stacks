@@ -21,6 +21,39 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
+$c-typeHeading-fontFamily: false !default;
+$c-typeHeading-fontWeight: $FontWeight-bold !default;
+$c-typeHeading-margin: $Margin-heading !default;
+
+$c-typeHeading1-fontSize: false !default; //set in normalise
+$c-typeHeading1-fontWeight: false !default;
+$c-typeHeading1-lineHeight: $LineHeight-h1 !default;
+
+$c-typeHeading2-fontSize: $FontSize-h2 !default;
+$c-typeHeading2-fontWeight: false !default;
+$c-typeHeading2-lineHeight: $LineHeight-h2 !default;
+
+$c-typeHeading3-fontSize: $FontSize-h3 !default;
+$typeHeading3-fontWeight: false !default;
+$typeHeading3-lineHeight: $LineHeight-h3 !default;
+
+$c-typeHeading5-fontSize: $FontSize-h4 !default;
+$c-typeHeading4-fontWeight: false !default;
+$c-typeHeading4-lineHeight: $LineHeight-h4 !default;
+
+$c-typeHeading5-fontSize: $FontSize-h5 !default;
+$c-typeHeading5-fontWeight: false !default;
+$c-typeHeading5-lineHeight: $LineHeight-h5 !default;
+
+$c-typeCopy-fontSize: false !default;
+$c-typeCopy-lineHeight: false !default;
+$c-typeCopy-marginTop: $Margin-copy !default;
+
+$c-typeLabel-fontSize: false !default;
+$c-typeLabel-lineHeight: false !default;
+$c-typeLabel-fontWeight: $FontWeight-bold !default;
+$c-typeLabel-marginTop: false !default;
+$c-typeLabel-colour: $Colour-baseFont--light !default;
 
 
 // --------------------------------------------------------------------------
@@ -40,44 +73,64 @@
 // --------------------------------------------------------------------------
 
 %typeHeading {
-	font-family: $FontFamily-heading;
-	margin: $Margin-heading;
+	@include conditional( $c-typeHeading-fontFamily ) { font-family: $c-typeHeading-fontFamily };
+	@include conditional( $c-typeHeading-fontWeight ) { font-weight: $c-typeHeading-fontWeight };
+	@include conditional( $c-typeHeading-margin ) { margin: $c-typeHeading-margin };
 }
 
 
 %typeHeading-1 {
-	line-height: $LineHeight-h1;
+	@include conditional( $c-typeHeading1-fontSize ) { @include font-size($c-typeHeading1-fontSize) };
+	@include conditional( $c-typeHeading1-fontWeight ) { font-weight: $c-typeHeading1-fontWeight };
+	@include conditional( $c-typeHeading1-lineHeight ) { line-height: $c-typeHeading1-lineHeight };
 }
 
 
 %typeHeading-2 {
-	font-size: $FontSize-h2;
-	line-height: $LineHeight-h2;
+	@include conditional( $c-typeHeading2-fontSize ) { @include font-size($c-typeHeading2-fontSize) };
+	@include conditional( $c-typeHeading2-fontWeight ) { font-weight: $c-typeHeading2-fontWeight };
+	@include conditional( $c-typeHeading2-lineHeight ) { line-height: $c-typeHeading2-lineHeight };
 }
 
 
 %typeHeading-3 {
-	font-size: $FontSize-h3;
-	line-height: $LineHeight-h3;
+	@include conditional( $c-typeHeading3-fontSize ) { @include font-size($c-typeHeading3-fontSize) };
+	@include conditional( $typeHeading3-fontWeight ) { font-weight: $typeHeading3-fontWeight };
+	@include conditional( $typeHeading3-lineHeight ) { line-height: $typeHeading3-lineHeight };
 }
 
 
 %typeHeading-4 {
-	font-size: $FontSize-h4;
-	line-height: $LineHeight-h4;
+	@include conditional( $c-typeHeading5-fontSize ) { @include font-size($c-typeHeading5-fontSize) };
+	@include conditional( $c-typeHeading4-fontWeight ) { font-weight: $c-typeHeading4-fontWeight };
+	@include conditional( $c-typeHeading4-lineHeight ) { line-height: $c-typeHeading4-lineHeight };
 }
 
 
 %typeHeading-5 {
-	font-size: $FontSize-h5;
-	line-height: $LineHeight-h5;
+	@include conditional( $c-typeHeading5-fontSize ) { @include font-size($c-typeHeading5-fontSize) };
+	@include conditional( $c-typeHeading5-fontWeight ) { font-weight: $c-typeHeading5-fontWeight };
+	@include conditional( $c-typeHeading5-lineHeight ) { line-height: $c-typeHeading5-lineHeight };
 }
 
 
 %typeCopy {
-	font-size: $FontSize-b;
-	line-height: $LineHeight-b;
-	margin: $Margin-copy;
+	@include conditional( $c-typeCopy-fontSize ) { @include font-size($c-typeCopy-fontSize) };
+	@include conditional( $c-typeCopy-lineHeight ) { line-height: $c-typeCopy-lineHeight };
+	@include conditional( $c-typeCopy-marginTop ) { margin: $c-typeCopy-marginTop };
+}
+
+
+/*
+ * TODO: Rename as something more reusable
+ */
+%typeLabel {
+	@include conditional( $c-typeLabel-fontSize ) { @include font-size($c-typeLabel-fontSize) };
+	@include conditional( $c-typeLabel-lineHeight ) { line-height: $c-typeLabel-lineHeight };
+	@include conditional( $c-typeLabel-fontWeight ) { font-weight: $c-typeLabel-fontWeight };
+	@include conditional( $c-typeLabel-marginTop ) { margin: $c-typeLabel-marginTop };
+
+	@include conditional( $c-typeLabel-colour ) { color: $c-typeLabel-colour };
 }
 
 
@@ -156,6 +209,16 @@
 
 	.typeCopy {
 		@extend %typeCopy;
+	}
+
+
+	/**
+	 * Label Notes
+	 *
+	 */
+
+	.typeLabel {
+		@extend %typeLabel;
 	}
 
 }

@@ -108,43 +108,70 @@ $Row-margin: 0 auto !default;
 // EXTENDABLES
 // --------------------------------------------------------------------------
 
+/*
+ * TODO: Think of a better way to generate these classes
+ */
+
+%oneWhole {
+	width: percentage(1 / 1);
+}
+
+%oneHalf {
+	width: percentage(1 / 2);
+}
+
+%oneThird {
+	width: percentage(1 / 3);
+}
+
+%twoThirds {
+	width: percentage(2 / 3);
+}
+
+%oneQuarter {
+	width: percentage(1 / 4);
+}
+
+%twoQuarters {
+	width: percentage(2 / 4);
+}
+
+%threeQuarters {
+	width: percentage(3 / 4);
+}
+
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
-.oneWhole,
-%oneWhole {
-	width: percentage(1 / 1);
-}
+@if $use-base-sizing == true {
+	.oneWhole {
+		@extend %oneWhole;
+	}
 
-.oneHalf,
-%oneHalf {
-	width: percentage(1 / 2);
-}
+	.oneHalf {
+		@extend %oneHalf;
+	}
 
-.oneThird,
-%oneThird {
-	width: percentage(1 / 3);
-}
+	.oneThird {
+		@extend %oneThird;
+	}
 
-.twoThirds,
-%twoThirds {
-	width: percentage(2 / 3);
-}
+	.twoThirds {
+		@extend %twoThirds;
+	}
 
-.oneQuarter,
-%oneQuarter {
-	width: percentage(1 / 4);
-}
+	.oneQuarter {
+		@extend %oneQuarter;
+	}
 
-.twoQuarters,
-%twoQuarters {
-	width: percentage(2 / 4);
-}
+	.twoQuarters {
+		@extend %twoQuarters;
+	}
 
-.threeQuarters,
-%threeQuarters {
-	width: percentage(3 / 4);
+	.threeQuarters {
+		@extend %threeQuarters;
+	}
 }

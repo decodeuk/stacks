@@ -2,6 +2,11 @@
 // Colour Variables
 // --------------------------------------------------------------------------
 
+/*
+ * TODO: Need to add a scheme for denoting conditional variables so that
+ * it is clear when you can remove styling using FALSE and when you can not.
+ */
+
 $Colour-black: #000 !default;
 $Colour-white: #fff !default;
 
@@ -9,6 +14,9 @@ $Colour-white: #fff !default;
 // Semantic colour naming
 $Colour-base: #444 !default;
 $Colour-baseFont: $Colour-base !default;
+$Colour-baseFont--light: lighten($Colour-base, 30%) !default;
+
+$Colour-primary: orange !default;
 
 $Colour-border: #ddd !default;
 
@@ -21,6 +29,9 @@ $Colour-border: #ddd !default;
 $FontFamily-heading: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
 $FontFamily-copy: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
 $FontFamily-mono: Consolas, "Andale Mono WT", "Andale Mono", Courier, monospace !default;
+
+$FontWeight-bold: 700;
+$FontWeight-normal: 400;
 
 $FontSize-h1: 44px !default;
 $LineHeight-h1: 1.25 !default;
@@ -49,4 +60,5 @@ $Margin-copy: 0.67em 0 !default;
 // Spacing Variables
 // --------------------------------------------------------------------------
 
-$Leading: 6px;
+// $Leading: 7px;
+$Leading: 0.5em;

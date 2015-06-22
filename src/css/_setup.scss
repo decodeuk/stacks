@@ -2,7 +2,12 @@
 // Base Setup
 // --------------------------------------------------------------------------
 
-$use-base-typography: false !default;
+$use-base-aspect: true !default;
+$use-base-buttons: true !default;
+$use-base-formfields: true !default;
+$use-base-normalize: true !default;
+$use-base-sizing: true !default;
+$use-base-typography: true !default;
 
 
 
@@ -10,7 +15,7 @@ $use-base-typography: false !default;
 // Element Setup
 // --------------------------------------------------------------------------
 
-// $use-element-type: true !default;
+$use-element-lists: true !default;
 
 
 

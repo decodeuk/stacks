@@ -1,0 +1,10 @@
+@mixin font-size($font-size: $FontSize-b) {
+	font-size: $font-size + 0px;
+	font-size: convert-font-to-relative($font-size) + 0rem;	
+}
+
+@mixin conditional($variable) {
+	@if $variable != false {
+		@content;
+	}
+}

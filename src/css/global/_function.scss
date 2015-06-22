@@ -1,0 +1,7 @@
+@function convert-font-to-relative($size) {
+	@return ($size / $FontSize-b);
+}
+
+@function convert-to-em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}

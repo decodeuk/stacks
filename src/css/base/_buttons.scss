@@ -1,0 +1,116 @@
+// --------------------------------------------------------------------------
+// BUTTON BASE
+// --------------------------------------------------------------------------
+
+/**
+ * Intro text
+ *
+ *
+ * DEPENDENCIES
+ * - 
+ *
+ *
+ * USED WITH
+ * -
+ * 
+ */
+
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$Button-padding: ($Leading * 1.5) ($Leading * 4.5) !default;
+$Button-textColour: $Colour-base !default;
+$c-Button-textColour--hover: $Colour-black !default;
+$Button-fontSize: 11px !default;
+$Button-fontWeight: $FontWeight-bold !default;
+$Button-lineHeight: 1 !default;
+$c-Button-textCase: uppercase !default;
+$Button-backgroundColour: transparent !default;
+$c-Button-borderRadius: 4px !default;
+$Button-border: 1px solid $Colour-base !default;
+$c-Button-borderColour--hover: $Colour-black !default;
+
+$c-Button-textColour--primary: $Colour-white !default;
+$c-Button-textColour--primaryHover: $Colour-primary !default;
+$c-Button-backgroundColour--primary: $Colour-primary !default;
+$c-Button-backgroundColour--primaryHover: $Colour-white !default;
+$c-Button-borderColour--primary: transparent !default;
+$c-Button-borderColour--primaryHover: $Colour-primary !default;
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+%button {
+	display: inline-block;
+	padding: $Button-padding;
+	color: $Button-textColour;
+	text-align: center;
+	@include font-size($Button-fontSize);
+	font-weight: $Button-fontWeight;
+	line-height: $Button-lineHeight;
+	text-decoration: none;
+	white-space: nowrap;
+	background-color: $Button-backgroundColour;
+	border: $Button-border;
+	cursor: pointer;
+	box-sizing: border-box;
+
+	@include conditional( $c-Button-textCase ) { text-transform: $c-Button-textCase; }
+	@include conditional( $c-Button-borderRadius ) { border-radius: $c-Button-borderRadius; }
+
+	&:hover,
+	&:focus {
+		outline: 0;
+
+		@include conditional( $c-Button-textColour--hover ) { color: $c-Button-textColour--hover; }
+		@include conditional( $c-Button-borderColour--hover ) { border-color: $c-Button-borderColour--hover; }
+	}
+}
+
+%button--primary {
+	@include conditional( $c-Button-textColour--primary ) { color: $c-Button-textColour--primary; }
+	@include conditional( $c-Button-backgroundColour--primary ) { background-color: $c-Button-backgroundColour--primary; }
+	@include conditional( $c-Button-borderColour--primary ) { border-color: $c-Button-borderColour--primary; }
+
+	&:hover,
+	&:focus {
+		@include conditional( $c-Button-textColour--primaryHover ) { color: $c-Button-textColour--primaryHover; }
+		@include conditional( $c-Button-backgroundColour--primaryHover ) { background-color: $c-Button-backgroundColour--primaryHover; }
+		@include conditional( $c-Button-borderColour--primaryHover ) { border-color: $c-Button-borderColour--primaryHover; }
+	}
+}
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+@if $use-base-buttons == true {
+	.button {
+	  @extend %button;
+	}
+
+
+	.button--primary {
+		@extend %button--primary;
+	}
+}
