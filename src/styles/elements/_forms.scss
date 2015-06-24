@@ -1,18 +1,34 @@
-// --------------------------------------------------------------------------
-// FORMFIELDS ELEMENT
-// --------------------------------------------------------------------------
+// FORM ELEMENTS
+//
+// Styling for form elements to give a consistant base design across all form elements.
+//
+// DEPENDENCIES </br>
+// - base/type
+//
+// EXTENDS </br>
+// - none
+//
+// VARIABLES </br>
+// - $input-padding: ($Leading / 2) ($Leading * 1.5); </br>
+// - $input-height: $Leading * 4; </br>
+// - $c-input-outline: none;
+// - 
+// - $input-border: 1px solid $Colour-border; </br>
+// - $c-input-borderColour--focus: $Colour-base; </br>
+// - $c-input-borderStyle--focus: false;
+// - 
+// - $input-borderRadius: 4px; </br>
+// - $input-backgroundColour: $Colour-white;
+//
+// .object-classes	- class description
+//
+// Markup:
+// <img src="http://placehold.it/600x300" alt="A landscape image" class="aspect {$modifiers}">
+//
+// Styleguide 9.0.0.
 
-/**
- * Intro text
- *
- *
- * DEPENDENCIES
- * - base/type
- *
- *
- * USED WITH
- * -
- * 
+/*
+ * TODO:
  */
 
 

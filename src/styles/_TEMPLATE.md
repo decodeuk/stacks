@@ -1,20 +1,25 @@
-// --------------------------------------------------------------------------
-// ASPECT BASE
-// --------------------------------------------------------------------------
+// OBJECT NAME
+//
+// Object description
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - none
+//
+// VARIABLES </br>
+// - none
+//
+// .object-classes	- class description
+//
+// Markup:
+// <img src="http://placehold.it/600x300" alt="A landscape image" class="aspect {$modifiers}">
+//
+// Styleguide 0.0.0.
 
-/**
- * Aspect ratios for scaling media whilst keeping aspect ratios
- *
- * TODO: Create a generator mixin which can be used to create custom aspects
- *
- *
- * DEPENDENCIES
- * - base/sizing
- *
- *
- * USED WITH
- * -
- * 
+/*
+ * TODO:
  */
 
 
@@ -46,20 +51,3 @@
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
-
-@if $use-base-aspect == true {
-	.aspect {
-		@extend %oneWhole;
-		height: auto;
-	}
-
-	.aspect--portrait {
-		width: auto;
-		height: 100%;
-	}
-
-	.aspect--wide {
-		width: auto;
-		height: 100%;
-	}
-}

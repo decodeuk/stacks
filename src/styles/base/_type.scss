@@ -1,18 +1,104 @@
-// --------------------------------------------------------------------------
-// TYPE BASE
-// --------------------------------------------------------------------------
+//
+// TYPE HEADING BASE
+//
+// Typography base classes which can be used and extended to bring reusable type styling.
+// typeHeading styles that is used to add constant styling to typeHeadings.
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - %typeHeading </br>
+// - %typeHeading-1 </br>
+// - %typeHeading-2 </br>
+// - %typeHeading-3 </br>
+// - %typeHeading-4 </br>
+// - %typeHeading-5
+//
+// VARIABLES </br>
+// - $c-typeHeading-fontFamily: false !default; </br>
+// - $c-typeHeading-fontWeight: $FontWeight-bold !default; </br>
+// - $c-typeHeading-margin: $Margin-heading !default;
+//
+// - $c-typeHeading1-fontSize: false !default; //set in normalise </br>
+// - $c-typeHeading1-fontWeight: false !default; </br>
+// - $c-typeHeading1-lineHeight: $LineHeight-h1 !default;
+//
+// - $c-typeHeading2-fontSize: $FontSize-h2 !default; </br>
+// - $c-typeHeading2-fontWeight: false !default; </br>
+// - $c-typeHeading2-lineHeight: $LineHeight-h2 !default;
+//
+// - $c-typeHeading3-fontSize: $FontSize-h3 !default; </br>
+// - $typeHeading3-fontWeight: false !default; </br>
+// - $typeHeading3-lineHeight: $LineHeight-h3 !default;
+//
+// - $c-typeHeading5-fontSize: $FontSize-h4 !default; </br>
+// - $c-typeHeading4-fontWeight: false !default; </br>
+// - $c-typeHeading4-lineHeight: $LineHeight-h4 !default;
+//
+// - $c-typeHeading5-fontSize: $FontSize-h5 !default; </br>
+// - $c-typeHeading5-fontWeight: false !default; </br>
+// - $c-typeHeading5-lineHeight: $LineHeight-h5 !default;
+//
+// Markup:
+// <div class="typeHeading {$modifiers}">Heading styling</div>
+//
+// .typeHeading-1	- H1 heading style
+// .typeHeading-2	- H2 heading style
+// .typeHeading-3	- H3 heading style
+// .typeHeading-4	- H4 heading style
+// .typeHeading-5	- H5 heading style
+//
+// Styleguide 7.1.0.
 
-/**
- * Intro text
- *
- *
- * DEPENDENCIES
- * - 
- *
- *
- * USED WITH
- * -
- * 
+
+//
+// TYPE COPY
+//
+// Base copy default typography styling
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - %typeCopy 
+//
+// VARIABLES </br>
+// - $c-typeCopy-fontSize: false !default; </br>
+// - $c-typeCopy-lineHeight: false !default; </br>
+// - $c-typeCopy-marginTop: $Margin-copy !default;
+//
+// Markup:
+// <div class="typeCopy">Paragraph copy styling lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quasi sapiente esse consectetur totam maiores praesentium perferendis enim, sunt quae exercitationem soluta, mollitia voluptatem obcaecati ullam distinctio facilis nemo reiciendis.</div>
+//
+// Styleguide 7.2.0.
+
+
+//
+// TYPE LABEL
+//
+// Label default styling
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - %typeLabel
+//
+// VARIABLES </br>
+// - $c-typeLabel-fontSize: false !default; </br>
+// - $c-typeLabel-lineHeight: false !default; </br>
+// - $c-typeLabel-fontWeight: $FontWeight-bold !default; </br>
+// - $c-typeLabel-marginTop: false !default; </br>
+// - $c-typeLabel-colour: $Colour-baseFont--light !default;
+//
+// Markup:
+// <div class="typeLabel">Form label styling</div>
+//
+// Styleguide 7.3.0.
+
+/*
+ * TODO: Rename %typeLabel so it has a more reusable name
  */
 
 
@@ -121,9 +207,6 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 }
 
 
-/*
- * TODO: Rename as something more reusable
- */
 %typeLabel {
 	@include conditional( $c-typeLabel-fontSize ) { @include font-size($c-typeLabel-fontSize) };
 	@include conditional( $c-typeLabel-lineHeight ) { line-height: $c-typeLabel-lineHeight };
@@ -165,7 +248,6 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 
 	/**
 	 * H2 Notes
-	 *
 	 */
 
 	.typeHeading-2 {
@@ -175,7 +257,6 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 
 	/**
 	 * H3 Notes
-	 *
 	 */
 
 	.typeHeading-3 {
@@ -184,7 +265,6 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 
 	/**
 	 * H4 Notes
-	 *
 	 */
 
 	.typeHeading-4 {
@@ -194,7 +274,6 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 
 	/**
 	 * H5 Notes
-	 *
 	 */
 
 	.typeHeading-5 {
@@ -204,7 +283,6 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 
 	/**
 	 * Copy Notes
-	 *
 	 */
 
 	.typeCopy {
@@ -214,7 +292,6 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 
 	/**
 	 * Label Notes
-	 *
 	 */
 
 	.typeLabel {

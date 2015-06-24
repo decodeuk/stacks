@@ -1,19 +1,42 @@
-// --------------------------------------------------------------------------
+//
 // BUTTON BASE
-// --------------------------------------------------------------------------
-
-/**
- * Intro text
- *
- *
- * DEPENDENCIES
- * - 
- *
- *
- * USED WITH
- * -
- * 
- */
+//
+// The .button class can be used to style markup to look like a button.
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - %button
+// - %button--primary
+//
+// VARIABLES </br>
+// - $Button-padding: ($Leading * 1.5) ($Leading * 4.5) !default; </br>
+// - $Button-textColour: $Colour-primary !default; </br>
+// - $c-Button-textColour--hover: $Colour-base !default; </br>
+// - $Button-fontSize: $FontSize-small !default; </br>
+// - $Button-fontWeight: $FontWeight-bold !default; </br>
+// - $Button-lineHeight: 1 !default; </br>
+// - $c-Button-textCase: uppercase !default; </br>
+// - $Button-backgroundColour: transparent !default; </br>
+// - $c-Button-borderRadius: 4px !default; </br>
+// - $Button-border: 1px solid $Colour-primary !default; </br>
+// - $c-Button-borderColour--hover: false !default; </br>
+// - $c-Button-outline: 0 !default; </br>
+// - $c-Button-textColour--primary: $Colour-white !default; </br>
+// - $c-Button-textColour--primaryHover: $Colour-base !default; </br>
+// - $c-Button-backgroundColour--primary: $Colour-primary !default; </br>
+// - $c-Button-backgroundColour--primaryHover: transparent !default; </br>
+// - $c-Button-borderColour--primary: transparent !default; </br>
+// - $c-Button-borderColour--primaryHover: $Colour-primary !default; </br>
+//
+// .button--primary				- Primary button modifier used to catch the users eye
+// :hover :focus				- For consistancy the :hover and :focus styling is the same for the default an button mods
+//
+// Markup:
+// <a href="#" class="button {$modifiers}">Hello</a>
+//
+// Styleguide 2.1.0.
 
 
 
@@ -35,9 +58,9 @@ $c-Button-borderColour--hover: false !default;
 $c-Button-outline: 0 !default;
 
 $c-Button-textColour--primary: $Colour-white !default;
-$c-Button-textColour--primaryHover: $Colour-primary !default;
+$c-Button-textColour--primaryHover: $Colour-base !default;
 $c-Button-backgroundColour--primary: $Colour-primary !default;
-$c-Button-backgroundColour--primaryHover: $Colour-white !default;
+$c-Button-backgroundColour--primaryHover: transparent !default;
 $c-Button-borderColour--primary: transparent !default;
 $c-Button-borderColour--primaryHover: $Colour-primary !default;
 
@@ -106,6 +129,7 @@ $c-Button-borderColour--primaryHover: $Colour-primary !default;
 // --------------------------------------------------------------------------
 
 @if $use-base-buttons == true {
+
 	.button {
 	  @extend %button;
 	}

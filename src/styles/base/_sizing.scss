@@ -1,19 +1,44 @@
-// --------------------------------------------------------------------------
+//
 // SIZING BASE
-// --------------------------------------------------------------------------
-
-/**
- * Intro text
- *
- *
- * DEPENDENCIES
- * - 
- *
- *
- * USED WITH
- * -
- * 
- */
+//
+// Size styling which can be used in conjunction with other objects such as the grid, media element or images.
+// Sizes are responsive and based on ratios for clearer naming and understanding.
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - %oneWhole </br>
+// - %oneHalf </br>
+// - %oneThird </br>
+// - %twoThirds </br>
+// - %oneQuarter </br>
+// - %twoQuarters </br>
+// - %threeQuarters
+//
+// VARIABLES </br>
+// - $Column-gutter: 20px !default; </br>
+// - $Column-count: 12 !default; </br>
+// - $Column-selector: column !default; </br>
+// - $Column-prefix: column- !default; </br>
+// - $Column-offsetSelector: column-offset- !default; </br>
+// - $Row-selector: row !default; </br>
+// - $Row-width: 100% !default; </br>
+// - $Row-maxWidth: 1080px !default; </br>
+// - $Row-margin: 0 auto !default;
+//
+// Markup:
+// <img src="http://placekitten.com/g/320/240" class="oneWhole {$modifiers}" alt="Cute kitten">
+//
+// .oneWhole 			- Removes list styling and resets left padding to 0
+// .oneHalf				- Displays the list in an horizontal format. Uses the noBullet list to reset styling.
+// .oneThird			- Displays the list in an horizontal format. Uses the noBullet list to reset styling.
+// .twoThirds			- Displays the list in an horizontal format. Uses the noBullet list to reset styling.
+// .oneQuarter			- Displays the list in an horizontal format. Uses the noBullet list to reset styling.
+// .twoQuarters			- Displays the list in an horizontal format. Uses the noBullet list to reset styling.
+// .threeQuarters		- Displays the list in an horizontal format. Uses the noBullet list to reset styling.
+//
+// Styleguide 6.1.0.
 
 
 

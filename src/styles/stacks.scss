@@ -2,7 +2,7 @@
 // Setup 
 // --------------------------------------------------------------------------
 
-@import "_setup.scss";
+@import "_setupStacks.scss";
 
 
 
@@ -22,13 +22,46 @@
 
 @import "base/_normalize.scss";
 
+// Aspect
+//
+// Styleguide 1.
 @import "base/_aspect.scss";
+
+
+// Buttons
+//
+// Styleguide 2.
 @import "base/_buttons.scss";
+
+
+// Clearfix
+//
+// Styleguide 3.
 @import "base/_clearfix.scss";
+
+
+// Formfields
+//
+// Styleguide 4.
 @import "base/_formfields.scss";
+
+
+// Lists
+//
+// Styleguide 5.
 @import "base/_lists.scss";
-@import "base/_type.scss";
+
+
+// Sizing
+//
+// Styleguide 6.
 @import "base/_sizing.scss";
+
+
+// Type
+//
+// Styleguide 7.
+@import "base/_type.scss";
 
 
 
@@ -36,7 +69,14 @@
 // Element 
 // --------------------------------------------------------------------------
 
+// Base Elements
+//
+// Styleguide 8.
 @import "elements/_base.scss";
+
+// Forms
+//
+// Styleguide 9.
 @import "elements/_forms.scss";
 @import "elements/_headings.scss";
 @import "elements/_links.scss";

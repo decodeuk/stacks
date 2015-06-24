@@ -1,0 +1,102 @@
+//
+// LIST BASE
+//
+// Base list styling utilities.
+//
+// DEPENDENCIES </br>
+// - base/clearfix
+//
+// EXTENDS </br>
+// - %list-noBullet <br/>
+// - %list-inline
+//
+// VARIABLES </br>
+// - $listInline-verticalAlign: top !default;
+//
+// Markup:
+// <ul class="{$modifiers}">
+// 	<li>First Item</li>
+// 	<li>Second Item</li>
+// 	<li>Third Item</li>
+//</ul>
+//
+// .list-noBullet 	- Removes list styling and resets left padding to 0
+// .list-inline		- Displays the list in an horizontal format. Uses the noBullet list to reset styling.
+//
+// Styleguide 5.1.0.
+
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$listInline-verticalAlign: top !default;
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+%list-noBullet {
+	padding-left: 0;
+	list-style: none;
+}
+
+
+%list-inline {
+	@extend %clearfix;
+
+	li {
+		display: inline-block;
+		vertical-align: $listInline-verticalAlign;
+		margin-right: $Leading * 2;
+	}
+}
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+@if $use-base-lists == true {
+
+	@if $use-base-lists--noBullet == true {
+	
+		/*
+		 * noBullet list
+		 */
+
+		.list-noBullet {
+			@extend %list-noBullet;
+		}
+	}
+
+
+	
+	@if $use-base-lists--inline == true {
+		
+		/*
+		 * inline list
+		 */
+
+		.list-inline {
+			@extend %list-noBullet;
+			@extend %list-inline;
+		}
+	}
+}

@@ -1,18 +1,25 @@
-// --------------------------------------------------------------------------
-// LISTS BASE
-// --------------------------------------------------------------------------
+// ASPECT BASE
+//
+// Aspect ratios for scaling media whilst keeping aspect ratios.
+//
+// DEPENDENCIES </br>
+// - base/sizing
+//
+// EXTENDS </br>
+// - none
+//
+// VARIABLES </br>
+// - none
+//
+// .aspect--portrait	- Used on portrait images for responsive scaling
+//
+// Markup:
+// <img src="http://placehold.it/600x300" alt="A landscape image" class="aspect {$modifiers}">
+//
+// Styleguide 1.1.0.
 
-/**
- * Intro text
- *
- *
- * DEPENDENCIES
- * - 
- *
- *
- * USED WITH
- * -
- * 
+/*
+ * TODO: Create a generator mixin which can be used to create custom aspects
  */
 
 
@@ -20,8 +27,6 @@
 // --------------------------------------------------------------------------
 // VARIABLES
 // --------------------------------------------------------------------------
-
-$listInline-verticalAlign: top !default;
 
 
 
@@ -41,51 +46,21 @@ $listInline-verticalAlign: top !default;
 // EXTENDABLES
 // --------------------------------------------------------------------------
 
-%list-noBullet {
-	padding-left: 0;
-	list-style: none;
-}
-
-
-%list-inline {
-	@extend %clearfix;
-
-	li {
-		display: inline-block;
-		vertical-align: $listInline-verticalAlign;
-		margin-right: $Leading * 2;
-	}
-}
-
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
-@if $use-base-lists == true {
+@if $use-base-aspect == true {
 
-	@if $use-base-lists--noBullet == true {
-	
-		/*
-		 * noBullet list
-		 */
-
-		.list-noBullet {
-			@extend %list-noBullet;
-		}
+	.aspect {
+		@extend %oneWhole;
+		height: auto;
 	}
-
-
 	
-	@if $use-base-lists--inline == true {
-		
-		/*
-		 * inline list
-		 */
-
-		.list-inline {
-			@extend %list-inline;
-		}
+	.aspect--portrait {
+		width: auto;
+		height: 100%;
 	}
 }

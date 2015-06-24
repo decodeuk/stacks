@@ -1,18 +1,29 @@
-// --------------------------------------------------------------------------
-// BODY ELEMENT
-// --------------------------------------------------------------------------
+// BASE ELEMENTS
+//
+// Some styling for base html elements.
+// Elements include html, element and a * catch all box-sizing.
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - none
+//
+// VARIABLES </br>
+// - $c-global-boxSizing: box-sizing !default;
+//
+// - $html-fontSize: 87.5% !default;
+//
+// - $body-fontSize: $FontSize-b !default; </br>
+// - $body-lineHeight: 1.6 !default; </br>
+// - $body-fontWeight: 400 !default; </br>
+// - $body-fontFamily: $FontFamily-copy !default; </br>
+// - $body-fontColour: $Colour-base !default;
+//
+// Styleguide 8.0.0.
 
-/**
- * Intro text
- *
- *
- * DEPENDENCIES
- * - global/mixins
- *
- *
- * USED WITH
- * -
- * 
+/*
+ * TODO:
  */
 
 
@@ -20,6 +31,8 @@
 // --------------------------------------------------------------------------
 // VARIABLES
 // --------------------------------------------------------------------------
+
+$c-global-boxSizing: box-sizing !default;
 
 $html-fontSize: 87.5% !default;
 
@@ -54,7 +67,7 @@ $body-fontColour: $Colour-base !default;
 // --------------------------------------------------------------------------
 
 * {
-	box-sizing: border-box;
+	@include conditional( $c-global-boxSizing ) { box-sizing: $c-global-boxSizing };
 }
 
 html {

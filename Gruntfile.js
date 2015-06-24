@@ -37,20 +37,26 @@ module.exports = function(grunt) {
 		project: {
 			src: 'src',
 			dist: 'dist',
+			dev: 'dev',
+
+			styleguide: 'styleguide',
 
 			distAssets: '<%= project.dist %>/assets',
+			devAssets: '<%= project.dev %>/assets',
 
 			srcImgDir: '<%= project.src %>/img',
 			distImgDir: '<%= project.distAssets %>/img',
+			devImgDir: '<%= project.devAssets %>/img',
 
-			scssDir: '<%= project.src %>/css',
-			scssFile: 'styles.scss',
+			scssDir: '<%= project.src %>/styles',
+			scssFile: 'stacks.scss',
 			scss: '<%= project.scssDir %>/<%= project.scssFile %>',
 
-			cssDir: '<%= project.distAssets %>/css',
-			cssFile: 'styles.css',
-			cssFileMin: 'styles.min.css',
-			css: '<%= project.cssDir %>/<%= project.cssFile %>',
+			cssDir: '<%= project.devAssets %>/css',
+			cssFile: 'stacks.css',
+			cssFileMin: 'stacks.min.css',
+			// css: '<%= project.cssDir %>/<%= project.cssFile %>',
+			css: '<%= project.styleguide %>/public/<%= project.cssFile %>',
 			cssMin: '<%= project.cssDir %>/<%= project.cssFileMin %>',
 		},
 
@@ -87,7 +93,7 @@ module.exports = function(grunt) {
 			livereload: {
 				options: {
 					middleware: function (connect) {
-						return [lrSnippet, mountFolder(connect, 'dist')];
+						return [lrSnippet, mountFolder(connect, '')];
 					}
 				}
 			}
@@ -106,10 +112,11 @@ module.exports = function(grunt) {
 				},
 
 				files: {
-					"<%= project.dist %>/index.html": "<%= project.src %>/templates/index.html",
+					"<%= project.dev %>/index.html": "<%= project.src %>/templates/index.html",
 				}
 			}
 		},
+
 
 
 		/**
@@ -120,6 +127,12 @@ module.exports = function(grunt) {
 		clean: {
 			dist: [
 				'<%= project.dist %>'
+			],
+			dev: [
+				'<%= project.dev %>'
+			],
+			styleguide: [
+				'<%= project.styleguide %>'
 			]
 		},
 
@@ -134,13 +147,52 @@ module.exports = function(grunt) {
 				expand: true,
 				cwd: 'src/img',
 				src: '**/*',
-				dest: '<%= project.distImgDir %>'
+				dest: '<%= project.devImgDir %>'
 			},
-			stylesguide : { // grimme but had to as kss isnt copying it properly so having to fake it
+
+			styleguide : { // grimme but had to as kss isnt copying it properly so having to fake it
 				expand: true,
-				flatten: true,
 				src: '<%= project.css %> ',
-				dest: 'styleguide/public'
+				dest: 'styleguide/public',
+				flatten: true
+			},
+
+
+
+			dist: {
+				expand: true,
+				cwd: '<%= project.scssDir %>',
+				src: '**/*',
+				dest: '<%= project.dist %>/stacks',
+				filter: 'isDirectory',
+				options: {
+					process: function (content, srcpath) {
+						// copy content setup file
+
+						return content(/(.*?)/g,"@import \"stacks/");
+					},
+				},
+			},
+
+			distSetup: {
+				expand: true,
+				cwd: '<%= project.scssDir %>',
+				src: '_setupStacks.scss',
+				dest: '<%= project.dist %>',
+				filter: 'isFile'
+			},
+
+			distStacks: {
+				expand: true,
+				cwd: '<%= project.scssDir %>',
+				src: '<%= project.scssFile %>',
+				dest: '<%= project.dist %>',
+				filter: 'isFile',
+				options: {
+					process: function (content, srcpath) {
+						return content.replace(/@import \"/g,"@import \"stacks/");
+					},
+				},
 			},
 		},
 
@@ -158,6 +210,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'<%= project.css %>': '<%= project.scss %>',
+					// 'styleguide/public/<%= project.cssFile %>': '<%= project.scss %>'
 				}
 			}
 		},
@@ -174,7 +227,7 @@ module.exports = function(grunt) {
 					'<%= project.src %>/js/libs/jquery/dist/jquery.min.js',
 					'<%= project.src %>/js/scripts.js', 
 				],
-				dest: '<%= project.dist %>/assets/js/scripts.min.js',
+				dest: '<%= project.devAssets %>/js/scripts.min.js',
 			},
 			options: {
 				stripBanners: true,
@@ -202,7 +255,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'<%= project.cssMin %>': ['<%= project.css %>']
+					'<%= project.css %>': ['<%= project.css %>']
 				}
 			}
 		},
@@ -226,8 +279,8 @@ module.exports = function(grunt) {
 		*/
 		kss: {
 			options: {
-				css: 'dist/assets/css/styles.css',
-				template: 'styleguide/src'
+				css: '<%= project.css %>',
+				template: '<%= project.src %>/styleguide'
 			},
 			dist: {
 				files: {
@@ -246,11 +299,11 @@ module.exports = function(grunt) {
 		watch: {
 			sass: {
 				files: '<%= project.scssDir %>/**/*.scss',
-				tasks: ['sass:dist', 'autoprefixer:dist']
+				tasks: ['kss', 'sass', 'autoprefixer']
 			},
 			bake: {
 				files: ['<%= project.src %>/templates/**/*.html'],
-				tasks: ['bake:build']
+				tasks: ['bake']
 			},
 			concat: {
 				files: '<%= project.src %>/js/**/*.js',
@@ -261,10 +314,11 @@ module.exports = function(grunt) {
 					livereload: LIVERELOAD_PORT
 				},
 				files: [
-					'<%= project.dist %>/**/*.html',
+					'<%= project.dev %>/**/*.html',
+					'styleguide/**/*.html',
 					'<%= project.cssDir %>/**/*.css',
-					'<%= project.dist %>/js/**/*.js',
-					'<%= project.dist %>/**/*.{png,jpg,jpeg,gif,webp,svg}'
+					'<%= project.dev %>/js/**/*.js',
+					'<%= project.dev %>/**/*.{png,jpg,jpeg,gif,webp,svg}'
 				]
 			}
 		}
@@ -285,10 +339,10 @@ module.exports = function(grunt) {
 		* Default task
 		* Run `grunt` on the command line
 	*/
-	grunt.registerTask('openup', [
-		'connect:livereload',
-		'open',
-		'watch'
+	grunt.registerTask('styleguide', [
+		'clean:styleguide',
+		'kss',
+		'copy:styleguide',
 	]);
 
 
@@ -299,9 +353,9 @@ module.exports = function(grunt) {
 	*/
 	grunt.registerTask('build', [
 		'clean:dist',
-		'copy:images',
-		'sass',
-		'bake'
+		'copy:dist',
+		'copy:distSetup',
+		'copy:distStacks'
 	]);
 
 };

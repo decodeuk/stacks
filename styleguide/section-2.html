@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>KSS: Living Styleguide</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+
+  <meta name="viewport" content="width=device-width">
+
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="public/kss.css">
+  <link rel="stylesheet" href="public/stacks.css">
+
+</head>
+<body><div id="kss-wrapper">
+  <div id="kss-nav">
+    <header id="kss-header">
+      <hgroup><h1>kss-node Styleguide</h1></hgroup>
+    </header>
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="index.html"><!--0.0: -->Overview</a></li>
+          
+            <li>
+              <a href="section-1.html"><!--1.0: -->Aspect</a>
+            </li>
+          
+            <li>
+              <a href="section-2.html"><!--2.0: -->Buttons</a>
+            </li>
+          
+            <li>
+              <a href="section-3.html"><!--3.0: -->Clearfix</a>
+            </li>
+          
+            <li>
+              <a href="section-4.html"><!--4.0: -->Formfields</a>
+            </li>
+          
+            <li>
+              <a href="section-5.html"><!--5.0: -->Lists</a>
+            </li>
+          
+            <li>
+              <a href="section-6.html"><!--6.0: -->Sizing</a>
+            </li>
+          
+            <li>
+              <a href="section-7.html"><!--7.0: -->Type</a>
+            </li>
+          
+            <li>
+              <a href="section-8.html"><!--8.0: -->Base Elements</a>
+            </li>
+          
+            <li>
+              <a href="section-9.html"><!--9.0: -->Forms</a>
+            </li>
+          
+
+          <!-- 
+            <ul class="kss-menu-child">
+              
+                
+                
+              
+                
+                  <li class="kss-menu-item"><a href="#section-2.1.0"><span class="kss-name">BUTTON BASE</span></a></li>
+                
+              
+            </ul>
+           -->
+        </ul>
+      </nav>
+    </aside>
+  </div>
+  <div role="main" id="kss-main">
+    <article id="kss-content">
+      
+
+        
+        
+          
+            <h1 class="kss-title"><span class="kss-ref">2.0</span> - Buttons</h1>
+          
+            
+                
+            
+           
+        
+          
+           <section class="kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.1.0</span> - BUTTON BASE</h1>
+          
+            
+                <div class="kss-box"><p>The .button class can be used to style markup to look like a button.
+
+</p>
+<p>DEPENDENCIES </br>
+- none
+
+</p>
+<p>EXTENDS </br>
+- %button
+- %button--primary
+
+</p>
+<p>VARIABLES </br>
+- $Button-padding: ($Leading <em> 1.5) ($Leading </em> 4.5) !default; </br>
+- $Button-textColour: $Colour-primary !default; </br>
+- $c-Button-textColour--hover: $Colour-base !default; </br>
+- $Button-fontSize: $FontSize-small !default; </br>
+- $Button-fontWeight: $FontWeight-bold !default; </br>
+- $Button-lineHeight: 1 !default; </br>
+- $c-Button-textCase: uppercase !default; </br>
+- $Button-backgroundColour: transparent !default; </br>
+- $c-Button-borderRadius: 4px !default; </br>
+- $Button-border: 1px solid $Colour-primary !default; </br>
+- $c-Button-borderColour--hover: false !default; </br>
+- $c-Button-outline: 0 !default; </br>
+- $c-Button-textColour--primary: $Colour-white !default; </br>
+- $c-Button-textColour--primaryHover: $Colour-base !default; </br>
+- $c-Button-backgroundColour--primary: $Colour-primary !default; </br>
+- $c-Button-backgroundColour--primaryHover: transparent !default; </br>
+- $c-Button-borderColour--primary: transparent !default; </br>
+- $c-Button-borderColour--primaryHover: $Colour-primary !default; </br></p>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><a href="#" class="button {$modifiers}">Hello</a></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Primary button modifier used to catch the users eye</p>
+</td>
+                    <td class="kss-mod-name"><p>.button--primary</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><a href="#" class="button button--primary">Hello</a></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>For consistancy the :hover and :focus styling is the same for the default an button mods</p>
+</td>
+                    <td class="kss-mod-name"><p>:hover :focus</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><a href="#" class="button pseudo-class-hover">Hello</a></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">&lt;a href=&quot;#&quot; class=&quot;button {$modifiers}&quot;&gt;Hello&lt;/a&gt;</pre>
+                </div>
+            
+          
+            </section>
+          
+        
+      
+    </article>
+  </div>
+ 
+  <!-- SCRIPTS -->
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var sidebarAdjust = function() {
+        // Match footer/body height
+        var height = Math.max($(window).height(), $('#kss-main').height());
+
+        if ($(window).width() <= 768) {
+          $('#kss-main, #kss-nav').height('auto');
+        } else {
+          $('#kss-main, #kss-nav').height(height);
+        }
+      };
+
+      $(window).resize(sidebarAdjust);
+      $(window).scroll(sidebarAdjust);
+      sidebarAdjust();
+
+      // Ensure code blocks are highlighted properly...
+      $('pre>code').addClass('prettyprint');
+      prettyPrint();
+
+    });
+  </script>
+</div></body>
+</html>
