@@ -1,19 +1,29 @@
 {
   "name": "Stacks",
   "version": "0.0.1",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "dist/assets/js/libs",
     "test",
-    "tests"
+    "tests",
+    "src/js/libs"
   ],
   "dependencies": {
     "jquery": "~1.11"
   },
   "devDependencies": {
     "html5shiv": "~3.7.2"
-  }
+  },
+  "homepage": "https://github.com/decodeuk/stacks",
+  "authors": [
+    "Patrick Allen <pa@pallen.co>"
+  ],
+  "description": "A tiny modular sass framework that gives a good starting point on most projects.",
+  "main": "dist/stacks/stacks.scss",
+  "keywords": [
+    "scss",
+    "sass"
+  ],
+  "license": "MIT"
 }
