@@ -50,31 +50,40 @@
         
           
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">9.0.0</span> - FORM ELEMENTS</h1>
+            <h1 class="kss-title"><span class="kss-ref">20.1.0</span> - button BASE</h1>
           
             
-                <div class="kss-box"><p>Styling for form elements to give a consistant base design across all form elements.
+                <div class="kss-box"><p>The .button class can be used to style markup to look like a button.
 
 </p>
 <p>DEPENDENCIES </br>
-- base/type
-
-</p>
-<p>EXTENDS </br>
 - none
 
 </p>
+<p>EXTENDS </br>
+- %button
+- %button--primary
+
+</p>
 <p>VARIABLES </br>
-- $input-padding: ($Leading / 2) ($Leading <em> 1.5); </br>
-- $input-height: $Leading </em> 4; </br>
-- $c-input-outline: none;
-- 
-- $input-border: 1px solid $Colour-border; </br>
-- $c-input-borderColour--focus: $Colour-base; </br>
-- $c-input-borderStyle--focus: false;
-- 
-- $input-borderRadius: 4px; </br>
-- $input-backgroundColour: $Colour-white;</p>
+- $button-padding: ($Leading <em> 1.5) ($Leading </em> 4.5) !default; </br>
+- $button-textColour: $Colour-primary !default; </br>
+- $c-button-textColour--hover: $Colour-base !default; </br>
+- $button-fontSize: $FontSize-small !default; </br>
+- $button-fontWeight: $FontWeight-bold !default; </br>
+- $button-lineHeight: 1 !default; </br>
+- $c-button-textCase: uppercase !default; </br>
+- $button-backgroundColour: transparent !default; </br>
+- $c-button-borderRadius: 4px !default; </br>
+- $button-border: 1px solid $Colour-primary !default; </br>
+- $c-button-borderColour--hover: false !default; </br>
+- $c-button-outline: 0 !default; </br>
+- $c-button-textColour--primary: $Colour-white !default; </br>
+- $c-button-textColour--primaryHover: $Colour-base !default; </br>
+- $c-button-backgroundColour--primary: $Colour-primary !default; </br>
+- $c-button-backgroundColour--primaryHover: transparent !default; </br>
+- $c-button-borderColour--primary: transparent !default; </br>
+- $c-button-borderColour--primaryHover: $Colour-primary !default; </br></p>
 </div>
                 <table class="kss-mod-list">
                   <tr class="kss-mod-desc-group">
@@ -82,57 +91,30 @@
                     <td class="kss-mod-name"></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><form>
-	<div class="formfield">
-		<label for="demoinput">Standard label styling</label>
-		<input type="text" placeholder="Demo placeholder..."/>
-	</div>
-	<div class="formfield">
-		<label for="demoTextarea">Standard label styling</label>
-		<textarea placeholder="Demo placeholder..." id="demoTextarea"></textarea>
-	</div>
-	<div class="formfield">
-		<input type="submit">
-	</div>
-	</form></td>
+                    <td colspan="2"><a href="#" class="button {$modifiers}">Hello</a></td>
                   </tr>
                 
                   <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>class description</p>
+                    <td class="kss-mod-desc"><p>Primary button modifier used to catch the users eye</p>
 </td>
-                    <td class="kss-mod-name"><p>.object-classes</p></td>
+                    <td class="kss-mod-name"><p>.button--primary</p></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><form>
-	<div class="formfield">
-		<label for="demoinput">Standard label styling</label>
-		<input type="text" placeholder="Demo placeholder..."/>
-	</div>
-	<div class="formfield">
-		<label for="demoTextarea">Standard label styling</label>
-		<textarea placeholder="Demo placeholder..." id="demoTextarea"></textarea>
-	</div>
-	<div class="formfield">
-		<input type="submit">
-	</div>
-	</form></td>
+                    <td colspan="2"><a href="#" class="button button--primary">Hello</a></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>For consistancy the :hover and :focus styling is the same for the default an button mods</p>
+</td>
+                    <td class="kss-mod-name"><p>:hover :focus</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><a href="#" class="button pseudo-class-hover">Hello</a></td>
                   </tr>
                 
                 </table>
                 <div class="kss-markup">
-                  <pre class="prettyprint lang-html">&lt;form&gt;
-	&lt;div class=&quot;formfield&quot;&gt;
-		&lt;label for=&quot;demoinput&quot;&gt;Standard label styling&lt;/label&gt;
-		&lt;input type=&quot;text&quot; placeholder=&quot;Demo placeholder...&quot;/&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;formfield&quot;&gt;
-		&lt;label for=&quot;demoTextarea&quot;&gt;Standard label styling&lt;/label&gt;
-		&lt;textarea placeholder=&quot;Demo placeholder...&quot; id=&quot;demoTextarea&quot;&gt;&lt;/textarea&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;formfield&quot;&gt;
-		&lt;input type=&quot;submit&quot;&gt;
-	&lt;/div&gt;
-	&lt;/form&gt;</pre>
+                  <pre class="prettyprint lang-html">&lt;a href=&quot;#&quot; class=&quot;button {$modifiers}&quot;&gt;Hello&lt;/a&gt;</pre>
                 </div>
             
           

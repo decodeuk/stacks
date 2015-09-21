@@ -1,21 +1,36 @@
-// --------------------------------------------------------------------------
+//
 // NAV COMPONENT
-// --------------------------------------------------------------------------
-
-// TODO: rethink naming to make sure it is inline with other naming in stacks
-
-/**
- * Intro text
- *
- *
- * DEPENDENCIES
- * - base/links
- *
- *
- * USED WITH
- * -
- * 
- */
+//
+// Universal nav styling for a variety of different navigation elements such as a nav list, inline nav or navbar.
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - %button
+// - %button--primary
+//
+// VARIABLES </br>
+// -
+//
+// .Nav-listInline		- Inline List
+// .Nav-bar				- Navbar
+//
+// Markup:
+//<nav>
+//		<input type="checkbox" id="Nav-itemToggle" class="Nav-itemToggleCheck">
+//		<ul class="Nav {$modifiers}">
+			//<li class="Nav-item Nav-itemBrand"><a href="#">Stacks</a></li>
+			//<li class="Nav-item"><a href="#">Default nav item styling</a></li>
+			//<li class="Nav-item"><a href="">Nav item</a></li>
+			//<li class="Nav-item"><a href="">Another one</a></li>
+			//<li class="Nav-item Nav-itemToggle">
+				//<label for="Nav-itemToggle" class="Nav-itemToggleLabel">Menu</label>
+			//</li>
+//		</ul>
+//	</nav>
+//
+// Styleguide 10.1.0.
 
 
 
@@ -29,6 +44,9 @@ $c-nav-textTransform: uppercase !default;
 
 $c-nav-textDecoration: none !default;
 $c-nav-textDecoration--hover: underline !default;
+$c-nav-textColour--hover: false !default;
+
+$c-navBar-verticalAlign: false !default;
 
 $navLink-display: inline-block !default;
 $navLink-paddingTop: $Leading !default;
@@ -37,17 +55,23 @@ $navLink-paddingBottom: $Leading !default;
 $navBar-padding: ($Leading * 2) ($Leading * 4) !default;
 $c-navBar-maxWidth: false !default;
 $c-navBar-fontSize: $FontSize-b !default;
+$c-navBar-textShadow: false !default;
 $c-navBar-marginRight: $Leading * 5 !default;
 $c-navBar-verticalAlign: middle !default;
 $c-navBar-brandFontSize: $FontSize-h3 !default;
 $c-navBar-brandColour: $Colour-base !default;
 $c-navBar-itemColour: false !default;
 
+$c-navBar-brandImage: false !default;
+$c-navBar-brandImageWidth: false !default;
+$c-navBar-brandImageHeight: false !default;
 $c-navBar-background: false !default;
 $c-navBar-borderTop: false !default;
 $c-navBar-borderRight: false !default;
 $c-navBar-borderBottom: false !default;
 $c-navBar-borderLeft: false !default;
+
+$navBar-breakpoint: 1120px !default;
 
 
 
@@ -101,6 +125,7 @@ $c-navBar-borderLeft: false !default;
 				&:hover,
 				&:focus {
 					text-decoration: $c-nav-textDecoration--hover;
+					@include conditional( $c-nav-textColour--hover ) { color: $c-nav-textColour--hover };
 				}
 			}
 		}
@@ -141,11 +166,13 @@ $c-navBar-borderLeft: false !default;
 		.Nav-bar {
 			@extend %list-inline;
 			@include conditional( $c-navBar-fontSize ) { @include font-size($c-navBar-fontSize) };
+			@include conditional( $c-navBar-textShadow ) { text-shadow: $c-navBar-textShadow };
+			@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
 			
 			position: relative;
 			padding: $navBar-padding;
 			margin: 0;
-
+			
 			@include conditional( $c-navBar-background ) { background: $c-navBar-background };
 			@include conditional( $c-navBar-borderTop ) { border-top: $c-navBar-borderTop };
 			@include conditional( $c-navBar-borderRight ) { border-right: $c-navBar-borderRight };
@@ -162,29 +189,45 @@ $c-navBar-borderLeft: false !default;
 
 				display: none;
 
-				@include respond-to(760px) {
+				@include respond-to($navBar-breakpoint) {
 					display: inline-block;
 				}
 			}
 
-			.Nav-itemBrand {
-				display: inline-block;
-				@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
-				@include conditional( $c-navBar-brandFontSize ) { @include font-size($c-navBar-brandFontSize) };
-				
-				a {
-					@include conditional( $c-navBar-brandColour ) { color: $c-navBar-brandColour };
-				}
-			}
+		}
 
-			.Nav-itemToggle {
-				display: block;
-				position: absolute;
-				top: $Leading * 4;
-				right: $Leading * 4;
-				margin-right: 0;
-			}
+		
 
+		.Nav-itemBrand {
+			display: inline-block;
+			@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
+			@include conditional( $c-navBar-brandFontSize ) { @include font-size($c-navBar-brandFontSize) };
+
+			@include conditional( $c-navBar-brandImage ) {
+				background: $c-navBar-brandImage;
+				text-indent: -9999px;
+
+				@include conditional( $c-navBar-brandImageWidth ) {
+					background-size: $c-navBar-brandImageWidth auto;
+					width: $c-navBar-brandImageWidth;
+					height: auto;
+				};
+
+				@include conditional( $c-navBar-brandImageHeight ) { height: $c-navBar-brandImageHeight; };
+
+			};
+			
+			a {
+				@include conditional( $c-navBar-brandColour ) { color: $c-navBar-brandColour };
+			}
+		}
+
+		.Nav-itemToggle {
+			display: block;
+			position: absolute;
+			top: $Leading * 4;
+			right: $Leading * 4;
+			margin-right: 0;
 		}
 
 		
@@ -217,7 +260,7 @@ $c-navBar-borderLeft: false !default;
 			@extend %button;
 			@include conditional( $c-navBar-fontSize ) { @include font-size($c-navBar-fontSize) };
 
-			@include respond-to(760px) {
+			@include respond-to($navBar-breakpoint) {
 				display: none;
 			}
 		}

@@ -1,4 +1,12 @@
 //
+// TODO: 
+//		- best way to standardise lineheights (unitless vs units)
+//		- multiple heading font weights?
+//
+
+
+
+//
 // TYPE HEADING BASE
 //
 // Typography base classes which can be used and extended to bring reusable type styling.
@@ -99,6 +107,7 @@
 
 /*
  * TODO: Rename %typeLabel so it has a more reusable name
+ * TODO: Fix H1 font size is duplication in normalise and the extend
  */
 
 
@@ -110,8 +119,9 @@
 $c-typeHeading-fontFamily: false !default;
 $c-typeHeading-fontWeight: $FontWeight-bold !default;
 $c-typeHeading-margin: $Margin-heading !default;
+$c-typeHeading-marginFirstChild: 0 !default;
 
-$c-typeHeading1-fontSize: false !default; //set in normalise
+$c-typeHeading1-fontSize: $FontSize-h1 !default;
 $c-typeHeading1-fontWeight: false !default;
 $c-typeHeading1-lineHeight: $LineHeight-h1 !default;
 
@@ -134,6 +144,14 @@ $c-typeHeading5-lineHeight: $LineHeight-h5 !default;
 $c-typeCopy-fontSize: false !default;
 $c-typeCopy-lineHeight: false !default;
 $c-typeCopy-marginTop: $Margin-copy !default;
+
+$c-typeSmall-fontSize: $FontSize-small !default;
+$c-typeSmall-lineHeight: false !default;
+$c-typeSmall-marginTop: false !default;
+
+$c-typeLead-fontSize: $FontSize-lead !default;
+$c-typeLead-lineHeight: false !default;
+$c-typeLead-marginTop: 0 !default;
 
 $c-typeLabel-fontSize: false !default;
 $c-typeLabel-lineHeight: false !default;
@@ -158,62 +176,166 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 // EXTENDABLES
 // --------------------------------------------------------------------------
 
-%typeHeading {
+%typeHeading-style {
 	@include conditional( $c-typeHeading-fontFamily ) { font-family: $c-typeHeading-fontFamily };
 	@include conditional( $c-typeHeading-fontWeight ) { font-weight: $c-typeHeading-fontWeight };
-	@include conditional( $c-typeHeading-margin ) { margin: $c-typeHeading-margin };
 }
 
 
-%typeHeading-1 {
+%typeHeading-layout {
+	@include conditional( $c-typeHeading-margin ) { margin: $c-typeHeading-margin };
+
+	@include conditional( $c-typeHeading-marginFirstChild ) {
+		&:first-child {
+			margin: $c-typeHeading-marginFirstChild
+		}
+	};
+}
+
+
+%typeHeading {
+	@extend %typeHeading-style !optional;
+	@extend %typeHeading-layout !optional;
+}
+
+
+%typeHeading-size--1 {
 	@include conditional( $c-typeHeading1-fontSize ) { @include font-size($c-typeHeading1-fontSize) };
 	@include conditional( $c-typeHeading1-fontWeight ) { font-weight: $c-typeHeading1-fontWeight };
 	@include conditional( $c-typeHeading1-lineHeight ) { line-height: $c-typeHeading1-lineHeight };
 }
 
 
-%typeHeading-2 {
+%typeHeading-size--2 {
 	@include conditional( $c-typeHeading2-fontSize ) { @include font-size($c-typeHeading2-fontSize) };
 	@include conditional( $c-typeHeading2-fontWeight ) { font-weight: $c-typeHeading2-fontWeight };
 	@include conditional( $c-typeHeading2-lineHeight ) { line-height: $c-typeHeading2-lineHeight };
 }
 
 
-%typeHeading-3 {
+%typeHeading-size--3 {
 	@include conditional( $c-typeHeading3-fontSize ) { @include font-size($c-typeHeading3-fontSize) };
 	@include conditional( $typeHeading3-fontWeight ) { font-weight: $typeHeading3-fontWeight };
 	@include conditional( $typeHeading3-lineHeight ) { line-height: $typeHeading3-lineHeight };
 }
 
 
-%typeHeading-4 {
+%typeHeading-size--4 {
 	@include conditional( $c-typeHeading5-fontSize ) { @include font-size($c-typeHeading5-fontSize) };
 	@include conditional( $c-typeHeading4-fontWeight ) { font-weight: $c-typeHeading4-fontWeight };
 	@include conditional( $c-typeHeading4-lineHeight ) { line-height: $c-typeHeading4-lineHeight };
 }
 
 
-%typeHeading-5 {
+%typeHeading-size--5 {
 	@include conditional( $c-typeHeading5-fontSize ) { @include font-size($c-typeHeading5-fontSize) };
 	@include conditional( $c-typeHeading5-fontWeight ) { font-weight: $c-typeHeading5-fontWeight };
 	@include conditional( $c-typeHeading5-lineHeight ) { line-height: $c-typeHeading5-lineHeight };
 }
 
 
-%typeCopy {
+//
+// TYPE COPY
+//
+
+%typeCopy-size {
 	@include conditional( $c-typeCopy-fontSize ) { @include font-size($c-typeCopy-fontSize) };
 	@include conditional( $c-typeCopy-lineHeight ) { line-height: $c-typeCopy-lineHeight };
+}
+
+
+%typeCopy-layout {
 	@include conditional( $c-typeCopy-marginTop ) { margin: $c-typeCopy-marginTop };
 }
 
 
-%typeLabel {
+%typeCopy {
+	@extend %typeCopy-size !optional;
+	@extend %typeCopy-layout !optional;
+}
+
+
+//
+// TYPE SMALL
+//
+
+%typeSmall-size {
+	@include conditional( $c-typeSmall-fontSize ) { @include font-size($c-typeSmall-fontSize) };
+	@include conditional( $c-typeSmall-lineHeight ) { line-height: $c-typeSmall-lineHeight };
+}
+
+%typeSmall-layout {
+	@include conditional( $c-typeSmall-marginTop ) { margin: $c-typeSmall-marginTop };
+}
+
+%typeSmall {
+	@extend %typeSmall-size !optional;
+	@extend %typeSmall-layout !optional;
+}
+
+
+//
+// TYPE LEAD
+//
+
+%typeLead-size {
+	@include conditional( $c-typeLead-fontSize ) { @include font-size($c-typeLead-fontSize) };
+	@include conditional( $c-typeLead-lineHeight ) { line-height: $c-typeLead-lineHeight };
+}
+
+%typeLead-layout {
+	@include conditional( $c-typeLead-marginTop ) { margin: $c-typeLead-marginTop };
+}
+
+%typeLead {
+	@extend %typeLead-size !optional;
+	@extend %typeLead-layout !optional;
+}
+
+
+//
+// TYPE LABEL
+//
+
+%typeLabel-size {
 	@include conditional( $c-typeLabel-fontSize ) { @include font-size($c-typeLabel-fontSize) };
 	@include conditional( $c-typeLabel-lineHeight ) { line-height: $c-typeLabel-lineHeight };
-	@include conditional( $c-typeLabel-fontWeight ) { font-weight: $c-typeLabel-fontWeight };
-	@include conditional( $c-typeLabel-marginTop ) { margin: $c-typeLabel-marginTop };
+}
 
+%typeLabel-style {
+	@include conditional( $c-typeLabel-fontWeight ) { font-weight: $c-typeLabel-fontWeight };
+}
+
+%typeLabel-layout {
+	@include conditional( $c-typeLabel-marginTop ) { margin: $c-typeLabel-marginTop };
+}
+
+%typeLabel-theme {
 	@include conditional( $c-typeLabel-colour ) { color: $c-typeLabel-colour };
+}
+
+%typeLabel {
+	@extend %typeLabel-size !optional;
+	@extend %typeLabel-style !optional;
+	@extend %typeLabel-layout !optional;
+	@extend %typeLabel-theme !optional;
+}
+
+
+//
+// TYPE UTILS
+//
+
+%typeCenter {
+	text-align: center;
+}
+
+%typeRight {
+	text-align: right;
+}
+
+%typeLeft {
+	text-align: left;
 }
 
 
@@ -222,7 +344,7 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 // STYLING
 // --------------------------------------------------------------------------
 
-@if $use-base-typography == true {
+@if $use-base-typography == true or $use-base-typography--headings == true {
 
 	/**
 	 * typeHeading Notes
@@ -242,7 +364,7 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 */
 
 	.typeHeading-1 {
-		@extend %typeHeading-1;
+		@extend %typeHeading-size--1;
 	}
 
 
@@ -250,8 +372,8 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 * H2 Notes
 	 */
 
-	.typeHeading-2 {
-		@extend %typeHeading-2;
+	.typeHeading-size--2 {
+		@extend %typeHeading-size--2;
 	}
 
 
@@ -259,16 +381,16 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 * H3 Notes
 	 */
 
-	.typeHeading-3 {
-		@extend %typeHeading-3;
+	.typeHeading-size--3 {
+		@extend %typeHeading-size--3;
 	}
 
 	/**
 	 * H4 Notes
 	 */
 
-	.typeHeading-4 {
-		@extend %typeHeading-4;
+	.typeHeading-size--4 {
+		@extend %typeHeading-size--4;
 	}
 
 
@@ -276,17 +398,39 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 * H5 Notes
 	 */
 
-	.typeHeading-5 {
-		@extend %typeHeading-5;
+	.typeHeading-size--5 {
+		@extend %typeHeading-size--5;
 	}
 
+}
 
+
+@if $use-base-typography == true or $use-base-typography--copy == true {
 	/**
 	 * Copy Notes
 	 */
 
 	.typeCopy {
 		@extend %typeCopy;
+	}
+
+
+	/**
+	 * Small Notes
+	 */
+
+	.typeSmall {
+		@extend %typeSmall;
+	}
+
+
+
+	/**
+	 * Lead Notes
+	 */
+
+	.typeLead {
+		@extend %typeLead;
 	}
 
 
@@ -298,4 +442,20 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 		@extend %typeLabel;
 	}
 
+}
+
+
+
+@if $use-base-typographyUtils == true {
+	.typeCenter {
+		@extend %typeCenter;
+	}
+
+	.typeRight {
+		@extend %typeRight;
+	}
+
+	.typeLeft {
+		@extend %typeLeft;
+	}
 }

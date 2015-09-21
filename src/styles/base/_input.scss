@@ -1,0 +1,79 @@
+//
+// Input BASE
+//
+// The .input class can be used to style markup to look like a button/form input.
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - 
+//
+// VARIABLES </br>
+// - 
+//
+// .input						- input styling
+// :hover :focus				- For consistancy the :hover and :focus styling is the same
+//
+// Markup:
+// <button href="#" class="{$modifiers}">Default button styling</button>
+// <input type="text" placeholder="Default input styling" />
+//
+// Styleguide 201.1.0.
+
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$input-padding: ($Leading * 1.25) ($Leading * 2.5) !default;
+$c-input-fontSize: $FontSize-small !default;
+$c-input-lineHeight: 17 / strip-unit($FontSize-small) !default;
+$c-input-borderRadius: 4px !default;
+$input-border: 1px solid $Colour-primary !default;
+$input-outline: none !default;
+
+$input-backgroundColour: transparent !default;
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+%input {
+	padding: $input-padding;
+	@include font-size($c-input-fontSize);
+	line-height: $c-input-lineHeight;
+	outline: $input-outline;
+	@include conditional( $c-global-boxSizing, false ) { box-sizing: border-box; }
+
+	background-color: $input-backgroundColour;
+	border: $input-border;
+	@include conditional( $c-input-borderRadius ) { border-radius: $c-input-borderRadius; }
+}
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+@if $use-base-input == true {
+
+	.input {
+	  @extend %input;
+	}
+}

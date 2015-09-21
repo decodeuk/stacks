@@ -15,6 +15,10 @@
  * You can turn off the grid and use the grid and sizing extends to build a 
  * semantic grid
  */
+/*
+ * TODO: Need to add a scheme for denoting conditional variables so that
+ * it is clear when you can remove styling using FALSE and when you can not.
+ */
 /**
  * Using normalize.css we have added in some variables so that the base
  * styling can be customised.
@@ -98,7 +102,6 @@ table {
  * TODO: Create a generator mixin which can be used to create custom aspects
  */
 .aspect {
-  wdth: 100%;
   height: auto;
 }
 
@@ -107,36 +110,22 @@ table {
   height: 100%;
 }
 
-.button, input[type="submit"], .Nav-itemToggleLabel, input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
-textarea,
-select {
-  padding: 7.5px 15px;
-  font-size: 11px;
-  font-size: 0.78571rem;
-  line-height: 1.54545;
-  outline: none;
-  background-color: transparent;
-  border: 1px solid #549CEF;
-  border-radius: 4px;
-}
-
 .button, input[type="submit"], .Nav-itemToggleLabel {
   display: inline-block;
+  padding: 1em 2.25em;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  padding-left: 22.5px;
-  padding-right: 22.5px;
+  font-size: 11px;
+  font-size: 0.78571rem;
   font-weight: 700;
+  line-height: 1;
   color: #549CEF;
+  border: 1px solid #549CEF;
+  border-radius: 4px;
 }
 .button:hover, input[type="submit"]:hover, .Nav-itemToggleLabel:hover, .button:focus, input[type="submit"]:focus, .Nav-itemToggleLabel:focus {
+  outline: 0;
   color: #444;
 }
 
@@ -162,23 +151,22 @@ select {
  * 
  */
 .formfield + .formfield {
-  margin-top: 12px;
+  margin-top: 1em;
 }
 .formfield label {
   display: block;
 }
-
-.formfield--fill input[type="email"],
-.formfield--fill input[type="number"],
-.formfield--fill input[type="search"],
-.formfield--fill input[type="text"],
-.formfield--fill input[type="tel"],
-.formfield--fill input[type="url"],
-.formfield--fill input[type="password"],
-.formfield--fill input[type="date"],
-.formfield--fill input[type="time"],
-.formfield--fill textarea,
-.formfield--fill select {
+.formfield input[type="email"],
+.formfield input[type="number"],
+.formfield input[type="search"],
+.formfield input[type="text"],
+.formfield input[type="tel"],
+.formfield input[type="url"],
+.formfield input[type="password"],
+.formfield input[type="date"],
+.formfield input[type="time"],
+.formfield textarea,
+.formfield select {
   width: 100%;
 }
 
@@ -190,7 +178,7 @@ select {
 .list-inline li, .Nav-listInline li, .Nav-bar li {
   display: inline-block;
   vertical-align: top;
-  margin-right: 12px;
+  margin-right: 1em;
 }
 .list-inline li:last-of-type, .Nav-listInline li:last-of-type, .Nav-bar li:last-of-type {
   margin-right: 0;
@@ -205,7 +193,7 @@ select {
 /*
  * TODO: Think of a better way to generate these classes
  */
-.oneWhole, .Grid-column, .GridCover-column {
+.aspect, .oneWhole, .loading img, .Grid-column, .GridCover-column {
   width: 100%;
 }
 
@@ -381,6 +369,46 @@ select {
 /*
  * TODO:
  */
+.loading {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+}
+.loading:before, .loading:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -4px;
+  margin-left: -4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-color: rgba(84, 156, 239, 0.2);
+  animation: beat 2.4s ease-in infinite;
+  z-index: -1;
+}
+.loading:after {
+  animation-delay: 1.2s;
+}
+.loading.is-visible:before, .loading.is-visible:after {
+  animation: none;
+}
+.loading.is-visible img {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform .4s, opacity .3s;
+}
+.loading img {
+  height: auto;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: transform .4s, opacity .3s;
+}
+
+/*
+ * TODO:
+ */
 * {
   box-sizing: border-box;
 }
@@ -400,14 +428,12 @@ body {
 }
 
 /*
- * TODO: Make button and input styling based on same styles so that when used together they work nicely
+ * TODO:
  */
 /**
- * input Base extend Notes
+ * Input Base extend Notes
  * These styles have been set to give a base style which is consistant across
  * input types
- *
- * TODO: See if a hieght is needed to keep consistancy across all input types
  */
 input[type="email"],
 input[type="number"],
@@ -418,8 +444,14 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-  border-color: #ddd;
+  height: 1.5em;
+  border-radius: 4px;
+  border: 1px solid #ddd;
   background: #fff;
+  outline: none;
+  /*
+   * If the outline is hidden then use :focus to style the border colour
+   */
 }
 input[type="email"]:focus,
 input[type="number"]:focus,
@@ -489,11 +521,23 @@ select :-ms-input-placeholder {
  * Very simple base styles which can be built apon with formfield classes
  */
 /**
- * input Notes
+ * Input Notes
  * 
  */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  padding: 0.25em 0.75em;
+}
+
 /**
- * input Submit Notes
+ * Input Submit Notes
  * 
  */
 /**
@@ -505,7 +549,7 @@ select :-ms-input-placeholder {
  * 
  */
 textarea {
-  height: 72px;
+  height: 6em;
 }
 
 /**
@@ -557,8 +601,8 @@ ul {
 }
 
 li {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 }
 
 /**
@@ -607,7 +651,7 @@ li {
  */
 .Grid-column {
   float: left;
-  padding: 0 24px;
+  padding: 0 2em;
 }
 
 .Grid-column--slim {
@@ -646,7 +690,7 @@ li {
 .GridCover-column {
   display: table-cell;
   vertical-align: inherit;
-  padding: 0 24px;
+  padding: 0 2em;
 }
 
 .GridCover-row--middle,
@@ -727,7 +771,7 @@ li {
 
 .Media-image,
 .Media-imageMiddle {
-  margin-right: 12px;
+  margin-right: 1em;
 }
 
 .Media-image {
@@ -736,7 +780,7 @@ li {
 
 .Media-imageAlt,
 .Media-imageAltMiddle {
-  margin-left: 12px;
+  margin-left: 1em;
 }
 
 .Media-imageAlt {
@@ -767,8 +811,8 @@ li {
 }
 .Nav a {
   display: inline-block;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   text-decoration: none;
 }
 .Nav a:hover, .Nav a:focus {
@@ -788,11 +832,11 @@ li {
   font-size: 14px;
   font-size: 1rem;
   position: relative;
-  padding: 12px 24px;
+  padding: 1em 2em;
   margin: 0;
 }
 .Nav-bar .Nav-item {
-  margin-right: 30px;
+  margin-right: 2.5em;
   display: none;
 }
 @media only screen and (min-width: 1120px) {
@@ -813,8 +857,8 @@ li {
 .Nav-itemToggle {
   display: block;
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 2em;
+  right: 2em;
   margin-right: 0;
 }
 
@@ -827,9 +871,9 @@ li {
 .Nav-itemToggleCheck:checked + .Nav-bar .Nav-item.Nav-itemToggle:before {
   content: '×';
   position: absolute;
-  left: 18px;
+  left: 1.5em;
   top: 50%;
-  margin-top: -10.2px;
+  margin-top: -0.85em;
 }
 .Nav-itemToggleCheck:checked + .Nav-bar .Nav-item .Nav-itemToggleLabel {
   padding-left: 2.75em;
@@ -866,8 +910,8 @@ li {
  * Stack default
  */
 .Stack {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 5em;
+  padding-bottom: 5em;
 }
 
 /*
@@ -880,8 +924,8 @@ li {
  * Stack Alert
  */
 .StackAlert {
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
 }
 
 /*

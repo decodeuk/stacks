@@ -49,42 +49,55 @@
         
         
           
-            <h1 class="kss-title"><span class="kss-ref">4.0</span> - Global Mixins</h1>
-          
-            
-                
-            
-           
-        
-          
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">4.1.0</span> - GLOBAL MIXINS</h1>
+            <h1 class="kss-title"><span class="kss-ref">40.1.0</span> - FORMFIELD BASE</h1>
           
             
-                
-                  <p>The global mixins
+                <div class="kss-box"><p>Formfields can be used to contain form label and input groups for a constant layout and markup strategy. 
 
 </p>
-<p>FUNCTIONS </br>
+<p>DEPENDENCIES </br>
+- none
 
 </p>
-<ul>
-<li><p>font-size($font-size: $FontSize-b): </br>
-Outputs a rem font size witha px value for a fallback </br></p>
-</li>
-<li><p>conditional($variable, $state: true): </br>
-Allows quick conditional code setup. If $variable evaluates </br>
-to true the content is shown. If $state is set to false then content is shown when $variable is false </br></p>
-</li>
-<li><p>respond-to($respondMinWidth, $respondOrientation: false): </br>
-Media query mixin which can be used to respond to min widths and orientations </br></p>
-</li>
-<li><p>limit-to($limitMinWidth, $limitMaxWidth, $limitOrientation: false): </br>
-Media query mixin which can be used to limit to min widths and max widths and also orientations </br></p>
-</li>
-</ul>
+<p>EXTENDS </br>
+- none
 
+</p>
+<p>VARIABLES </br>
+- none</p>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div class="formfield {$modifiers}">
+	<label>Label styling</label>
+	<input type="text" placeholder="Default input styling" />
+</div></td>
+                  </tr>
                 
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Makes inner inputs full width</p>
+</td>
+                    <td class="kss-mod-name"><p>.formfield--fill</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div class="formfield formfield--fill">
+	<label>Label styling</label>
+	<input type="text" placeholder="Default input styling" />
+</div></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">&lt;div class=&quot;formfield {$modifiers}&quot;&gt;
+	&lt;label&gt;Label styling&lt;/label&gt;
+	&lt;input type=&quot;text&quot; placeholder=&quot;Default input styling&quot; /&gt;
+&lt;/div&gt;</pre>
+                </div>
             
           
             </section>

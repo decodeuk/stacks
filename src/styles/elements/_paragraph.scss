@@ -45,7 +45,7 @@
 // STYLING
 // --------------------------------------------------------------------------
 
-@if $use-base-typography == true {
+@if $use-base-typography == true or $use-base-typography--copy == true {
 
 	p {
 		@extend %typeCopy;

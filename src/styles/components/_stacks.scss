@@ -24,6 +24,9 @@
 $Stack-paddingTop: $Leading * 10 !default;
 $Stack-paddingBottom: $Leading * 10 !default;
 
+$StackAlert-paddingTop: $Leading * 3 !default;
+$StackAlert-paddingBottom: $Leading * 3 !default;
+
 
 
 // --------------------------------------------------------------------------
@@ -71,8 +74,12 @@ $Stack-paddingBottom: $Leading * 10 !default;
 
 
 /*
- * Stack slim??
+ * Stack Alert
  */
+ .StackAlert {
+	padding-top: $StackAlert-paddingTop;
+	padding-bottom: $StackAlert-paddingBottom;
+}
 
 
 /*

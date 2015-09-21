@@ -1,5 +1,5 @@
 //
-// BUTTON BASE
+// button BASE
 //
 // The .button class can be used to style markup to look like a button.
 //
@@ -11,24 +11,24 @@
 // - %button--primary
 //
 // VARIABLES </br>
-// - $Button-padding: ($Leading * 1.5) ($Leading * 4.5) !default; </br>
-// - $Button-textColour: $Colour-primary !default; </br>
-// - $c-Button-textColour--hover: $Colour-base !default; </br>
-// - $Button-fontSize: $FontSize-small !default; </br>
-// - $Button-fontWeight: $FontWeight-bold !default; </br>
-// - $Button-lineHeight: 1 !default; </br>
-// - $c-Button-textCase: uppercase !default; </br>
-// - $Button-backgroundColour: transparent !default; </br>
-// - $c-Button-borderRadius: 4px !default; </br>
-// - $Button-border: 1px solid $Colour-primary !default; </br>
-// - $c-Button-borderColour--hover: false !default; </br>
-// - $c-Button-outline: 0 !default; </br>
-// - $c-Button-textColour--primary: $Colour-white !default; </br>
-// - $c-Button-textColour--primaryHover: $Colour-base !default; </br>
-// - $c-Button-backgroundColour--primary: $Colour-primary !default; </br>
-// - $c-Button-backgroundColour--primaryHover: transparent !default; </br>
-// - $c-Button-borderColour--primary: transparent !default; </br>
-// - $c-Button-borderColour--primaryHover: $Colour-primary !default; </br>
+// - $button-padding: ($Leading * 1.5) ($Leading * 4.5) !default; </br>
+// - $button-textColour: $Colour-primary !default; </br>
+// - $c-button-textColour--hover: $Colour-base !default; </br>
+// - $button-fontSize: $FontSize-small !default; </br>
+// - $button-fontWeight: $FontWeight-bold !default; </br>
+// - $button-lineHeight: 1 !default; </br>
+// - $c-button-textCase: uppercase !default; </br>
+// - $button-backgroundColour: transparent !default; </br>
+// - $c-button-borderRadius: 4px !default; </br>
+// - $button-border: 1px solid $Colour-primary !default; </br>
+// - $c-button-borderColour--hover: false !default; </br>
+// - $c-button-outline: 0 !default; </br>
+// - $c-button-textColour--primary: $Colour-white !default; </br>
+// - $c-button-textColour--primaryHover: $Colour-base !default; </br>
+// - $c-button-backgroundColour--primary: $Colour-primary !default; </br>
+// - $c-button-backgroundColour--primaryHover: transparent !default; </br>
+// - $c-button-borderColour--primary: transparent !default; </br>
+// - $c-button-borderColour--primaryHover: $Colour-primary !default; </br>
 //
 // .button--primary				- Primary button modifier used to catch the users eye
 // :hover :focus				- For consistancy the :hover and :focus styling is the same for the default an button mods
@@ -36,7 +36,7 @@
 // Markup:
 // <a href="#" class="button {$modifiers}">Hello</a>
 //
-// Styleguide 2.1.0.
+// Styleguide 20.1.0.
 
 
 
@@ -44,25 +44,21 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
-$Button-padding: ($Leading * 1.5) ($Leading * 4.5) !default;
-$Button-textColour: $Colour-primary !default;
-$c-Button-textColour--hover: $Colour-base !default;
-$Button-fontSize: $FontSize-small !default;
-$Button-fontWeight: $FontWeight-bold !default;
-$Button-lineHeight: 1 !default;
-$c-Button-textCase: uppercase !default;
-$Button-backgroundColour: transparent !default;
-$c-Button-borderRadius: 4px !default;
-$Button-border: 1px solid $Colour-primary !default;
-$c-Button-borderColour--hover: false !default;
-$c-Button-outline: 0 !default;
+$button-paddingSides: ($Leading * 3.75) !default;
+$c-button-textColour: $Colour-primary !default;
+$c-button-textColour--hover: $Colour-base !default;
+$c-button-fontSize: $FontSize-small !default;
+$c-button-fontWeight: $FontWeight-bold !default;
+$c-button-lineHeight: 1 !default;
+$c-button-backgroundColour--hover:  false !default;
+$c-button-borderColour--hover: false !default;
 
-$c-Button-textColour--primary: $Colour-white !default;
-$c-Button-textColour--primaryHover: $Colour-base !default;
-$c-Button-backgroundColour--primary: $Colour-primary !default;
-$c-Button-backgroundColour--primaryHover: transparent !default;
-$c-Button-borderColour--primary: transparent !default;
-$c-Button-borderColour--primaryHover: $Colour-primary !default;
+$c-button-textColour--primary: $Colour-white !default;
+$c-button-textColour--primaryHover: $Colour-base !default;
+$c-button-backgroundColour--primary: $Colour-primary !default;
+$c-button-backgroundColour--primaryHover: transparent !default;
+$c-button-borderColour--primary: transparent !default;
+$c-button-borderColour--primaryHover: $Colour-primary !default;
 
 
 
@@ -82,43 +78,40 @@ $c-Button-borderColour--primaryHover: $Colour-primary !default;
 // EXTENDABLES
 // --------------------------------------------------------------------------
 
-%button {
-	display: inline-block;
-	padding: $Button-padding;
-	color: $Button-textColour;
-	text-align: center;
-	@include font-size($Button-fontSize);
-	font-weight: $Button-fontWeight;
-	line-height: $Button-lineHeight;
-	text-decoration: none;
-	white-space: nowrap;
-	background-color: $Button-backgroundColour;
-	border: $Button-border;
-	cursor: pointer;
-	box-sizing: border-box;
 
-	@include conditional( $c-Button-textCase ) { text-transform: $c-Button-textCase; }
-	@include conditional( $c-Button-borderRadius ) { border-radius: $c-Button-borderRadius; }
+%button {
+	@extend %input;
+
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	// white-space: nowrap;
+	cursor: pointer;
+
+	padding-left: ($button-paddingSides);
+	padding-right: ($button-paddingSides);
+	
+	@include conditional( $c-button-fontWeight ) { font-weight: $c-button-fontWeight; }
+	@include conditional( $c-button-textColour ) { color: $c-button-textColour; }
 
 	&:hover,
 	&:focus {
-		@include conditional( $c-Button-outline ) { outline: $c-Button-outline; }
-
-		@include conditional( $c-Button-textColour--hover ) { color: $c-Button-textColour--hover; }
-		@include conditional( $c-Button-borderColour--hover ) { border-color: $c-Button-borderColour--hover; }
+		@include conditional( $c-button-textColour--hover ) { color: $c-button-textColour--hover; }
+		@include conditional( $c-button-borderColour--hover ) { border-color: $c-button-borderColour--hover; }
+		@include conditional( $c-button-backgroundColour--hover ) { background-color: $c-button-backgroundColour--hover; }
 	}
 }
 
 %button--primary {
-	@include conditional( $c-Button-textColour--primary ) { color: $c-Button-textColour--primary; }
-	@include conditional( $c-Button-backgroundColour--primary ) { background-color: $c-Button-backgroundColour--primary; }
-	@include conditional( $c-Button-borderColour--primary ) { border-color: $c-Button-borderColour--primary; }
+	@include conditional( $c-button-textColour--primary ) { color: $c-button-textColour--primary; }
+	@include conditional( $c-button-backgroundColour--primary ) { background-color: $c-button-backgroundColour--primary; }
+	@include conditional( $c-button-borderColour--primary ) { border-color: $c-button-borderColour--primary; }
 
 	&:hover,
 	&:focus {
-		@include conditional( $c-Button-textColour--primaryHover ) { color: $c-Button-textColour--primaryHover; }
-		@include conditional( $c-Button-backgroundColour--primaryHover ) { background-color: $c-Button-backgroundColour--primaryHover; }
-		@include conditional( $c-Button-borderColour--primaryHover ) { border-color: $c-Button-borderColour--primaryHover; }
+		@include conditional( $c-button-textColour--primaryHover ) { color: $c-button-textColour--primaryHover; }
+		@include conditional( $c-button-backgroundColour--primaryHover ) { background-color: $c-button-backgroundColour--primaryHover; }
+		@include conditional( $c-button-borderColour--primaryHover ) { border-color: $c-button-borderColour--primaryHover; }
 	}
 }
 

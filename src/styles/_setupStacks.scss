@@ -1,3 +1,49 @@
+// STACKS SETUP
+//
+// The basic stacks setup. Stack styling can be conditional loaded or removed
+// to create a slick base. If a module is set to false extends can still be
+// used and only classes and elements will be removed.
+//
+// CONDITIONAL STYLE LOADING </br>
+//
+// Base Setup </br>
+// - $use-base-aspect: true !default; </br>
+// - $use-base-buttons: true !default; </br>
+// - $use-base-formfields: true !default; </br>
+// - $use-base-input: false !default; </br>
+// - $use-base-lists: true !default; </br>
+// - $use-base-lists--noBullet: true !default; </br>
+// - $use-base-lists--inline: true !default; </br>
+// - $use-base-normalize: false !default; </br>
+// - $use-base-reset: true !default; </br>
+// - $use-base-sizing: true !default; </br>
+// - $use-base-offset: true !default; </br>
+// - $use-base-typography: true !default; </br>
+// - $use-base-typography--headings: true !default; </br>
+// - $use-base-typography--copy: true !default; </br>
+// - $use-base-typographyUtils: true !default; </br>
+//
+// Element Setup </br>
+// - $use-element-links: true !default; </br>
+// - $use-element-lists: true !default; </br>
+//
+// Component Setup </br>
+// - $use-component-grid: true !default; </br>
+// - $use-component-gridCover: true !default; </br>
+// - $use-component-gridUtils: true !default; </br>
+// - $show-grid: false !default; </br>
+// - $use-component-layers: true !default; </br>
+// - $use-component-mediaElement: true !default; </br>
+// - $use-component-nav: true !default; </br>
+// - $use-component-navList: true !default; </br>
+// - $use-component-navList--inline: true !default; </br>
+// - $use-component-navBar: true !default; </br>
+// - $use-component-navTabs: true !default; </br>
+//
+// Styleguide 1.1.0.
+
+
+
 // --------------------------------------------------------------------------
 // Base Setup
 // --------------------------------------------------------------------------
@@ -5,14 +51,33 @@
 $use-base-aspect: true !default;
 $use-base-buttons: true !default;
 $use-base-formfields: true !default;
+$use-base-input: false !default;
 
 $use-base-lists: true !default;
 $use-base-lists--noBullet: true !default;
 $use-base-lists--inline: true !default;
 
-$use-base-normalize: true !default;
+$use-base-normalize: false !default;
+$use-base-reset: true !default;
+
+/*
+ * Modular sizing setup
+ * The extends can be used in conjunction witht he grid to build a semantic
+ * grid
+ */
 $use-base-sizing: true !default;
+$use-base-offset: true !default;
+
+/*
+ * Modular typography setup
+ * $use-base-typography controls turning all typography styles on and off
+ * If $use-base-typography is set to false you can control the modular type
+ * settings independatly
+ */
 $use-base-typography: true !default;
+$use-base-typography--headings: true !default;
+$use-base-typography--copy: true !default;
+$use-base-typographyUtils: true !default;
 
 
 
@@ -29,10 +94,17 @@ $use-element-lists: true !default;
 // Component Setup
 // --------------------------------------------------------------------------
 
+/*
+ * Modular grid setup
+ * You can turn off the grid and use the grid and sizing extends to build a 
+ * semantic grid
+ */
 $use-component-grid: true !default;
 $use-component-gridCover: true !default;
+$use-component-gridUtils: true !default;
 $show-grid: false !default;
 
+$use-component-layers: true !default;
 $use-component-mediaElement: true !default;
 
 $use-component-nav: true !default;
@@ -40,3 +112,14 @@ $use-component-navList: true !default;
 $use-component-navList--inline: true !default;
 $use-component-navBar: true !default;
 $use-component-navTabs: true !default;
+
+
+
+
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$c-global-boxSizing: border-box !default;

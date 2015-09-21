@@ -1,7 +1,32 @@
-@function convert-font-to-relative($size) {
-	@return ($size / $FontSize-b);
+// GLOBAL FUNCTIONS
+//
+// The global functions
+//
+// FUNCTIONS </br>
+//
+// - convert-to-rem($size, $base: $FontSize-b): </br>
+// converts px to rem </br>
+//
+// - convert-to-em($px, $base: $base-font-size): </br>
+// converts px to em </br>
+//
+// - strip-unit($number): </br>
+// strips units from number types </br>
+//
+// Styleguide 3.1.0.
+
+@function convert-to-rem($size, $base: $FontSize-b) {
+	@return ($size / $base) * 1rem;
 }
 
-@function convert-to-em($px, $base: $base-font-size) {
-    @return ($px / $base) * 1em;
+@function convert-to-em($size, $base: $FontSize-b) {
+    @return ($size / $base) * 1em;
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
 }

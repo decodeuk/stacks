@@ -32,15 +32,16 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
-$c-global-boxSizing: box-sizing !default;
+$c-global-boxSizing: border-box !default;
 
-$html-fontSize: 87.5% !default;
+$html-fontSize: 100% !default;
 
 $body-fontSize: $FontSize-b !default;
-$body-lineHeight: 1.6 !default;
-$body-fontWeight: 400 !default;
+$body-lineHeight: 1.5 !default;
+$body-fontWeight: normal !default;
 $body-fontFamily: $FontFamily-copy !default;
 $body-fontColour: $Colour-base !default;
+$c-body-backgroundColour: false !default;
 
 
 
@@ -75,6 +76,8 @@ html {
 }
 
 body {
+	@include conditional( $c-body-backgroundColour ) { background-color: $c-body-backgroundColour };
+
 	font-size: convert-to-em($body-fontSize, $body-fontSize);
 	line-height: $body-lineHeight;
 	font-weight: $body-fontWeight;

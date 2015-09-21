@@ -23,7 +23,7 @@
 // .list-noBullet 	- Removes list styling and resets left padding to 0
 // .list-inline		- Displays the list in an horizontal format. Uses the noBullet list to reset styling.
 //
-// Styleguide 5.1.0.
+// Styleguide 50.1.0.
 
 
 
@@ -32,6 +32,7 @@
 // --------------------------------------------------------------------------
 
 $listInline-verticalAlign: top !default;
+$listInline-rightSpacing: $Leading * 2 !default;
 
 
 
@@ -58,12 +59,14 @@ $listInline-verticalAlign: top !default;
 
 
 %list-inline {
-	@extend %clearfix;
-
 	li {
 		display: inline-block;
 		vertical-align: $listInline-verticalAlign;
-		margin-right: $Leading * 2;
+		margin-right: $listInline-rightSpacing;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
 	}
 }
 
@@ -73,30 +76,27 @@ $listInline-verticalAlign: top !default;
 // STYLING
 // --------------------------------------------------------------------------
 
-@if $use-base-lists == true {
 
-	@if $use-base-lists--noBullet == true {
-	
-		/*
-		 * noBullet list
-		 */
+@if $use-base-lists == true or $use-base-lists--noBullet == true {
 
-		.list-noBullet {
-			@extend %list-noBullet;
-		}
+	/*
+	 * noBullet list
+	 */
+
+	.list-noBullet {
+		@extend %list-noBullet;
 	}
+}
 
 
+@if $use-base-lists == true or $use-base-lists--inline == true {
 	
-	@if $use-base-lists--inline == true {
-		
-		/*
-		 * inline list
-		 */
+	/*
+	 * inline list
+	 */
 
-		.list-inline {
-			@extend %list-noBullet;
-			@extend %list-inline;
-		}
+	.list-inline {
+		@extend %list-noBullet;
+		@extend %list-inline;
 	}
 }

@@ -49,42 +49,59 @@
         
         
           
-            <h1 class="kss-title"><span class="kss-ref">4.0</span> - Global Mixins</h1>
-          
-            
-                
-            
-           
-        
-          
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">4.1.0</span> - GLOBAL MIXINS</h1>
+            <h1 class="kss-title"><span class="kss-ref">201.1.0</span> - Input BASE</h1>
           
             
-                
-                  <p>The global mixins
+                <div class="kss-box"><p>The .input class can be used to style markup to look like a button/form input.
 
 </p>
-<p>FUNCTIONS </br>
+<p>DEPENDENCIES </br>
+- none
 
 </p>
-<ul>
-<li><p>font-size($font-size: $FontSize-b): </br>
-Outputs a rem font size witha px value for a fallback </br></p>
-</li>
-<li><p>conditional($variable, $state: true): </br>
-Allows quick conditional code setup. If $variable evaluates </br>
-to true the content is shown. If $state is set to false then content is shown when $variable is false </br></p>
-</li>
-<li><p>respond-to($respondMinWidth, $respondOrientation: false): </br>
-Media query mixin which can be used to respond to min widths and orientations </br></p>
-</li>
-<li><p>limit-to($limitMinWidth, $limitMaxWidth, $limitOrientation: false): </br>
-Media query mixin which can be used to limit to min widths and max widths and also orientations </br></p>
-</li>
-</ul>
+<p>EXTENDS </br>
+- 
 
+</p>
+<p>VARIABLES </br>
+- </p>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><button href="#" class="{$modifiers}">Default button styling</button>
+<input type="text" placeholder="Default input styling" /></td>
+                  </tr>
                 
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>input styling</p>
+</td>
+                    <td class="kss-mod-name"><p>.input</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><button href="#" class="input">Default button styling</button>
+<input type="text" placeholder="Default input styling" /></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>For consistancy the :hover and :focus styling is the same</p>
+</td>
+                    <td class="kss-mod-name"><p>:hover :focus</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><button href="#" class="pseudo-class-hover">Default button styling</button>
+<input type="text" placeholder="Default input styling" /></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">&lt;button href=&quot;#&quot; class=&quot;{$modifiers}&quot;&gt;Default button styling&lt;/button&gt;
+&lt;input type=&quot;text&quot; placeholder=&quot;Default input styling&quot; /&gt;</pre>
+                </div>
             
           
             </section>

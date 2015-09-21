@@ -46,18 +46,6 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
-$Column-gutter: 20px !default;
-$Column-count: 12 !default;
-
-$Column-selector: column !default;
-$Column-prefix: column- !default;
-$Column-offsetSelector: column-offset- !default;
-
-$Row-selector: row !default;
-$Row-width: 100% !default;
-$Row-maxWidth: 1080px !default;
-$Row-margin: 0 auto !default;
-
 
 
 // --------------------------------------------------------------------------
@@ -71,61 +59,6 @@ $Row-margin: 0 auto !default;
 // MIXINS
 // --------------------------------------------------------------------------
 
-/*
-* Generate columns
-* Generates symmetric and asymetric grids using the $columns varible
-* The Propert aug allows the generator to be used to create columns and column offsets
-*/
-
-@mixin columnGenerator($Columns: $Column-count, $Prefix: $Column-prefix, $Property: 'width') {
-
-	$Columm-total: $Columns;
-
-	// if async grid set total columns total number of them
-	@if length($Columns) > 1 {
-		$Columm-total: length($Columns);
-	} @else {
-		
-	}
-		
-	@for $i from 1 through $Columm-total {
-		.#{$Prefix + $i} {
-			@if length($Columns) > 1 {
-				// if there are multiple values in the Columns variable generate an asymmetrical grid
-				$Ratio: nth($Columns, $i);
-				#{$Property}: percentage($Ratio / 1);
-			}
-			@else {
-				//else there is one whole number stating the total Columns in a symmetrical grid
-				#{$Property}: percentage($i / $Columns);
-			}
-		}
-	}
-
-}
-
-
-/*
- * Generate columns
- */
-
-@mixin generateColumns($Columns: $Column-count, $Prefix: $Column-prefix) {
-
-	@include columnGenerator($Columns, $Prefix, 'width');
-
-}
-
-
-/*
-* Generate columns offsets
-* Generates symmetric and asymetric grid offsets using the $columns varible
-*/
-
-@mixin generateOffsets($Columns: $Column-count, $Prefix: $Column-offsetSelector) {
-
-	@include columnGenerator($Columns, $Prefix, 'margin-left');
-
-}
 
 
 
@@ -167,6 +100,36 @@ $Row-margin: 0 auto !default;
 
 
 
+%offset-oneWhole {
+	margin-left: percentage(1 / 1);
+}
+
+%offset-oneHalf {
+	margin-left: percentage(1 / 2);
+}
+
+%offset-oneThird {
+	margin-left: percentage(1 / 3);
+}
+
+%offset-twoThirds {
+	margin-left: percentage(2 / 3);
+}
+
+%offset-oneQuarter {
+	margin-left: percentage(1 / 4);
+}
+
+%offset-twoQuarters {
+	margin-left: percentage(2 / 4);
+}
+
+%offset-threeQuarters {
+	margin-left: percentage(3 / 4);
+}
+
+
+
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
@@ -198,5 +161,37 @@ $Row-margin: 0 auto !default;
 
 	.threeQuarters {
 		@extend %threeQuarters;
+	}
+}
+
+
+
+@if $use-base-offset == true {
+	.offset-oneWhole {
+		@extend %offset-oneWhole;
+	}
+
+	.offset-oneHalf {
+		@extend %offset-oneHalf;
+	}
+
+	.offset-oneThird {
+		@extend %offset-oneThird;
+	}
+
+	.offset-twoThirds {
+		@extend %offset-twoThirds;
+	}
+
+	.offset-oneQuarter {
+		@extend %offset-oneQuarter;
+	}
+
+	.offset-twoQuarters {
+		@extend %offset-twoQuarters;
+	}
+
+	.offset-threeQuarters {
+		@extend %offset-threeQuarters;
 	}
 }

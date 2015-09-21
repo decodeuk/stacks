@@ -31,8 +31,6 @@ $ColumnCover-namespace: GridCover-column !default;
 $Column-padding: 0 ($Leading * 4) !default;
 $Column-gutter: ($Leading * 4) !default;
 
-$Offset-namespace: Grid-offset !default;
-
 
 
 // --------------------------------------------------------------------------
@@ -114,7 +112,7 @@ $Offset-namespace: Grid-offset !default;
 		@if $Row-gutter != false {
 			padding-left: $Row-gutter;
 			padding-right: $Row-gutter;
-		}	
+		}
 	}
 
 
@@ -130,17 +128,16 @@ $Offset-namespace: Grid-offset !default;
 
 		float: left;
 		padding: $Column-padding;
-		box-sizing: border-box;
+		@include conditional( $c-global-boxSizing, false ) { box-sizing: border-box; }
 	}
-	
 
-	/**
-	 * Offset Notes
-	 * - Adds a left margin matching the width of the modifier
-	 */
+	.#{$Column-namespace + --slim} {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 
-	.#{$Offset-namespace} {
-		margin-left: 50%;
+	.#{$Column-namespace + --flat} {
+		padding: 0;
 	}
 
 }
@@ -167,15 +164,18 @@ $Offset-namespace: Grid-offset !default;
 		@extend %clearfix;
 
 		display: table;
-		vertical-align: top;	
-	}
+		vertical-align: top;
 
-	.GridCover-row--middle {
-		vertical-align: middle;
-	}
+		@if $Row-maxWidth != false {
+			max-width: $Row-maxWidth;
+			margin-left: auto;
+			margin-right: auto;
+		}
 
-	.GridCover-row--bottom {
-		vertical-align: bottom;
+		@if $Row-gutter != false {
+			padding-left: $Row-gutter;
+			padding-right: $Row-gutter;
+		}	
 	}
 
 
@@ -192,17 +192,35 @@ $Offset-namespace: Grid-offset !default;
 		display: table-cell;
 		vertical-align: inherit;
 		padding: $Column-padding;
-		box-sizing: border-box;
+		@include conditional( $c-global-boxSizing, false ) { box-sizing: border-box; }
 	}
 
+	.GridCover-row--middle,
 	.GridCover-column--middle {
 		vertical-align: middle;
 	}
 
+	.GridCover-row--bottom,
 	.GridCover-column--bottom {
 		vertical-align: bottom;
 	}
 
+	.GridCover-row--top,
+	.GridCover-column--top {
+		vertical-align: top;
+	}
+
+}
+
+
+@if $use-component-gridUtils == true {
+	.Grid-center {
+		.Grid-column {
+			float: none;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
 }
 
 

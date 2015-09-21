@@ -23,12 +23,24 @@
 // .object-classes	- class description
 //
 // Markup:
-// <img src="http://placehold.it/600x300" alt="A landscape image" class="aspect {$modifiers}">
+// <form>
+//	<div class="formfield">
+//		<label for="demoinput">Standard label styling</label>
+//		<input type="text" placeholder="Demo placeholder..."/>
+//	</div>
+//	<div class="formfield">
+//		<label for="demoTextarea">Standard label styling</label>
+//		<textarea placeholder="Demo placeholder..." id="demoTextarea"></textarea>
+//	</div>
+//	<div class="formfield">
+//		<input type="submit">
+//	</div>
+//	</form>
 //
 // Styleguide 9.0.0.
 
 /*
- * TODO:
+ * TODO: Make button and input styling based on same styles so that when used together they work nicely
  */
 
 
@@ -37,16 +49,15 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
-$input-padding: ($Leading / 2) ($Leading * 1.5);
-$input-height: $Leading * 4;
-$c-input-outline: none;
+$inputForm-height: $Leading * 3 !default;  // TODO: need to fix to match up to base input styling
+$multilineInputForm-height: $inputForm-height * 4 !default;
 
-$input-border: 1px solid $Colour-border;
-$c-input-borderColour--focus: $Colour-base;
-$c-input-borderStyle--focus: false;
+$c-inputForm-backgroundColour: $Colour-white !default;
+$inputForm-borderColour: $Colour-border !default;
+$c-inputForm-borderColour--focus: $Colour-base !default;
+$c-inputForm-backgroundColour--focus: false !default;
 
-$input-borderRadius: 4px;
-$input-backgroundColour: $Colour-white;
+$inputFormPlaceholder-colour: $Colour-inactive !default;
 
 
 
@@ -67,29 +78,49 @@ $input-backgroundColour: $Colour-white;
 // --------------------------------------------------------------------------
 
 /**
- * Input Base extend Notes
+ * input Base extend Notes
  * These styles have been set to give a base style which is consistant across
  * input types
+ *
+ * TODO: See if a hieght is needed to keep consistancy across all input types
  */
 
-%Input-base {
-	height: $input-height;
-	border-radius: $input-borderRadius;
-	border: $input-border;
+%input-base {
+	@extend %input;
 
-	background: $input-backgroundColour;
-	@include conditional( $c-input-outline ) { outline: $c-input-outline };
+	// height: $input-height;
+	border-color: $inputForm-borderColour;
+	@include conditional( $c-inputForm-backgroundColour ) { background: $c-inputForm-backgroundColour; };
 	
-	/*
-	 * If the outline is hidden then use :focus to style the border colour
-	 */
-	@include conditional( $c-input-outline ) {
-		&:focus {
-			@include conditional( $c-input-borderColour--focus ) { border-color: $c-input-borderColour--focus };
-			@include conditional( $c-input-borderStyle--focus ) { border-style: $c-input-borderStyle--focus };
-		}
-	};
+	&:focus {
+		@include conditional( $c-inputForm-borderColour--focus ) { border-color: $c-inputForm-borderColour--focus; }
+		@include conditional( $c-inputForm-backgroundColour--focus ) { background-color: $c-inputForm-backgroundColour--focus; }
+	}
 	
+}
+
+
+/**
+ * Placeholder extend Notes
+ * Sets the placeholder text colour
+ */
+
+%input-placeholder {
+	::-webkit-input-placeholder {
+	   color: $inputFormPlaceholder-colour;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: $inputFormPlaceholder-colour;  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: $inputFormPlaceholder-colour;  
+	}
+
+	:-ms-input-placeholder {  
+	   color: $inputFormPlaceholder-colour;  
+	}
 }
 
 
@@ -110,7 +141,7 @@ label {
 
 
 /**
- * Input Notes
+ * input Notes
  * 
  */
 
@@ -123,20 +154,22 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-	@extend %Input-base;
+	@extend %input-base;
+	@extend %input-placeholder;
 
-	@include conditional( $input-padding ) { padding: $input-padding };
+	// @include conditional( $input-padding ) { padding: $input-padding };
 }
 
 
 
 /**
- * Input Submit Notes
+ * input Submit Notes
  * 
  */
 
 input[type="submit"] {
 	@extend %button;
+	// @extend %button--primary;
 }
 
 
@@ -147,5 +180,17 @@ input[type="submit"] {
  */
 
 select {
-	@extend %Input-base;
+	@extend %input-base;
+}
+
+
+
+/**
+ * Textarea Notes
+ * 
+ */
+
+textarea {
+	// @extend %input-base;
+	height: $multilineInputForm-height;
 }

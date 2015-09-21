@@ -49,42 +49,37 @@
         
         
           
-            <h1 class="kss-title"><span class="kss-ref">4.0</span> - Global Mixins</h1>
-          
-            
-                
-            
-           
-        
-          
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">4.1.0</span> - GLOBAL MIXINS</h1>
+            <h1 class="kss-title"><span class="kss-ref">30.1.0</span> - CLEARFIX BASE</h1>
           
             
-                
-                  <p>The global mixins
+                <div class="kss-box"><p>Clearfix is used on parents to contain floated children.
 
 </p>
-<p>FUNCTIONS </br>
+<p>DEPENDENCIES </br>
+- none
 
 </p>
-<ul>
-<li><p>font-size($font-size: $FontSize-b): </br>
-Outputs a rem font size witha px value for a fallback </br></p>
-</li>
-<li><p>conditional($variable, $state: true): </br>
-Allows quick conditional code setup. If $variable evaluates </br>
-to true the content is shown. If $state is set to false then content is shown when $variable is false </br></p>
-</li>
-<li><p>respond-to($respondMinWidth, $respondOrientation: false): </br>
-Media query mixin which can be used to respond to min widths and orientations </br></p>
-</li>
-<li><p>limit-to($limitMinWidth, $limitMaxWidth, $limitOrientation: false): </br>
-Media query mixin which can be used to limit to min widths and max widths and also orientations </br></p>
-</li>
-</ul>
+<p>EXTENDS </br>
+- %clearfix
 
+</p>
+<p>VARIABLES </br>
+none</p>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div href="#" class="clearfix">Hello</div></td>
+                  </tr>
                 
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">&lt;div href=&quot;#&quot; class=&quot;clearfix&quot;&gt;Hello&lt;/div&gt;</pre>
+                </div>
             
           
             </section>

@@ -1,20 +1,24 @@
 @charset "UTF-8";
+
 /*
  * Modular sizing setup
  * The extends can be used in conjunction witht he grid to build a semantic
  * grid
  */
+
 /*
  * Modular typography setup
  * $use-base-typography controls turning all typography styles on and off
  * If $use-base-typography is set to false you can control the modular type
  * settings independatly
  */
+
 /*
  * Modular grid setup
  * You can turn off the grid and use the grid and sizing extends to build a 
  * semantic grid
  */
+
 /**
  * Using normalize.css we have added in some variables so that the base
  * styling can be customised.
@@ -28,6 +32,7 @@
  * -
  * 
  */
+
 /**
  * Using reset.css we can reset styling to start from scratch.
  *
@@ -40,23 +45,93 @@
  * -
  * 
  */
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -66,8 +141,18 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -75,16 +160,20 @@ body {
   line-height: 1.5;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -97,6 +186,7 @@ table {
 /*
  * TODO: Create a generator mixin which can be used to create custom aspects
  */
+
 .aspect {
   wdth: 100%;
   height: auto;
@@ -107,7 +197,10 @@ table {
   height: 100%;
 }
 
-.button, input[type="submit"], .Nav-itemToggleLabel, input[type="email"],
+.button,
+input[type="submit"],
+.Nav-itemToggleLabel,
+input[type="email"],
 input[type="number"],
 input[type="search"],
 input[type="text"],
@@ -126,7 +219,9 @@ select {
   border-radius: 4px;
 }
 
-.button, input[type="submit"], .Nav-itemToggleLabel {
+.button,
+input[type="submit"],
+.Nav-itemToggleLabel {
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -136,7 +231,13 @@ select {
   font-weight: 700;
   color: #549CEF;
 }
-.button:hover, input[type="submit"]:hover, .Nav-itemToggleLabel:hover, .button:focus, input[type="submit"]:focus, .Nav-itemToggleLabel:focus {
+
+.button:hover,
+input[type="submit"]:hover,
+.Nav-itemToggleLabel:hover,
+.button:focus,
+input[type="submit"]:focus,
+.Nav-itemToggleLabel:focus {
   color: #444;
 }
 
@@ -145,13 +246,17 @@ select {
   background-color: #549CEF;
   border-color: transparent;
 }
-.button--primary:hover, .button--primary:focus {
+
+.button--primary:hover,
+.button--primary:focus {
   color: #444;
   background-color: transparent;
   border-color: #549CEF;
 }
 
-.clearfix:after, .Grid-row:after, .GridCover-row:after {
+.clearfix:after,
+.Grid-row:after,
+.GridCover-row:after {
   content: "";
   display: table;
   clear: both;
@@ -161,9 +266,11 @@ select {
  * Formfiled styling
  * 
  */
+
 .formfield + .formfield {
   margin-top: 12px;
 }
+
 .formfield label {
   display: block;
 }
@@ -182,30 +289,42 @@ select {
   width: 100%;
 }
 
-.list-noBullet, .list-inline, .Nav {
+.list-noBullet,
+.list-inline,
+.Nav {
   padding-left: 0;
   list-style: none;
 }
 
-.list-inline li, .Nav-listInline li, .Nav-bar li {
+.list-inline li,
+.Nav-listInline li,
+.Nav-bar li {
   display: inline-block;
   vertical-align: top;
   margin-right: 12px;
 }
-.list-inline li:last-of-type, .Nav-listInline li:last-of-type, .Nav-bar li:last-of-type {
+
+.list-inline li:last-of-type,
+.Nav-listInline li:last-of-type,
+.Nav-bar li:last-of-type {
   margin-right: 0;
 }
 
 /*
  * noBullet list
  */
+
 /*
  * inline list
  */
+
 /*
  * TODO: Think of a better way to generate these classes
  */
-.oneWhole, .Grid-column, .GridCover-column {
+
+.oneWhole,
+.Grid-column,
+.GridCover-column {
   width: 100%;
 }
 
@@ -265,48 +384,71 @@ select {
  * TODO: Rename %typeLabel so it has a more reusable name
  * TODO: Fix H1 font size is duplication in normalise and the extend
  */
-.typeHeading, h1, h2, h3, h4, h5 {
+
+.typeHeading,
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: 700;
 }
 
-.typeHeading, h1, h2, h3, h4, h5 {
+.typeHeading,
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0.67em 0;
 }
-.typeHeading:first-child, h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child {
+
+.typeHeading:first-child,
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child {
   margin: 0;
 }
 
-.typeHeading-1, h1 {
+.typeHeading-1,
+h1 {
   font-size: 48px;
   font-size: 3.42857rem;
   line-height: 1.25;
 }
 
-.typeHeading-size--2, h2 {
+.typeHeading-size--2,
+h2 {
   font-size: 36px;
   font-size: 2.57143rem;
   line-height: 1.3;
 }
 
-.typeHeading-size--3, h3 {
+.typeHeading-size--3,
+h3 {
   font-size: 24px;
   font-size: 1.71429rem;
   line-height: 1.4;
 }
 
-.typeHeading-size--4, h4 {
+.typeHeading-size--4,
+h4 {
   font-size: 20px;
   font-size: 1.42857rem;
   line-height: 1.5;
 }
 
-.typeHeading-size--5, h5 {
+.typeHeading-size--5,
+h5 {
   font-size: 20px;
   font-size: 1.42857rem;
   line-height: 1.5;
 }
 
-.typeCopy, p {
+.typeCopy,
+p {
   margin: 0.67em 0;
 }
 
@@ -324,11 +466,13 @@ select {
   margin: 0;
 }
 
-.typeLabel, label {
+.typeLabel,
+label {
   font-weight: 700;
 }
 
-.typeLabel, label {
+.typeLabel,
+label {
   color: #919191;
 }
 
@@ -349,39 +493,51 @@ select {
  * - Default typeHeading styles that is used to add constant
  * styling to typeHeadings
  */
+
 /**
  * H1 Notes
  * - Font size set by Normalize
  * - Margin set by Normalize
  */
+
 /**
  * H2 Notes
  */
+
 /**
  * H3 Notes
  */
+
 /**
  * H4 Notes
  */
+
 /**
  * H5 Notes
  */
+
 /**
  * Copy Notes
  */
+
 /**
  * Small Notes
  */
+
 /**
  * Lead Notes
  */
+
 /**
  * Label Notes
  */
+
 /*
  * TODO:
  */
+
 * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -402,6 +558,7 @@ body {
 /*
  * TODO: Make button and input styling based on same styles so that when used together they work nicely
  */
+
 /**
  * input Base extend Notes
  * These styles have been set to give a base style which is consistant across
@@ -409,6 +566,7 @@ body {
  *
  * TODO: See if a hieght is needed to keep consistancy across all input types
  */
+
 input[type="email"],
 input[type="number"],
 input[type="search"],
@@ -421,6 +579,7 @@ select {
   border-color: #ddd;
   background: #fff;
 }
+
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
@@ -437,6 +596,7 @@ select:focus {
  * Placeholder extend Notes
  * Sets the placeholder text colour
  */
+
 input[type="email"] ::-webkit-input-placeholder,
 input[type="number"] ::-webkit-input-placeholder,
 input[type="search"] ::-webkit-input-placeholder,
@@ -448,6 +608,7 @@ textarea ::-webkit-input-placeholder,
 select ::-webkit-input-placeholder {
   color: #999;
 }
+
 input[type="email"] :-moz-placeholder,
 input[type="number"] :-moz-placeholder,
 input[type="search"] :-moz-placeholder,
@@ -460,6 +621,7 @@ select :-moz-placeholder {
   /* Firefox 18- */
   color: #999;
 }
+
 input[type="email"] ::-moz-placeholder,
 input[type="number"] ::-moz-placeholder,
 input[type="search"] ::-moz-placeholder,
@@ -472,6 +634,7 @@ select ::-moz-placeholder {
   /* Firefox 19+ */
   color: #999;
 }
+
 input[type="email"] :-ms-input-placeholder,
 input[type="number"] :-ms-input-placeholder,
 input[type="search"] :-ms-input-placeholder,
@@ -488,22 +651,27 @@ select :-ms-input-placeholder {
  * Label Notes
  * Very simple base styles which can be built apon with formfield classes
  */
+
 /**
  * input Notes
  * 
  */
+
 /**
  * input Submit Notes
  * 
  */
+
 /**
  * Select Notes
  * 
  */
+
 /**
  * Textarea Notes
  * 
  */
+
 textarea {
   height: 72px;
 }
@@ -520,6 +688,7 @@ textarea {
  * -
  * 
  */
+
 /**
  * Intro text
  *
@@ -532,10 +701,13 @@ textarea {
  * -
  * 
  */
+
 a {
   color: #549CEF;
 }
-a:hover, a:focus {
+
+a:hover,
+a:focus {
   outline: 0;
   color: #444;
 }
@@ -552,6 +724,7 @@ a:hover, a:focus {
  * -
  * 
  */
+
 ul {
   list-style: circle;
 }
@@ -573,6 +746,7 @@ li {
  * -
  * 
  */
+
 /**
  * The grid is used for layout and structure. It should ideally be used to
  * wrap elements rather than alongside elements/components.
@@ -585,26 +759,31 @@ li {
  * - base/sizing
  *
  */
+
 /**
  * showGrid Mixin
  * - Adds styling to make the grid visibile
  */
+
 /**
  * GRID COMPONENT STYLING
  * - Extends clearfix to stop floated children collapsing the container
  */
+
 /**
  * Row Notes
  * - Extends clearfix to stop floated children collapsing the container
  * - Sets a max width if set and also adds left and right margins to center align
  * - Adds a row gutter if set
  */
+
 /**
  * Column Notes
  * - Floats left to horizontally align multiple columns
  * - Sets a default width so there is no need to add additional classes for full width columns
  * - Adds a column gutter
  */
+
 .Grid-column {
   float: left;
   padding: 0 24px;
@@ -626,12 +805,14 @@ li {
  *
  * - Extends clearfix to stop floated children collapsing the container
  */
+
 /**
  * Row Notes
  * - Extends clearfix to stop floated children collapsing the container
  * - Sets a max width if set and also adds left and right margins to center align
  * - Adds a row gutter if set
  */
+
 .GridCover-row {
   display: table;
   vertical-align: top;
@@ -643,6 +824,7 @@ li {
  * - Sets a default width so there is no need to add additional classes for full width columns
  * - Adds a column gutter
  */
+
 .GridCover-column {
   display: table-cell;
   vertical-align: inherit;
@@ -674,9 +856,11 @@ li {
  * SHOW GRID STYLING
  * Provides styling that makes the columns and gutters visible.
  */
+
 /*
  * TODO:
  */
+
 .Layer-base {
   position: absolute;
   top: 0;
@@ -697,6 +881,7 @@ li {
   position: relative;
   z-index: 2;
 }
+
 .Layer + .Layer {
   z-index: 3;
 }
@@ -713,6 +898,7 @@ li {
  * -
  * 
  */
+
 .Media,
 .Media-body {
   overflow: hidden;
@@ -756,34 +942,42 @@ li {
 /*
  * Default nav styling
  */
+
 /*
  * Default Nav styling
  */
+
 .Nav {
   font-size: 11px;
   font-size: 0.78571rem;
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .Nav a {
   display: inline-block;
   padding-top: 6px;
   padding-bottom: 6px;
   text-decoration: none;
 }
-.Nav a:hover, .Nav a:focus {
+
+.Nav a:hover,
+.Nav a:focus {
   text-decoration: underline;
 }
 
 /*
  * Nav list styling
  */
+
 /*
  * Nav list horizontal styling
  */
+
 /*
  * Nav bar styling
  */
+
 .Nav-bar {
   font-size: 14px;
   font-size: 1rem;
@@ -791,10 +985,12 @@ li {
   padding: 12px 24px;
   margin: 0;
 }
+
 .Nav-bar .Nav-item {
   margin-right: 30px;
   display: none;
 }
+
 @media only screen and (min-width: 1120px) {
   .Nav-bar .Nav-item {
     display: inline-block;
@@ -806,6 +1002,7 @@ li {
   font-size: 24px;
   font-size: 1.71429rem;
 }
+
 .Nav-itemBrand a {
   color: #444;
 }
@@ -821,9 +1018,11 @@ li {
 .Nav-itemToggleCheck {
   display: none;
 }
+
 .Nav-itemToggleCheck:checked + .Nav-bar .Nav-item {
   display: block;
 }
+
 .Nav-itemToggleCheck:checked + .Nav-bar .Nav-item.Nav-itemToggle:before {
   content: '×';
   position: absolute;
@@ -831,6 +1030,7 @@ li {
   top: 50%;
   margin-top: -10.2px;
 }
+
 .Nav-itemToggleCheck:checked + .Nav-bar .Nav-item .Nav-itemToggleLabel {
   padding-left: 2.75em;
   padding-right: 1.75em;
@@ -841,6 +1041,7 @@ li {
   font-size: 14px;
   font-size: 1rem;
 }
+
 @media only screen and (min-width: 1120px) {
   .Nav-itemToggleLabel {
     display: none;
@@ -850,6 +1051,7 @@ li {
 /*
 * Nav tabs styling
 */
+
 /**
  * Intro text
  *
@@ -862,9 +1064,11 @@ li {
  * -
  * 
  */
+
 /*
  * Stack default
  */
+
 .Stack {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -873,12 +1077,15 @@ li {
 /*
  * Stack hero??
  */
+
 /*
  * Stack fixed image top or bottom??
  */
+
 /*
  * Stack Alert
  */
+
 .StackAlert {
   padding-top: 18px;
   padding-bottom: 18px;

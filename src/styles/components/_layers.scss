@@ -1,9 +1,9 @@
-// ASPECT BASE
+// LAYERS COMPONENT
 //
-// Aspect ratios for scaling media whilst keeping aspect ratios.
+// Object description
 //
 // DEPENDENCIES </br>
-// - base/sizing
+// - none
 //
 // EXTENDS </br>
 // - none
@@ -11,15 +11,15 @@
 // VARIABLES </br>
 // - none
 //
-// .aspect--portrait	- Used on portrait images for responsive scaling
+// .object-classes	- class description
 //
 // Markup:
-// <img src="http://placehold.it/600x300" alt="A landscape image" class="aspect {$modifiers}">
+// <div class="Layers"></div>
 //
-// Styleguide 100.1.0.
+// Styleguide 0.0.0.
 
 /*
- * TODO: Create a generator mixin which can be used to create custom aspects
+ * TODO:
  */
 
 
@@ -46,21 +46,39 @@
 // EXTENDABLES
 // --------------------------------------------------------------------------
 
+%layer-fill {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
-@if $use-base-aspect == true {
-
-	.aspect {
-		wdth: 100%;
-		height: auto;
+@if $use-component-layers == true {
+	.Layers {
+		position: relative;
 	}
-	
-	.aspect--portrait {
-		width: auto;
-		height: 100%;
+
+	.Layer-base {
+		@extend %layer-fill;
+
+		z-index: 1;
+	}
+
+	.Layer {
+		position: relative;
+		z-index: 2;
+
+		+ {
+			.Layer {
+				z-index: 3;
+			}
+		}
 	}
 }

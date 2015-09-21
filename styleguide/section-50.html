@@ -49,42 +49,72 @@
         
         
           
-            <h1 class="kss-title"><span class="kss-ref">4.0</span> - Global Mixins</h1>
-          
-            
-                
-            
-           
-        
-          
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">4.1.0</span> - GLOBAL MIXINS</h1>
+            <h1 class="kss-title"><span class="kss-ref">50.1.0</span> - LIST BASE</h1>
           
             
-                
-                  <p>The global mixins
+                <div class="kss-box"><p>Base list styling utilities.
 
 </p>
-<p>FUNCTIONS </br>
+<p>DEPENDENCIES </br>
+- base/clearfix
 
 </p>
-<ul>
-<li><p>font-size($font-size: $FontSize-b): </br>
-Outputs a rem font size witha px value for a fallback </br></p>
-</li>
-<li><p>conditional($variable, $state: true): </br>
-Allows quick conditional code setup. If $variable evaluates </br>
-to true the content is shown. If $state is set to false then content is shown when $variable is false </br></p>
-</li>
-<li><p>respond-to($respondMinWidth, $respondOrientation: false): </br>
-Media query mixin which can be used to respond to min widths and orientations </br></p>
-</li>
-<li><p>limit-to($limitMinWidth, $limitMaxWidth, $limitOrientation: false): </br>
-Media query mixin which can be used to limit to min widths and max widths and also orientations </br></p>
-</li>
-</ul>
+<p>EXTENDS </br>
+- %list-noBullet <br/>
+- %list-inline
 
+</p>
+<p>VARIABLES </br>
+- $listInline-verticalAlign: top !default;</p>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><ul class="{$modifiers}">
+	<li>First Item</li>
+	<li>Second Item</li>
+	<li>Third Item</li>
+</ul></td>
+                  </tr>
                 
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Removes list styling and resets left padding to 0</p>
+</td>
+                    <td class="kss-mod-name"><p>.list-noBullet</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><ul class="list-noBullet">
+	<li>First Item</li>
+	<li>Second Item</li>
+	<li>Third Item</li>
+</ul></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
+</td>
+                    <td class="kss-mod-name"><p>.list-inline</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><ul class="list-inline">
+	<li>First Item</li>
+	<li>Second Item</li>
+	<li>Third Item</li>
+</ul></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">&lt;ul class=&quot;{$modifiers}&quot;&gt;
+	&lt;li&gt;First Item&lt;/li&gt;
+	&lt;li&gt;Second Item&lt;/li&gt;
+	&lt;li&gt;Third Item&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                </div>
             
           
             </section>

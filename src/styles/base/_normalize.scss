@@ -270,8 +270,7 @@ $Norm-figure-margin: 1em 40px !default;
    */
 
   hr {
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+    @include conditional( $c-global-boxSizing, false ) { box-sizing: border-box; }
     height: 0;
   }
 
@@ -394,7 +393,7 @@ $Norm-figure-margin: 1em 40px !default;
 
   input[type="checkbox"],
   input[type="radio"] {
-    box-sizing: border-box; /* 1 */
+    @include conditional( $c-global-boxSizing, false ) { box-sizing: border-box; } /* 1 */
     padding: 0; /* 2 */
   }
 

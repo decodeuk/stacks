@@ -15,6 +15,8 @@
  * 
  */
 
+ // TODO: make vertical align reusable extend.
+
 
 
 // --------------------------------------------------------------------------
@@ -49,10 +51,6 @@ $mediaElement-margin: $Leading * 2 !default;
 
 @if $use-component-mediaElement == true {
 
-	// .Media {
-	// 	margin: $mediaElement-margin;
-	// }
-
 	.Media,
 	.Media-body {
 		overflow: hidden;
@@ -60,21 +58,39 @@ $mediaElement-margin: $Leading * 2 !default;
 		zoom: 1;
 	}
 
-	.Media-img,
-	.Media-imgAlt {
+	.Media-image,
+	.Media-imageAlt {
 		img {
 			display: block;
 		}
 	}
 
-	.Media-img {
-		float: left;
+	.Media-image,
+	.Media-imageMiddle {
 		margin-right: $mediaElement-margin;
 	}
 
-	.Media-imgAlt {
-		float: right;
+	.Media-image {
+		float: left;
+	}
+
+	.Media-imageAlt,
+	.Media-imageAltMiddle {
 		margin-left: $mediaElement-margin;
+	}
+
+	.Media-imageAlt {
+		float: right;
+	}
+
+	.Media-bodyMiddle,
+	.Media-imageMiddle {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.Media-imageMiddle img {
+		vertical-align: bottom;
 	}
 
 

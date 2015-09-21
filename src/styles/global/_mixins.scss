@@ -1,19 +1,57 @@
+// GLOBAL MIXINS
+//
+// The global mixins
+//
+// FUNCTIONS </br>
+//
+// - font-size($font-size: $FontSize-b): </br>
+// Outputs a rem font size witha px value for a fallback </br>
+//
+// - conditional($variable, $state: true): </br>
+// Allows quick conditional code setup. If $variable evaluates </br>
+// to true the content is shown. If $state is set to false then content is shown when $variable is false </br>
+//
+// - respond-to($respondMinWidth, $respondOrientation: false): </br>
+// Media query mixin which can be used to respond to min widths and orientations </br>
+//
+// - limit-to($limitMinWidth, $limitMaxWidth, $limitOrientation: false): </br>
+// Media query mixin which can be used to limit to min widths and max widths and also orientations </br>
+//
+// Styleguide 4.1.0.
+
+// TODO: Think of a better way to do media queries
+
 @mixin font-size($font-size: $FontSize-b) {
 	font-size: $font-size + 0px;
-	font-size: convert-font-to-relative($font-size) + 0rem;	
+	font-size: convert-to-rem($font-size);
 }
 
-@mixin conditional($variable) {
-	@if $variable != false {
-		@content;
+@mixin conditional($variable, $state: true) {
+	@if $state == false {
+		@if $variable == false {
+			@content;
+		}
+	} @else {
+		@if $variable != false {
+			@content;
+		}
 	}
 }
 
 
-@mixin respond-to($Width, $Orientation: false) {
-	@if $Orientation == true {
-		@media only screen and (orientation: $Orientation) and (min-width : $Width) { @content; }
+@mixin respond-to($respondMinWidth, $respondOrientation: false) {
+	@if $respondOrientation == true {
+		@media only screen and (orientation: $respondOrientation) and (min-width : $respondMinWidth) { @content; }
 	} @else {
-		@media only screen and (min-width : $Width) { @content; }
+		@media only screen and (min-width : $respondMinWidth) { @content; }
+	}
+}
+
+
+@mixin limit-to($limitMinWidth, $limitMaxWidth, $limitOrientation: false) {
+	@if $limitOrientation == true {
+		@media only screen and (orientation: $limitOrientation) and (min-width : $limitMinWidth) and (max-width : $limitMaxWidth) { @content; }
+	} @else {
+		@media only screen and (min-width : $limitMinWidth) and (max-width : $limitMaxWidth) { @content; }
 	}
 }

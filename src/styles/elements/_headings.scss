@@ -45,31 +45,31 @@
 // STYLING
 // --------------------------------------------------------------------------
 
-@if $use-base-typography == true {
+@if $use-base-typography == true or $use-base-typography--headings == true {
 
 	h1 {
 		@extend %typeHeading;
-		@extend %typeHeading-1;
+		@extend %typeHeading-size--1;
 	}
 
 	h2 {
 		@extend %typeHeading;
-		@extend %typeHeading-2;
+		@extend %typeHeading-size--2;
 	}
 
 	h3 {
 		@extend %typeHeading;
-		@extend %typeHeading-3;
+		@extend %typeHeading-size--3;
 	}
 
 	h4 {
 		@extend %typeHeading;
-		@extend %typeHeading-4;
+		@extend %typeHeading-size--4;
 	}
 
 	h5 {
 		@extend %typeHeading;
-		@extend %typeHeading-5;
+		@extend %typeHeading-size--5;
 	}
 
 }

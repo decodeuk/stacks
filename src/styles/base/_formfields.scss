@@ -12,13 +12,15 @@
 // VARIABLES </br>
 // - none
 //
+// .formfield--fill				- Makes inner inputs full width
+//
 // Markup:
-// <div class="formfield">
-// 	<label>First Name</label>
-//	<input type="text">
+// <div class="formfield {$modifiers}">
+// 	<label>Label styling</label>
+//	<input type="text" placeholder="Default input styling" />
 //</div>
 //
-// Styleguide 4.1.0.
+// Styleguide 40.1.0.
 
 
 
@@ -26,6 +28,7 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
+$c-formfield-spacing: $Leading * 2 !default;
 
 
 // --------------------------------------------------------------------------
@@ -57,25 +60,31 @@
 	 * 
 	 */
 
-	 .formfield {
-	 	+ .formfield {
-	 		margin-top: $Leading * 2;
-	 	}
+	.formfield {
+		@include conditional( $c-formfield-spacing ) {
+			+ .formfield {
+				margin-top: $c-formfield-spacing;
+			}
+		};
 
-	 	label {
-	 		display: block;
-	 	}
+		label {
+			display: block;
+		}
+	}
 
-	 	input[type="email"],
+	.formfield--fill {
+		input[type="email"],
 		input[type="number"],
 		input[type="search"],
 		input[type="text"],
 		input[type="tel"],
 		input[type="url"],
 		input[type="password"],
+		input[type="date"],
+		input[type="time"],
 		textarea,
 		select {
-	 		width: 100%;
-	 	}
-	 }
+			width: 100%;
+		}
+	}
 }

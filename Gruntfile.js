@@ -37,27 +37,16 @@ module.exports = function(grunt) {
 		project: {
 			src: 'src',
 			dist: 'dist',
-			dev: 'dev',
-
 			styleguide: 'styleguide',
-
-			distAssets: '<%= project.dist %>/assets',
-			devAssets: '<%= project.dev %>/assets',
-
-			srcImgDir: '<%= project.src %>/img',
-			distImgDir: '<%= project.distAssets %>/img',
-			devImgDir: '<%= project.devAssets %>/img',
 
 			scssDir: '<%= project.src %>/styles',
 			scssFile: 'stacks.scss',
 			scss: '<%= project.scssDir %>/<%= project.scssFile %>',
 
-			cssDir: '<%= project.devAssets %>/css',
 			cssFile: 'stacks.css',
-			cssFileMin: 'stacks.min.css',
-			// css: '<%= project.cssDir %>/<%= project.cssFile %>',
+			cssFileMin: 'stacks.prefix.css',
 			css: '<%= project.styleguide %>/public/<%= project.cssFile %>',
-			cssMin: '<%= project.cssDir %>/<%= project.cssFileMin %>',
+			cssMin: '<%= project.styleguide %>/public/<%= project.cssFileMin %>',
 		},
 
 
@@ -93,26 +82,8 @@ module.exports = function(grunt) {
 			livereload: {
 				options: {
 					middleware: function (connect) {
-						return [lrSnippet, mountFolder(connect, '')];
+						return [lrSnippet, mountFolder(connect, 'styleguide')];
 					}
-				}
-			}
-		},
-
-
-
-		/**
-			* Includes html snippets
-			* https://www.npmjs.org/package/grunt-bake
-		*/
-		bake: {
-			build: {
-				options: {
-					content: "<%= project.src %>/data/data.json"
-				},
-
-				files: {
-					"<%= project.dev %>/index.html": "<%= project.src %>/templates/index.html",
 				}
 			}
 		},
@@ -125,15 +96,8 @@ module.exports = function(grunt) {
 			* Remove generated files for clean deploy
 		*/
 		clean: {
-			dist: [
-				'<%= project.dist %>'
-			],
-			dev: [
-				'<%= project.dev %>'
-			],
-			styleguide: [
-				'<%= project.styleguide %>'
-			]
+			dist: [ '<%= project.dist %>' ],
+			styleguide: [ '<%= project.styleguide %>' ]
 		},
 
 
@@ -143,33 +107,16 @@ module.exports = function(grunt) {
 			* https://github.com/gruntjs/grunt-contrib-copy
 		*/
 		copy: {
-			images: {
-				expand: true,
-				cwd: 'src/img',
-				src: '**/*',
-				dest: '<%= project.devImgDir %>'
-			},
-
-			styleguide : { // grimme but had to as kss isnt copying it properly so having to fake it
-				expand: true,
-				src: '<%= project.css %> ',
-				dest: 'styleguide/public',
-				flatten: true
-			},
-
-
-
 			dist: {
 				expand: true,
 				cwd: '<%= project.scssDir %>',
-				src: '**/*',
+				src: ['**/*.scss', '!_setupStacks.scss'],
 				dest: '<%= project.dist %>/stacks',
-				filter: 'isDirectory',
+				// filter: 'isDirectory'
 				options: {
 					process: function (content, srcpath) {
-						// copy content setup file
-
-						return content(/(.*?)/g,"@import \"stacks/");
+						// return content.replace(/@import \"/g,"@import \"stacks/");
+						return content.replace(/@import "_setupStacks.scss";/g,"@import \"..\/_setupStacks.scss\"\;");
 					},
 				},
 			},
@@ -180,20 +127,7 @@ module.exports = function(grunt) {
 				src: '_setupStacks.scss',
 				dest: '<%= project.dist %>',
 				filter: 'isFile'
-			},
-
-			distStacks: {
-				expand: true,
-				cwd: '<%= project.scssDir %>',
-				src: '<%= project.scssFile %>',
-				dest: '<%= project.dist %>',
-				filter: 'isFile',
-				options: {
-					process: function (content, srcpath) {
-						return content.replace(/@import \"/g,"@import \"stacks/");
-					},
-				},
-			},
+			}
 		},
 
 
@@ -204,35 +138,14 @@ module.exports = function(grunt) {
 			* Compiles all Sass/SCSS files and appends project banner
 		*/
 		sass: {
-			dist: {
+			dev: {
 				options: {
 					style: 'expanded'
 				},
 				files: {
 					'<%= project.css %>': '<%= project.scss %>',
-					// 'styleguide/public/<%= project.cssFile %>': '<%= project.scss %>'
+					// 'styleguide/public/style.css': '<%= project.scss %>'
 				}
-			}
-		},
-
-
-		/**
-			* Concatenate JavaScript files
-			* https://github.com/gruntjs/grunt-contrib-concat
-			* Imports all .js files and appends project banner
-		*/
-		concat: {
-			dist: {
-				src: [
-					'<%= project.src %>/js/libs/jquery/dist/jquery.min.js',
-					'<%= project.src %>/js/scripts.js', 
-				],
-				dest: '<%= project.devAssets %>/js/scripts.min.js',
-			},
-			options: {
-				stripBanners: true,
-				nonull: true,
-				banner: '<%= tag.banner %>'
 			}
 		},
 
@@ -255,7 +168,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'<%= project.css %>': ['<%= project.css %>']
+					'<%= project.cssMin %>': ['<%= project.css %>']
 				}
 			}
 		},
@@ -279,12 +192,12 @@ module.exports = function(grunt) {
 		*/
 		kss: {
 			options: {
-				css: '<%= project.css %>',
-				template: '<%= project.src %>/styleguide'
+				css: '<%= project.cssMin %>',
+				template: 'src/styleguide'
 			},
 			dist: {
 				files: {
-					'styleguide/': ['<%= project.scssDir %>']
+					'<%= project.styleguide %>': ['<%= project.scssDir %>/']
 				}
 			}
 		},
@@ -301,24 +214,13 @@ module.exports = function(grunt) {
 				files: '<%= project.scssDir %>/**/*.scss',
 				tasks: ['kss', 'sass', 'autoprefixer']
 			},
-			bake: {
-				files: ['<%= project.src %>/templates/**/*.html'],
-				tasks: ['bake']
-			},
-			concat: {
-				files: '<%= project.src %>/js/**/*.js',
-				tasks: ['concat']
-			},
 			livereload: {
 				options: {
 					livereload: LIVERELOAD_PORT
 				},
 				files: [
-					'<%= project.dev %>/**/*.html',
-					'styleguide/**/*.html',
-					'<%= project.cssDir %>/**/*.css',
-					'<%= project.dev %>/js/**/*.js',
-					'<%= project.dev %>/**/*.{png,jpg,jpeg,gif,webp,svg}'
+					'<%= project.styleguide %>/**/*.html',
+					'<%= project.styleguide %>/**/*.css',
 				]
 			}
 		}
@@ -340,9 +242,9 @@ module.exports = function(grunt) {
 		* Run `grunt` on the command line
 	*/
 	grunt.registerTask('styleguide', [
-		'clean:styleguide',
 		'kss',
-		'copy:styleguide',
+		'sass',
+		'clean:styleguide',
 	]);
 
 
@@ -355,7 +257,6 @@ module.exports = function(grunt) {
 		'clean:dist',
 		'copy:dist',
 		'copy:distSetup',
-		'copy:distStacks'
 	]);
 
 };

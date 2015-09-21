@@ -50,31 +50,23 @@
         
           
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">9.0.0</span> - FORM ELEMENTS</h1>
+            <h1 class="kss-title"><span class="kss-ref">10.1.0</span> - NAV COMPONENT</h1>
           
             
-                <div class="kss-box"><p>Styling for form elements to give a consistant base design across all form elements.
+                <div class="kss-box"><p>Universal nav styling for a variety of different navigation elements such as a nav list, inline nav or navbar.
 
 </p>
 <p>DEPENDENCIES </br>
-- base/type
-
-</p>
-<p>EXTENDS </br>
 - none
 
 </p>
+<p>EXTENDS </br>
+- %button
+- %button--primary
+
+</p>
 <p>VARIABLES </br>
-- $input-padding: ($Leading / 2) ($Leading <em> 1.5); </br>
-- $input-height: $Leading </em> 4; </br>
-- $c-input-outline: none;
-- 
-- $input-border: 1px solid $Colour-border; </br>
-- $c-input-borderColour--focus: $Colour-base; </br>
-- $c-input-borderStyle--focus: false;
-- 
-- $input-borderRadius: 4px; </br>
-- $input-backgroundColour: $Colour-white;</p>
+-</p>
 </div>
                 <table class="kss-mod-list">
                   <tr class="kss-mod-desc-group">
@@ -82,57 +74,74 @@
                     <td class="kss-mod-name"></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><form>
-	<div class="formfield">
-		<label for="demoinput">Standard label styling</label>
-		<input type="text" placeholder="Demo placeholder..."/>
-	</div>
-	<div class="formfield">
-		<label for="demoTextarea">Standard label styling</label>
-		<textarea placeholder="Demo placeholder..." id="demoTextarea"></textarea>
-	</div>
-	<div class="formfield">
-		<input type="submit">
-	</div>
-	</form></td>
+                    <td colspan="2"><nav>
+		<input type="checkbox" id="Nav-itemToggle" class="Nav-itemToggleCheck">
+		<ul class="Nav {$modifiers}">
+<li class="Nav-item Nav-itemBrand"><a href="#">Stacks</a></li>
+<li class="Nav-item"><a href="#">Default nav item styling</a></li>
+<li class="Nav-item"><a href="">Nav item</a></li>
+<li class="Nav-item"><a href="">Another one</a></li>
+<li class="Nav-item Nav-itemToggle">
+<label for="Nav-itemToggle" class="Nav-itemToggleLabel">Menu</label>
+</li>
+		</ul>
+	</nav></td>
                   </tr>
                 
                   <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>class description</p>
+                    <td class="kss-mod-desc"><p>Inline List</p>
 </td>
-                    <td class="kss-mod-name"><p>.object-classes</p></td>
+                    <td class="kss-mod-name"><p>.Nav-listInline</p></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><form>
-	<div class="formfield">
-		<label for="demoinput">Standard label styling</label>
-		<input type="text" placeholder="Demo placeholder..."/>
-	</div>
-	<div class="formfield">
-		<label for="demoTextarea">Standard label styling</label>
-		<textarea placeholder="Demo placeholder..." id="demoTextarea"></textarea>
-	</div>
-	<div class="formfield">
-		<input type="submit">
-	</div>
-	</form></td>
+                    <td colspan="2"><nav>
+		<input type="checkbox" id="Nav-itemToggle" class="Nav-itemToggleCheck">
+		<ul class="Nav Nav-listInline">
+<li class="Nav-item Nav-itemBrand"><a href="#">Stacks</a></li>
+<li class="Nav-item"><a href="#">Default nav item styling</a></li>
+<li class="Nav-item"><a href="">Nav item</a></li>
+<li class="Nav-item"><a href="">Another one</a></li>
+<li class="Nav-item Nav-itemToggle">
+<label for="Nav-itemToggle" class="Nav-itemToggleLabel">Menu</label>
+</li>
+		</ul>
+	</nav></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Navbar</p>
+</td>
+                    <td class="kss-mod-name"><p>.Nav-bar</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><nav>
+		<input type="checkbox" id="Nav-itemToggle" class="Nav-itemToggleCheck">
+		<ul class="Nav Nav-bar">
+<li class="Nav-item Nav-itemBrand"><a href="#">Stacks</a></li>
+<li class="Nav-item"><a href="#">Default nav item styling</a></li>
+<li class="Nav-item"><a href="">Nav item</a></li>
+<li class="Nav-item"><a href="">Another one</a></li>
+<li class="Nav-item Nav-itemToggle">
+<label for="Nav-itemToggle" class="Nav-itemToggleLabel">Menu</label>
+</li>
+		</ul>
+	</nav></td>
                   </tr>
                 
                 </table>
                 <div class="kss-markup">
-                  <pre class="prettyprint lang-html">&lt;form&gt;
-	&lt;div class=&quot;formfield&quot;&gt;
-		&lt;label for=&quot;demoinput&quot;&gt;Standard label styling&lt;/label&gt;
-		&lt;input type=&quot;text&quot; placeholder=&quot;Demo placeholder...&quot;/&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;formfield&quot;&gt;
-		&lt;label for=&quot;demoTextarea&quot;&gt;Standard label styling&lt;/label&gt;
-		&lt;textarea placeholder=&quot;Demo placeholder...&quot; id=&quot;demoTextarea&quot;&gt;&lt;/textarea&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;formfield&quot;&gt;
-		&lt;input type=&quot;submit&quot;&gt;
-	&lt;/div&gt;
-	&lt;/form&gt;</pre>
+                  <pre class="prettyprint lang-html">&lt;nav&gt;
+		&lt;input type=&quot;checkbox&quot; id=&quot;Nav-itemToggle&quot; class=&quot;Nav-itemToggleCheck&quot;&gt;
+		&lt;ul class=&quot;Nav {$modifiers}&quot;&gt;
+&lt;li class=&quot;Nav-item Nav-itemBrand&quot;&gt;&lt;a href=&quot;#&quot;&gt;Stacks&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;Nav-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Default nav item styling&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;Nav-item&quot;&gt;&lt;a href=&quot;&quot;&gt;Nav item&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;Nav-item&quot;&gt;&lt;a href=&quot;&quot;&gt;Another one&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;Nav-item Nav-itemToggle&quot;&gt;
+&lt;label for=&quot;Nav-itemToggle&quot; class=&quot;Nav-itemToggleLabel&quot;&gt;Menu&lt;/label&gt;
+&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/nav&gt;</pre>
                 </div>
             
           

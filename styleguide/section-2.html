@@ -15,7 +15,7 @@
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="public/kss.css">
-  <link rel="stylesheet" href="public/stacks.css">
+  <link rel="stylesheet" href="public/stacks.prefix.css">
 
 </head>
 <body><div id="kss-wrapper">
@@ -24,61 +24,22 @@
       <hgroup><h1>kss-node Styleguide</h1></hgroup>
     </header>
     <aside>
-      <nav>
-        <ul>
-          <li><a href="index.html"><!--0.0: -->Overview</a></li>
-          
-            <li>
-              <a href="section-1.html"><!--1.0: -->Aspect</a>
-            </li>
-          
-            <li>
-              <a href="section-2.html"><!--2.0: -->Buttons</a>
-            </li>
-          
-            <li>
-              <a href="section-3.html"><!--3.0: -->Clearfix</a>
-            </li>
-          
-            <li>
-              <a href="section-4.html"><!--4.0: -->Formfields</a>
-            </li>
-          
-            <li>
-              <a href="section-5.html"><!--5.0: -->Lists</a>
-            </li>
-          
-            <li>
-              <a href="section-6.html"><!--6.0: -->Sizing</a>
-            </li>
-          
-            <li>
-              <a href="section-7.html"><!--7.0: -->Type</a>
-            </li>
-          
-            <li>
-              <a href="section-8.html"><!--8.0: -->Base Elements</a>
-            </li>
-          
-            <li>
-              <a href="section-9.html"><!--9.0: -->Forms</a>
-            </li>
-          
-
-          <!-- 
-            <ul class="kss-menu-child">
-              
-                
-                
-              
-                
-                  <li class="kss-menu-item"><a href="#section-2.1.0"><span class="kss-name">BUTTON BASE</span></a></li>
-                
-              
-            </ul>
-           -->
-        </ul>
-      </nav>
+      <nav><ul>
+        <li><a href="index.html">0.0: Overview</a></li>
+        
+          <li><a href="section-1.html">1.0: Stacks Setup</a></li>
+        
+          <li><a href="section-2.html">2.0: Global Variables</a></li>
+        
+          <li><a href="section-3.html">3.0: Global Functions</a></li>
+        
+          <li><a href="section-4.html">4.0: Global Mixins</a></li>
+        
+          <li><a href="section-5.html">5.0: Base Setup</a></li>
+        
+          <li><a href="section-6.html">6.0: Base Aspect</a></li>
+        
+      </ul></nav>
     </aside>
   </div>
   <div role="main" id="kss-main">
@@ -88,7 +49,7 @@
         
         
           
-            <h1 class="kss-title"><span class="kss-ref">2.0</span> - Buttons</h1>
+            <h1 class="kss-title"><span class="kss-ref">2.0</span> - Global Variables</h1>
           
             
                 
@@ -97,72 +58,65 @@
         
           
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">2.1.0</span> - BUTTON BASE</h1>
+            <h1 class="kss-title"><span class="kss-ref">2.1.0</span> - GLOBAL VARIABLES</h1>
           
             
-                <div class="kss-box"><p>The .button class can be used to style markup to look like a button.
-
-</p>
-<p>DEPENDENCIES </br>
-- none
-
-</p>
-<p>EXTENDS </br>
-- %button
-- %button--primary
+                
+                  <p>The global variables
 
 </p>
 <p>VARIABLES </br>
-- $Button-padding: ($Leading <em> 1.5) ($Leading </em> 4.5) !default; </br>
-- $Button-textColour: $Colour-primary !default; </br>
-- $c-Button-textColour--hover: $Colour-base !default; </br>
-- $Button-fontSize: $FontSize-small !default; </br>
-- $Button-fontWeight: $FontWeight-bold !default; </br>
-- $Button-lineHeight: 1 !default; </br>
-- $c-Button-textCase: uppercase !default; </br>
-- $Button-backgroundColour: transparent !default; </br>
-- $c-Button-borderRadius: 4px !default; </br>
-- $Button-border: 1px solid $Colour-primary !default; </br>
-- $c-Button-borderColour--hover: false !default; </br>
-- $c-Button-outline: 0 !default; </br>
-- $c-Button-textColour--primary: $Colour-white !default; </br>
-- $c-Button-textColour--primaryHover: $Colour-base !default; </br>
-- $c-Button-backgroundColour--primary: $Colour-primary !default; </br>
-- $c-Button-backgroundColour--primaryHover: transparent !default; </br>
-- $c-Button-borderColour--primary: transparent !default; </br>
-- $c-Button-borderColour--primaryHover: $Colour-primary !default; </br></p>
-</div>
-                <table class="kss-mod-list">
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Default styling</p></td>
-                    <td class="kss-mod-name"></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><a href="#" class="button {$modifiers}">Hello</a></td>
-                  </tr>
+
+</p>
+<p>Base colours
+
+</p>
+<ul>
+<li>$Colour-black: #000 !default; </br></li>
+<li>$Colour-white: #fff !default; </br></li>
+</ul>
+<p>Semantic colour naming </br>
+
+</p>
+<ul>
+<li>$Colour-base: #444 !default; </br></li>
+<li>$Colour-baseFont: $Colour-base !default; </br></li>
+<li>$Colour-baseFont--light: lighten($Colour-base, 30%) !default; </br></li>
+<li>$Colour-primary: #549CEF !default; </br></li>
+<li>$Colour-primary--darken: #4784CB !default; </br></li>
+<li>$Colour-border: #ddd !default; </br></li>
+<li>$Colour-inactive: #999 !default; </br></li>
+</ul>
+<p>Type variables </br>
+
+</p>
+<ul>
+<li>$FontFamily-heading: &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif !default; </br></li>
+<li>$FontFamily-copy: &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif !default; </br></li>
+<li>$FontFamily-mono: Consolas, &quot;Andale Mono WT&quot;, &quot;Andale Mono&quot;, Courier, monospace !default; </br></li>
+<li>$FontWeight-bold: 700; </br></li>
+<li>$FontWeight-normal: 400; </br></li>
+<li>$FontSize-h1: 48px !default; </br></li>
+<li>$LineHeight-h1: 1.25 !default; </br></li>
+<li>$FontSize-h2: 36px !default; </br></li>
+<li>$LineHeight-h2: 1.3 !default; </br></li>
+<li>$FontSize-h3: 24px !default; </br></li>
+<li>$LineHeight-h3: 1.4 !default; </br></li>
+<li>$FontSize-h4: 20px !default; </br></li>
+<li>$LineHeight-h4: 1.5 !default; </br></li>
+<li>$FontSize-h5: 18px !default; </br></li>
+<li>$LineHeight-h5: 1.5 !default; </br></li>
+<li>$FontSize-b: 14px !default; </br></li>
+<li>$LineHeight-b: 1.5 !default; </br></li>
+<li>$FontSize-small: 11px !default; </br></li>
+<li>$FontSize-lead: $FontSize-h5 !default; </br></li>
+<li>$Margin-heading: 0.67em 0 !default; </br></li>
+<li>$Margin-copy: 0.67em 0 !default; </br></li>
+</ul>
+<p>Spacing variables
+- $Leading: 6px; </br></p>
+
                 
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Primary button modifier used to catch the users eye</p>
-</td>
-                    <td class="kss-mod-name"><p>.button--primary</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><a href="#" class="button button--primary">Hello</a></td>
-                  </tr>
-                
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>For consistancy the :hover and :focus styling is the same for the default an button mods</p>
-</td>
-                    <td class="kss-mod-name"><p>:hover :focus</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><a href="#" class="button pseudo-class-hover">Hello</a></td>
-                  </tr>
-                
-                </table>
-                <div class="kss-markup">
-                  <pre class="prettyprint lang-html">&lt;a href=&quot;#&quot; class=&quot;button {$modifiers}&quot;&gt;Hello&lt;/a&gt;</pre>
-                </div>
             
           
             </section>
@@ -171,7 +125,9 @@
       
     </article>
   </div>
- 
+  <footer>
+    
+  </footer>
   <!-- SCRIPTS -->
   <script src="public/kss.js"></script>
   <script src="public/prettify.js"></script>
@@ -199,5 +155,8 @@
 
     });
   </script>
+
+  
+  
 </div></body>
 </html>
