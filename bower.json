@@ -9,12 +9,8 @@
     "tests",
     "src/js/libs"
   ],
-  "dependencies": {
-    "jquery": "~1.11"
-  },
-  "devDependencies": {
-    "html5shiv": "~3.7.2"
-  },
+  "dependencies": {},
+  "devDependencies": {},
   "homepage": "https://github.com/decodeuk/stacks",
   "authors": [
     "Patrick Allen <pa@pallen.co>"

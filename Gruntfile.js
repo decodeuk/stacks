@@ -36,10 +36,9 @@ module.exports = function(grunt) {
 		*/
 		project: {
 			src: 'src',
-			dist: 'dist',
 			styleguide: 'styleguide',
 
-			scssDir: '<%= project.src %>/styles',
+			scssDir: '<%= project.src %>/stacks',
 			scssFile: 'stacks.scss',
 			scss: '<%= project.scssDir %>/<%= project.scssFile %>',
 
@@ -96,38 +95,7 @@ module.exports = function(grunt) {
 			* Remove generated files for clean deploy
 		*/
 		clean: {
-			dist: [ '<%= project.dist %>' ],
 			styleguide: [ '<%= project.styleguide %>' ]
-		},
-
-
-
-		/**
-			* Copy folders/files to destination
-			* https://github.com/gruntjs/grunt-contrib-copy
-		*/
-		copy: {
-			dist: {
-				expand: true,
-				cwd: '<%= project.scssDir %>',
-				src: ['**/*.scss', '!_setupStacks.scss'],
-				dest: '<%= project.dist %>/stacks',
-				// filter: 'isDirectory'
-				options: {
-					process: function (content, srcpath) {
-						// return content.replace(/@import \"/g,"@import \"stacks/");
-						return content.replace(/@import "_setupStacks.scss";/g,"@import \"..\/_setupStacks.scss\"\;");
-					},
-				},
-			},
-
-			distSetup: {
-				expand: true,
-				cwd: '<%= project.scssDir %>',
-				src: '_setupStacks.scss',
-				dest: '<%= project.dist %>',
-				filter: 'isFile'
-			}
 		},
 
 
@@ -144,7 +112,6 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'<%= project.css %>': '<%= project.scss %>',
-					// 'styleguide/public/style.css': '<%= project.scss %>'
 				}
 			}
 		},
@@ -241,22 +208,11 @@ module.exports = function(grunt) {
 		* Default task
 		* Run `grunt` on the command line
 	*/
-	grunt.registerTask('styleguide', [
+	grunt.registerTask('build', [
+		'clean',
 		'kss',
 		'sass',
-		'clean:styleguide',
-	]);
-
-
-	/**
-		* Build task
-		* Run `grunt build` on the command line
-		* Then compress all JS/CSS files
-	*/
-	grunt.registerTask('build', [
-		'clean:dist',
-		'copy:dist',
-		'copy:distSetup',
+		'autoprefixer'
 	]);
 
 };
