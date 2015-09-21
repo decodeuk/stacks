@@ -1,0 +1,94 @@
+// BLOCKQUOTE ELEMENTS
+//
+// Some styling for blockquote html elements.
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - none
+//
+// VARIABLES </br>
+// - 
+//
+// Styleguide 8.0.0.
+
+/*
+ * TODO:
+ */
+
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$c-blockquote-fontSize: $FontSize-lead !default;
+$c-blockquote-fontStyle: italic !default;
+$c-blockquote-margin: 0 !default;
+$c-blockquote-padding: ($Leading * 2) ($Leading * 3) !default;
+
+$c-blockquoteFooter-fontSize: $FontSize-small !default;
+$c-blockquoteFooter-fontWeight: $FontWeight-bold !default;
+$c-blockquoteFooter-fontStyle: normal !default;
+
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+@if $use-element-blockquote == true {
+	blockquote {
+		@include font-size($c-blockquote-fontSize);
+
+		margin: $c-blockquote-margin;
+		padding: $c-blockquote-padding;
+		font-style: $c-blockquote-fontStyle;
+
+		position: relative;
+
+		// &:before {
+		// 	content: open-quote;
+		// 	font-family: Georgia, serif;
+
+		// 	position: absolute;
+		// 	top: -36px;
+		// 	left: -6px;
+
+		// 	font-size: 110px;
+
+		// 	color: rgba($Colour-primary, .15);
+		// }
+
+		// &:after {
+		// 	content: no-close-quote;
+		// }
+
+		footer {
+			// padding: 0;
+			@include font-size($c-blockquoteFooter-fontSize);
+			font-weight: $c-blockquoteFooter-fontWeight;
+			font-style: $c-blockquoteFooter-fontStyle;
+		}
+	}
+}
