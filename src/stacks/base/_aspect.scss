@@ -46,6 +46,15 @@
 // EXTENDABLES
 // --------------------------------------------------------------------------
 
+%aspect {
+	width: 100%;
+	height: auto;
+}
+
+%aspectPortrait {
+	width: auto;
+	height: 100%;
+}
 
 
 // --------------------------------------------------------------------------
@@ -55,12 +64,10 @@
 @if $use-base-aspect == true {
 
 	.aspect {
-		wdth: 100%;
-		height: auto;
+		@extend %aspect;
 	}
 	
 	.aspect--portrait {
-		width: auto;
-		height: 100%;
+		@extend %aspectPortrait;
 	}
 }
