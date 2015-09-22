@@ -39,6 +39,50 @@
         
           <li><a href="section-6.html">6.0: Base Aspect</a></li>
         
+          <li><a href="section-7.html">7.0: Base Input</a></li>
+        
+          <li><a href="section-8.html">8.0: Base Buttons</a></li>
+        
+          <li><a href="section-9.html">9.0: Base Clearfix</a></li>
+        
+          <li><a href="section-10.html">10.0: Base Formfields</a></li>
+        
+          <li><a href="section-11.html">11.0: Base Lists</a></li>
+        
+          <li><a href="section-12.html">12.0: Base Sizing</a></li>
+        
+          <li><a href="section-13.html">13.0: Base Type</a></li>
+        
+          <li><a href="section-14.html">14.0: Base Utils</a></li>
+        
+          <li><a href="section-15.html">15.0: Elements Base</a></li>
+        
+          <li><a href="section-16.html">16.0: Elements Blockquote</a></li>
+        
+          <li><a href="section-17.html">17.0: Elements Button</a></li>
+        
+          <li><a href="section-18.html">18.0: Elements Forms</a></li>
+        
+          <li><a href="section-19.html">19.0: Elements Headings</a></li>
+        
+          <li><a href="section-20.html">20.0: Elements Links</a></li>
+        
+          <li><a href="section-21.html">21.0: Elements Lists</a></li>
+        
+          <li><a href="section-22.html">22.0: Elements Paragraph</a></li>
+        
+          <li><a href="section-23.html">23.0: Elements Type</a></li>
+        
+          <li><a href="section-24.html">24.0: Component Grid</a></li>
+        
+          <li><a href="section-25.html">25.0: Component Layers</a></li>
+        
+          <li><a href="section-26.html">26.0: Component Media Element</a></li>
+        
+          <li><a href="section-27.html">27.0: Component Nav</a></li>
+        
+          <li><a href="section-28.html">28.0: Component Stacks</a></li>
+        
       </ul></nav>
     </aside>
   </div>
@@ -58,37 +102,22 @@
         
           
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">6.1.0</span> - SIZING BASE</h1>
+            <h1 class="kss-title"><span class="kss-ref">6.1.0</span> - ASPECT BASE</h1>
           
             
-                <div class="kss-box"><p>Size styling which can be used in conjunction with other objects such as the grid, media element or images.
-Sizes are responsive and based on ratios for clearer naming and understanding.
+                <div class="kss-box"><p>Aspect ratios for scaling media whilst keeping aspect ratios.
 
 </p>
 <p>DEPENDENCIES </br>
-- none
+- base/sizing
 
 </p>
 <p>EXTENDS </br>
-- %oneWhole </br>
-- %oneHalf </br>
-- %oneThird </br>
-- %twoThirds </br>
-- %oneQuarter </br>
-- %twoQuarters </br>
-- %threeQuarters
+- none
 
 </p>
 <p>VARIABLES </br>
-- $Column-gutter: 20px !default; </br>
-- $Column-count: 12 !default; </br>
-- $Column-selector: column !default; </br>
-- $Column-prefix: column- !default; </br>
-- $Column-offsetSelector: column-offset- !default; </br>
-- $Row-selector: row !default; </br>
-- $Row-width: 100% !default; </br>
-- $Row-maxWidth: 1080px !default; </br>
-- $Row-margin: 0 auto !default;</p>
+- none</p>
 </div>
                 <table class="kss-mod-list">
                   <tr class="kss-mod-desc-group">
@@ -96,75 +125,21 @@ Sizes are responsive and based on ratios for clearer naming and understanding.
                     <td class="kss-mod-name"></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole {$modifiers}" alt="Cute kitten"></td>
+                    <td colspan="2"><img src="http://placehold.it/600x300" alt="A landscape image" class="aspect {$modifiers}"></td>
                   </tr>
                 
                   <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Removes list styling and resets left padding to 0</p>
+                    <td class="kss-mod-desc"><p>Used on portrait images for responsive scaling</p>
 </td>
-                    <td class="kss-mod-name"><p>.oneWhole</p></td>
+                    <td class="kss-mod-name"><p>.aspect--portrait</p></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole oneWhole" alt="Cute kitten"></td>
-                  </tr>
-                
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
-</td>
-                    <td class="kss-mod-name"><p>.oneHalf</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole oneHalf" alt="Cute kitten"></td>
-                  </tr>
-                
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
-</td>
-                    <td class="kss-mod-name"><p>.oneThird</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole oneThird" alt="Cute kitten"></td>
-                  </tr>
-                
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
-</td>
-                    <td class="kss-mod-name"><p>.twoThirds</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole twoThirds" alt="Cute kitten"></td>
-                  </tr>
-                
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
-</td>
-                    <td class="kss-mod-name"><p>.oneQuarter</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole oneQuarter" alt="Cute kitten"></td>
-                  </tr>
-                
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
-</td>
-                    <td class="kss-mod-name"><p>.twoQuarters</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole twoQuarters" alt="Cute kitten"></td>
-                  </tr>
-                
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
-</td>
-                    <td class="kss-mod-name"><p>.threeQuarters</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole threeQuarters" alt="Cute kitten"></td>
+                    <td colspan="2"><img src="http://placehold.it/600x300" alt="A landscape image" class="aspect aspect--portrait"></td>
                   </tr>
                 
                 </table>
                 <div class="kss-markup">
-                  <pre class="prettyprint lang-html">&lt;img src=&quot;http://placekitten.com/g/320/240&quot; class=&quot;oneWhole {$modifiers}&quot; alt=&quot;Cute kitten&quot;&gt;</pre>
+                  <pre class="prettyprint lang-html">&lt;img src=&quot;http://placehold.it/600x300&quot; alt=&quot;A landscape image&quot; class=&quot;aspect {$modifiers}&quot;&gt;</pre>
                 </div>
             
           

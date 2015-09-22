@@ -93,7 +93,7 @@
         
         
           
-            <h1 class="kss-title"><span class="kss-ref">10.0</span> - Base Formfields</h1>
+            <h1 class="kss-title"><span class="kss-ref">12.0</span> - Base Sizing</h1>
           
             
                 
@@ -102,10 +102,11 @@
         
           
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">10.1.0</span> - FORMFIELD BASE</h1>
+            <h1 class="kss-title"><span class="kss-ref">12.1.0</span> - SIZING BASE</h1>
           
             
-                <div class="kss-box"><p>Formfields can be used to contain form label and input groups for a constant layout and markup strategy. 
+                <div class="kss-box"><p>Size styling which can be used in conjunction with other objects such as the grid, media element or images.
+Sizes are responsive and based on ratios for clearer naming and understanding.
 
 </p>
 <p>DEPENDENCIES </br>
@@ -113,11 +114,25 @@
 
 </p>
 <p>EXTENDS </br>
-- none
+- %oneWhole </br>
+- %oneHalf </br>
+- %oneThird </br>
+- %twoThirds </br>
+- %oneQuarter </br>
+- %twoQuarters </br>
+- %threeQuarters
 
 </p>
 <p>VARIABLES </br>
-- none</p>
+- $Column-gutter: 20px !default; </br>
+- $Column-count: 12 !default; </br>
+- $Column-selector: column !default; </br>
+- $Column-prefix: column- !default; </br>
+- $Column-offsetSelector: column-offset- !default; </br>
+- $Row-selector: row !default; </br>
+- $Row-width: 100% !default; </br>
+- $Row-maxWidth: 1080px !default; </br>
+- $Row-margin: 0 auto !default;</p>
 </div>
                 <table class="kss-mod-list">
                   <tr class="kss-mod-desc-group">
@@ -125,30 +140,75 @@
                     <td class="kss-mod-name"></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><div class="formfield {$modifiers}">
-	<label>Label styling</label>
-	<input type="text" placeholder="Default input styling" />
-</div></td>
+                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole {$modifiers}" alt="Cute kitten"></td>
                   </tr>
                 
                   <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Makes inner inputs full width</p>
+                    <td class="kss-mod-desc"><p>Removes list styling and resets left padding to 0</p>
 </td>
-                    <td class="kss-mod-name"><p>.formfield--fill</p></td>
+                    <td class="kss-mod-name"><p>.oneWhole</p></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><div class="formfield formfield--fill">
-	<label>Label styling</label>
-	<input type="text" placeholder="Default input styling" />
-</div></td>
+                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole oneWhole" alt="Cute kitten"></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
+</td>
+                    <td class="kss-mod-name"><p>.oneHalf</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole oneHalf" alt="Cute kitten"></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
+</td>
+                    <td class="kss-mod-name"><p>.oneThird</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole oneThird" alt="Cute kitten"></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
+</td>
+                    <td class="kss-mod-name"><p>.twoThirds</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole twoThirds" alt="Cute kitten"></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
+</td>
+                    <td class="kss-mod-name"><p>.oneQuarter</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole oneQuarter" alt="Cute kitten"></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
+</td>
+                    <td class="kss-mod-name"><p>.twoQuarters</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole twoQuarters" alt="Cute kitten"></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Displays the list in an horizontal format. Uses the noBullet list to reset styling.</p>
+</td>
+                    <td class="kss-mod-name"><p>.threeQuarters</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><img src="http://placekitten.com/g/320/240" class="oneWhole threeQuarters" alt="Cute kitten"></td>
                   </tr>
                 
                 </table>
                 <div class="kss-markup">
-                  <pre class="prettyprint lang-html">&lt;div class=&quot;formfield {$modifiers}&quot;&gt;
-	&lt;label&gt;Label styling&lt;/label&gt;
-	&lt;input type=&quot;text&quot; placeholder=&quot;Default input styling&quot; /&gt;
-&lt;/div&gt;</pre>
+                  <pre class="prettyprint lang-html">&lt;img src=&quot;http://placekitten.com/g/320/240&quot; class=&quot;oneWhole {$modifiers}&quot; alt=&quot;Cute kitten&quot;&gt;</pre>
                 </div>
             
           

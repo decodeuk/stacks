@@ -93,7 +93,7 @@
         
         
           
-            <h1 class="kss-title"><span class="kss-ref">1.0</span> - Stacks Setup</h1>
+            <h1 class="kss-title"><span class="kss-ref">17.0</span> - Elements Button</h1>
           
             
                 
@@ -102,55 +102,55 @@
         
           
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">1.1.0</span> - STACKS SETUP</h1>
+            <h1 class="kss-title"><span class="kss-ref">17.0.0</span> - BUTTON ELEMENTS</h1>
           
             
+                <div class="kss-box"><p>Some styling for base html elements.
+Elements include html, element and a * catch all box-sizing.
+
+</p>
+<p>DEPENDENCIES </br>
+- none
+
+</p>
+<p>EXTENDS </br>
+- none
+
+</p>
+<p>VARIABLES </br>
+- </p>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><button href="#" class="{$modifiers}">Hello</button></td>
+                  </tr>
                 
-                  <p>The basic stacks setup. Stack styling can be conditional loaded or removed
-to create a slick base. If a module is set to false extends can still be
-used and only classes and elements will be removed.
-
-</p>
-<p>CONDITIONAL STYLE LOADING </br>
-
-</p>
-<p>Base Setup </br>
-- $use-base-aspect: true !default; </br>
-- $use-base-buttons: true !default; </br>
-- $use-base-formfields: true !default; </br>
-- $use-base-input: false !default; </br>
-- $use-base-lists: true !default; </br>
-- $use-base-lists--noBullet: true !default; </br>
-- $use-base-lists--inline: true !default; </br>
-- $use-base-normalize: false !default; </br>
-- $use-base-reset: true !default; </br>
-- $use-base-sizing: true !default; </br>
-- $use-base-offset: true !default; </br>
-- $use-base-typography: true !default; </br>
-- $use-base-typography--headings: true !default; </br>
-- $use-base-typography--copy: true !default; </br>
-- $use-base-typographyUtils: true !default; </br>
-
-</p>
-<p>Element Setup </br>
-- $use-element-links: true !default; </br>
-- $use-element-lists: true !default; </br>
-
-</p>
-<p>Component Setup </br>
-- $use-component-grid: true !default; </br>
-- $use-component-gridCover: true !default; </br>
-- $use-component-gridUtils: true !default; </br>
-- $show-grid: false !default; </br>
-- $use-component-layers: true !default; </br>
-- $use-component-mediaElement: true !default; </br>
-- $use-component-nav: true !default; </br>
-- $use-component-navList: true !default; </br>
-- $use-component-navList--inline: true !default; </br>
-- $use-component-navBar: true !default; </br>
-- $use-component-navTabs: true !default; </br></p>
-
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Primary button modifier used to catch the users eye</p>
+</td>
+                    <td class="kss-mod-name"><p>.button--primary</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><button href="#" class="button--primary">Hello</button></td>
+                  </tr>
                 
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>For consistancy the :hover and :focus styling is the same for the default an button mods</p>
+</td>
+                    <td class="kss-mod-name"><p>:hover :focus</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><button href="#" class="pseudo-class-hover">Hello</button></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">&lt;button href=&quot;#&quot; class=&quot;{$modifiers}&quot;&gt;Hello&lt;/button&gt;</pre>
+                </div>
             
           
             </section>

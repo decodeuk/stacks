@@ -39,6 +39,50 @@
         
           <li><a href="section-6.html">6.0: Base Aspect</a></li>
         
+          <li><a href="section-7.html">7.0: Base Input</a></li>
+        
+          <li><a href="section-8.html">8.0: Base Buttons</a></li>
+        
+          <li><a href="section-9.html">9.0: Base Clearfix</a></li>
+        
+          <li><a href="section-10.html">10.0: Base Formfields</a></li>
+        
+          <li><a href="section-11.html">11.0: Base Lists</a></li>
+        
+          <li><a href="section-12.html">12.0: Base Sizing</a></li>
+        
+          <li><a href="section-13.html">13.0: Base Type</a></li>
+        
+          <li><a href="section-14.html">14.0: Base Utils</a></li>
+        
+          <li><a href="section-15.html">15.0: Elements Base</a></li>
+        
+          <li><a href="section-16.html">16.0: Elements Blockquote</a></li>
+        
+          <li><a href="section-17.html">17.0: Elements Button</a></li>
+        
+          <li><a href="section-18.html">18.0: Elements Forms</a></li>
+        
+          <li><a href="section-19.html">19.0: Elements Headings</a></li>
+        
+          <li><a href="section-20.html">20.0: Elements Links</a></li>
+        
+          <li><a href="section-21.html">21.0: Elements Lists</a></li>
+        
+          <li><a href="section-22.html">22.0: Elements Paragraph</a></li>
+        
+          <li><a href="section-23.html">23.0: Elements Type</a></li>
+        
+          <li><a href="section-24.html">24.0: Component Grid</a></li>
+        
+          <li><a href="section-25.html">25.0: Component Layers</a></li>
+        
+          <li><a href="section-26.html">26.0: Component Media Element</a></li>
+        
+          <li><a href="section-27.html">27.0: Component Nav</a></li>
+        
+          <li><a href="section-28.html">28.0: Component Stacks</a></li>
+        
       </ul></nav>
     </aside>
   </div>
@@ -49,13 +93,19 @@
         
         
           
-           <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">8.0.0</span> - BASE ELEMENTS</h1>
+            <h1 class="kss-title"><span class="kss-ref">8.0</span> - Base Buttons</h1>
           
             
                 
-                  <p>Some styling for base html elements.
-Elements include html, element and a * catch all box-sizing.
+            
+           
+        
+          
+           <section class="kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">8.1.0</span> - button BASE</h1>
+          
+            
+                <div class="kss-box"><p>The .button class can be used to style markup to look like a button.
 
 </p>
 <p>DEPENDENCIES </br>
@@ -63,18 +113,61 @@ Elements include html, element and a * catch all box-sizing.
 
 </p>
 <p>EXTENDS </br>
-- none
+- %button
+- %button--primary
 
 </p>
 <p>VARIABLES </br>
-- $c-global-boxSizing: box-sizing !default;
-
-</p>
-<ul>
-<li>$html-fontSize: 87.5% !default;</li>
-</ul>
-
+- $button-padding: ($Leading <em> 1.5) ($Leading </em> 4.5) !default; </br>
+- $button-textColour: $Colour-primary !default; </br>
+- $c-button-textColour--hover: $Colour-base !default; </br>
+- $button-fontSize: $FontSize-small !default; </br>
+- $button-fontWeight: $FontWeight-bold !default; </br>
+- $button-lineHeight: 1 !default; </br>
+- $c-button-textCase: uppercase !default; </br>
+- $button-backgroundColour: transparent !default; </br>
+- $c-button-borderRadius: 4px !default; </br>
+- $button-border: 1px solid $Colour-primary !default; </br>
+- $c-button-borderColour--hover: false !default; </br>
+- $c-button-outline: 0 !default; </br>
+- $c-button-textColour--primary: $Colour-white !default; </br>
+- $c-button-textColour--primaryHover: $Colour-base !default; </br>
+- $c-button-backgroundColour--primary: $Colour-primary !default; </br>
+- $c-button-backgroundColour--primaryHover: transparent !default; </br>
+- $c-button-borderColour--primary: transparent !default; </br>
+- $c-button-borderColour--primaryHover: $Colour-primary !default; </br></p>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><a href="#" class="button {$modifiers}">Hello</a></td>
+                  </tr>
                 
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Primary button modifier used to catch the users eye</p>
+</td>
+                    <td class="kss-mod-name"><p>.button--primary</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><a href="#" class="button button--primary">Hello</a></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>For consistancy the :hover and :focus styling is the same for the default an button mods</p>
+</td>
+                    <td class="kss-mod-name"><p>:hover :focus</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><a href="#" class="button pseudo-class-hover">Hello</a></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">&lt;a href=&quot;#&quot; class=&quot;button {$modifiers}&quot;&gt;Hello&lt;/a&gt;</pre>
+                </div>
             
           
             </section>

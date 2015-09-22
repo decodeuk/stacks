@@ -49,45 +49,59 @@
 @import "base/_normalize.scss";
 @import "base/_reset.scss";
 
+
 // Base Aspect
 //
 // Styleguide 6.
 @import "base/_aspect.scss";
 
 
+// Base Input
+//
+// Styleguide 7.
 @import "base/_input.scss";
 
 
-// Buttons
+// Base Buttons
 //
+// Styleguide 8.
 @import "base/_buttons.scss";
 
 
-// Clearfix
+// Base Clearfix
 //
+// Styleguide 9.
 @import "base/_clearfix.scss";
 
 
 // Base Formfields
 //
+// Styleguide 10.
 @import "base/_formfields.scss";
-
-
 
 
 // Base Lists
 //
+// Styleguide 11.
 @import "base/_lists.scss";
 
 
 // Base Sizing
 //
+// Styleguide 12.
 @import "base/_sizing.scss";
 
 
 // Base Type
 //
+// Styleguide 13.
 @import "base/_type.scss";
+
+
+// Base Utils
+//
+// Styleguide 14.
+@import "base/_utils.scss";
 
 
 
@@ -97,17 +111,55 @@
 
 // Elements Base
 //
+// Styleguide 15.
 @import "elements/_base.scss";
 
+
+// Elements Blockquote
+//
+// Styleguide 16.
 @import "elements/_blockquote.scss";
+
+
+// Elements Button
+//
+// Styleguide 17.
+@import "elements/_button.scss";
+
 
 // Elements Forms
 //
+// Styleguide 18.
 @import "elements/_forms.scss";
+
+
+// Elements Headings
+//
+// Styleguide 19.
 @import "elements/_headings.scss";
+
+
+// Elements Links
+//
+// Styleguide 20.
 @import "elements/_links.scss";
+
+
+// Elements Lists
+//
+// Styleguide 21.
 @import "elements/_lists.scss";
+
+
+// Elements Paragraph
+//
+// Styleguide 22.
 @import "elements/_paragraph.scss";
+
+
+// Elements Type
+//
+// Styleguide 23.
 @import "elements/_type.scss";
 
 
@@ -116,11 +168,31 @@
 // Component 
 // --------------------------------------------------------------------------
 
+// Component Grid
+//
+// Styleguide 24.
 @import "components/_grid.scss";
+
+
+// Component Layers
+//
+// Styleguide 25.
 @import "components/_layers.scss";
+
+
+// Component Media Element
+//
+// Styleguide 26.
 @import "components/_media-element.scss";
 
-// Components Nav
+
+// Component Nav
 //
+// Styleguide 27.
 @import "components/_nav.scss";
+
+
+// Component Stacks
+//
+// Styleguide 28.
 @import "components/_stacks.scss";

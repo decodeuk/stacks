@@ -39,6 +39,50 @@
         
           <li><a href="section-6.html">6.0: Base Aspect</a></li>
         
+          <li><a href="section-7.html">7.0: Base Input</a></li>
+        
+          <li><a href="section-8.html">8.0: Base Buttons</a></li>
+        
+          <li><a href="section-9.html">9.0: Base Clearfix</a></li>
+        
+          <li><a href="section-10.html">10.0: Base Formfields</a></li>
+        
+          <li><a href="section-11.html">11.0: Base Lists</a></li>
+        
+          <li><a href="section-12.html">12.0: Base Sizing</a></li>
+        
+          <li><a href="section-13.html">13.0: Base Type</a></li>
+        
+          <li><a href="section-14.html">14.0: Base Utils</a></li>
+        
+          <li><a href="section-15.html">15.0: Elements Base</a></li>
+        
+          <li><a href="section-16.html">16.0: Elements Blockquote</a></li>
+        
+          <li><a href="section-17.html">17.0: Elements Button</a></li>
+        
+          <li><a href="section-18.html">18.0: Elements Forms</a></li>
+        
+          <li><a href="section-19.html">19.0: Elements Headings</a></li>
+        
+          <li><a href="section-20.html">20.0: Elements Links</a></li>
+        
+          <li><a href="section-21.html">21.0: Elements Lists</a></li>
+        
+          <li><a href="section-22.html">22.0: Elements Paragraph</a></li>
+        
+          <li><a href="section-23.html">23.0: Elements Type</a></li>
+        
+          <li><a href="section-24.html">24.0: Component Grid</a></li>
+        
+          <li><a href="section-25.html">25.0: Component Layers</a></li>
+        
+          <li><a href="section-26.html">26.0: Component Media Element</a></li>
+        
+          <li><a href="section-27.html">27.0: Component Nav</a></li>
+        
+          <li><a href="section-28.html">28.0: Component Stacks</a></li>
+        
       </ul></nav>
     </aside>
   </div>
@@ -49,32 +93,31 @@
         
         
           
-           <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">9.0.0</span> - FORM ELEMENTS</h1>
+            <h1 class="kss-title"><span class="kss-ref">9.0</span> - Base Clearfix</h1>
           
             
-                <div class="kss-box"><p>Styling for form elements to give a consistant base design across all form elements.
+                
+            
+           
+        
+          
+           <section class="kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">9.1.0</span> - CLEARFIX BASE</h1>
+          
+            
+                <div class="kss-box"><p>Clearfix is used on parents to contain floated children.
 
 </p>
 <p>DEPENDENCIES </br>
-- base/type
-
-</p>
-<p>EXTENDS </br>
 - none
 
 </p>
+<p>EXTENDS </br>
+- %clearfix
+
+</p>
 <p>VARIABLES </br>
-- $input-padding: ($Leading / 2) ($Leading <em> 1.5); </br>
-- $input-height: $Leading </em> 4; </br>
-- $c-input-outline: none;
-- 
-- $input-border: 1px solid $Colour-border; </br>
-- $c-input-borderColour--focus: $Colour-base; </br>
-- $c-input-borderStyle--focus: false;
-- 
-- $input-borderRadius: 4px; </br>
-- $input-backgroundColour: $Colour-white;</p>
+none</p>
 </div>
                 <table class="kss-mod-list">
                   <tr class="kss-mod-desc-group">
@@ -82,57 +125,73 @@
                     <td class="kss-mod-name"></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><form>
-	<div class="formfield">
-		<label for="demoinput">Standard label styling</label>
-		<input type="text" placeholder="Demo placeholder..."/>
-	</div>
-	<div class="formfield">
-		<label for="demoTextarea">Standard label styling</label>
-		<textarea placeholder="Demo placeholder..." id="demoTextarea"></textarea>
-	</div>
-	<div class="formfield">
-		<input type="submit">
-	</div>
-	</form></td>
-                  </tr>
-                
-                  <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>class description</p>
-</td>
-                    <td class="kss-mod-name"><p>.object-classes</p></td>
-                  </tr>
-                  <tr class="kss-mod-example">
-                    <td colspan="2"><form>
-	<div class="formfield">
-		<label for="demoinput">Standard label styling</label>
-		<input type="text" placeholder="Demo placeholder..."/>
-	</div>
-	<div class="formfield">
-		<label for="demoTextarea">Standard label styling</label>
-		<textarea placeholder="Demo placeholder..." id="demoTextarea"></textarea>
-	</div>
-	<div class="formfield">
-		<input type="submit">
-	</div>
-	</form></td>
+                    <td colspan="2"><div href="#" class="clearfix"><div class="pullLeft">Hello</div></div></td>
                   </tr>
                 
                 </table>
                 <div class="kss-markup">
-                  <pre class="prettyprint lang-html">&lt;form&gt;
-	&lt;div class=&quot;formfield&quot;&gt;
-		&lt;label for=&quot;demoinput&quot;&gt;Standard label styling&lt;/label&gt;
-		&lt;input type=&quot;text&quot; placeholder=&quot;Demo placeholder...&quot;/&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;formfield&quot;&gt;
-		&lt;label for=&quot;demoTextarea&quot;&gt;Standard label styling&lt;/label&gt;
-		&lt;textarea placeholder=&quot;Demo placeholder...&quot; id=&quot;demoTextarea&quot;&gt;&lt;/textarea&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;formfield&quot;&gt;
-		&lt;input type=&quot;submit&quot;&gt;
-	&lt;/div&gt;
-	&lt;/form&gt;</pre>
+                  <pre class="prettyprint lang-html">&lt;div href=&quot;#&quot; class=&quot;clearfix&quot;&gt;&lt;div class=&quot;pullLeft&quot;&gt;Hello&lt;/div&gt;&lt;/div&gt;</pre>
+                </div>
+            
+          
+            </section>
+          
+        
+          
+           <section class="kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">9.1.0</span> - UTILS BASE</h1>
+          
+            
+                <div class="kss-box"><p>Utility classes that help with tiny comon cases
+
+</p>
+<p>DEPENDENCIES </br>
+- none
+
+</p>
+<p>EXTENDS </br>
+- none
+
+</p>
+<p>VARIABLES </br>
+none</p>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div class="pullLeft {$modifiers}">Hello</div></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">&lt;div class=&quot;pullLeft {$modifiers}&quot;&gt;Hello&lt;/div&gt;</pre>
+                </div>
+            
+          
+            </section>
+          
+        
+          
+           <section class="kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">9.1.1</span> - </h1>
+          
+            
+                <div class="kss-box"></div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div class="pullRight {$modifiers}">Hello</div></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">&lt;div class=&quot;pullRight {$modifiers}&quot;&gt;Hello&lt;/div&gt;</pre>
                 </div>
             
           

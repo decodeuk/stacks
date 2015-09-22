@@ -1,7 +1,7 @@
 //
 // TODO: 
-//		- best way to standardise lineheights (unitless vs units)
-//		- multiple heading font weights?
+//	- best way to standardise lineheights (unitless vs units)
+//	- multiple heading font weights?
 //
 
 
@@ -57,7 +57,7 @@
 // .typeHeading-4	- H4 heading style
 // .typeHeading-5	- H5 heading style
 //
-// Styleguide 7.1.0.
+// Styleguide 13.1.0.
 
 
 //
@@ -372,7 +372,7 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 * H2 Notes
 	 */
 
-	.typeHeading-size--2 {
+	.typeHeading-2 {
 		@extend %typeHeading-size--2;
 	}
 
@@ -381,7 +381,7 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 * H3 Notes
 	 */
 
-	.typeHeading-size--3 {
+	.typeHeading-3 {
 		@extend %typeHeading-size--3;
 	}
 
@@ -389,7 +389,7 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 * H4 Notes
 	 */
 
-	.typeHeading-size--4 {
+	.typeHeading-4 {
 		@extend %typeHeading-size--4;
 	}
 
@@ -398,7 +398,7 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 * H5 Notes
 	 */
 
-	.typeHeading-size--5 {
+	.typeHeading-5 {
 		@extend %typeHeading-size--5;
 	}
 

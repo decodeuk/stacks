@@ -60,24 +60,13 @@ $use-base-lists--inline: true !default;
 $use-base-normalize: false !default;
 $use-base-reset: true !default;
 
-/*
- * Modular sizing setup
- * The extends can be used in conjunction witht he grid to build a semantic
- * grid
- */
 $use-base-sizing: true !default;
 $use-base-offset: true !default;
 
-/*
- * Modular typography setup
- * $use-base-typography controls turning all typography styles on and off
- * If $use-base-typography is set to false you can control the modular type
- * settings independatly
- */
 $use-base-typography: true !default;
-$use-base-typography--headings: true !default;
-$use-base-typography--copy: true !default;
 $use-base-typographyUtils: true !default;
+
+$use-base-utils: true !default;
 
 
 
@@ -85,8 +74,15 @@ $use-base-typographyUtils: true !default;
 // Element Setup
 // --------------------------------------------------------------------------
 
+$use-element-base: true !default;
+$use-element-blockquote: true !default;
+$use-element-button: true !default;
+$use-element-forms: true !default;
+$use-element-typography--headings: true !default;
 $use-element-links: true !default;
 $use-element-lists: true !default;
+$use-element-typography--copy: true !default;
+$use-element-type: true !default;
 
 
 
@@ -94,11 +90,6 @@ $use-element-lists: true !default;
 // Component Setup
 // --------------------------------------------------------------------------
 
-/*
- * Modular grid setup
- * You can turn off the grid and use the grid and sizing extends to build a 
- * semantic grid
- */
 $use-component-grid: true !default;
 $use-component-gridCover: true !default;
 $use-component-gridUtils: true !default;

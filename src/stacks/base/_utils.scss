@@ -1,6 +1,7 @@
-// LAYERS COMPONENT
 //
-// Object description
+// UTILS BASE
+//
+// Utility classes that help with tiny comon cases
 //
 // DEPENDENCIES </br>
 // - none
@@ -9,26 +10,12 @@
 // - none
 //
 // VARIABLES </br>
-// - none
-//
-// .object-classes	- class description
+// none
 //
 // Markup:
-// <div class="Layers"></div>
+// <div class="pullLeft {$modifiers}">Hello</div>
 //
-// Styleguide 25.0.0.
-
-/*
- * TODO:
- */
-
-
-
-// --------------------------------------------------------------------------
-// VARIABLES
-// --------------------------------------------------------------------------
-
-
+// Styleguide 9.1.0.
 
 // --------------------------------------------------------------------------
 // FUNCTIONS
@@ -46,39 +33,36 @@
 // EXTENDABLES
 // --------------------------------------------------------------------------
 
-%layer-fill {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
-@if $use-component-layers == true {
-	.Layers {
-		position: relative;
+@if $use-base-utils == true {
+	
+	/**
+	 * Float left styling
+	 * 
+	 */
+
+	.pullLeft {
+		float: left;
 	}
 
-	.Layer-base {
-		@extend %layer-fill;
 
-		z-index: 1;
+	/**
+	 * Float right styling
+	 * 
+	 */
+
+	// Markup:
+	// <div class="pullRight {$modifiers}">Hello</div>
+	//
+	// Styleguide 9.1.1.
+
+	.pullRight {
+		float: right;
 	}
 
-	.Layer {
-		position: relative;
-		z-index: 2;
-
-		+ {
-			.Layer {
-				z-index: 3;
-			}
-		}
-	}
 }

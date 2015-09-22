@@ -1,21 +1,24 @@
-// --------------------------------------------------------------------------
-// HEADINGS ELEMENT
-// --------------------------------------------------------------------------
-
-/**
- * Intro text
- *
- *
- * DEPENDENCIES
- * - base/type
- *
- *
- * USED WITH
- * -
- * 
- */
-
- // Styleguide 19.1.0.
+// BUTTON ELEMENTS
+//
+// Some styling for base html elements.
+// Elements include html, element and a * catch all box-sizing.
+//
+// DEPENDENCIES </br>
+// - none
+//
+// EXTENDS </br>
+// - none
+//
+// VARIABLES </br>
+// - 
+//
+// .button--primary				- Primary button modifier used to catch the users eye
+// :hover :focus				- For consistancy the :hover and :focus styling is the same for the default an button mods
+//
+// Markup:
+// <button href="#" class="{$modifiers}">Hello</button>
+//
+// Styleguide 17.0.0.
 
 
 
@@ -47,31 +50,8 @@
 // STYLING
 // --------------------------------------------------------------------------
 
-@if $use-base-typography == true or $use-element-typography--headings == true {
-
-	h1 {
-		@extend %typeHeading;
-		@extend %typeHeading-size--1;
+@if $use-element-button == true {
+	button {
+		@extend %button;
 	}
-
-	h2 {
-		@extend %typeHeading;
-		@extend %typeHeading-size--2;
-	}
-
-	h3 {
-		@extend %typeHeading;
-		@extend %typeHeading-size--3;
-	}
-
-	h4 {
-		@extend %typeHeading;
-		@extend %typeHeading-size--4;
-	}
-
-	h5 {
-		@extend %typeHeading;
-		@extend %typeHeading-size--5;
-	}
-
 }

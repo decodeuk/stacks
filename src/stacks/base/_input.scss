@@ -13,18 +13,18 @@
 // - 
 //
 // .input						- input styling
-// :hover :focus				- For consistancy the :hover and :focus styling is the same
 //
 // Markup:
-// <button href="#" class="{$modifiers}">Default button styling</button>
-// <input type="text" placeholder="Default input styling" />
+// <button href="#" class="input">Base button styling</button>
+// <input type="text" class="input" placeholder="Base input styling" />
 //
-// Styleguide 201.1.0.
+// Styleguide 7.1.0.
 
 
+// VARIABLES START ->
 
 // --------------------------------------------------------------------------
-// VARIABLES
+// INPUT VARIABLES
 // --------------------------------------------------------------------------
 
 $input-padding: ($Leading * 1.25) ($Leading * 2.5) !default;
@@ -35,6 +35,11 @@ $input-border: 1px solid $Colour-primary !default;
 $input-outline: none !default;
 
 $input-backgroundColour: transparent !default;
+
+
+// VARIABLES END <-
+
+
 
 
 // --------------------------------------------------------------------------

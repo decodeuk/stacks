@@ -37,7 +37,7 @@
 //	</div>
 //	</form>
 //
-// Styleguide 9.0.0.
+// Styleguide 18.0.0.
 
 /*
  * TODO: Make button and input styling based on same styles so that when used together they work nicely
@@ -129,68 +129,71 @@ $inputFormPlaceholder-colour: $Colour-inactive !default;
 // STYLING
 // --------------------------------------------------------------------------
 
-/**
- * Label Notes
- * Very simple base styles which can be built apon with formfield classes
- */
+@if $use-element-forms == true {
 
-label {
-	@extend %typeLabel;
-}
+	/**
+	 * Label Notes
+	 * Very simple base styles which can be built apon with formfield classes
+	 */
 
-
-
-/**
- * input Notes
- * 
- */
-
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
-textarea,
-select {
-	@extend %input-base;
-	@extend %input-placeholder;
-
-	// @include conditional( $input-padding ) { padding: $input-padding };
-}
+	label {
+		@extend %typeLabel;
+	}
 
 
 
-/**
- * input Submit Notes
- * 
- */
+	/**
+	 * input Notes
+	 * 
+	 */
 
-input[type="submit"] {
-	@extend %button;
-	// @extend %button--primary;
-}
+	input[type="email"],
+	input[type="number"],
+	input[type="search"],
+	input[type="text"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="password"],
+	textarea,
+	select {
+		@extend %input-base;
+		@extend %input-placeholder;
 
-
-
-/**
- * Select Notes
- * 
- */
-
-select {
-	@extend %input-base;
-}
-
+		// @include conditional( $input-padding ) { padding: $input-padding };
+	}
 
 
-/**
- * Textarea Notes
- * 
- */
 
-textarea {
-	// @extend %input-base;
-	height: $multilineInputForm-height;
+	/**
+	 * input Submit Notes
+	 * 
+	 */
+
+	input[type="submit"] {
+		@extend %button;
+		// @extend %button--primary;
+	}
+
+
+
+	/**
+	 * Select Notes
+	 * 
+	 */
+
+	select {
+		@extend %input-base;
+	}
+
+
+
+	/**
+	 * Textarea Notes
+	 * 
+	 */
+
+	textarea {
+		// @extend %input-base;
+		height: $multilineInputForm-height;
+	}
 }

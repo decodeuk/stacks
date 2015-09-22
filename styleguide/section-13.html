@@ -93,7 +93,7 @@
         
         
           
-            <h1 class="kss-title"><span class="kss-ref">1.0</span> - Stacks Setup</h1>
+            <h1 class="kss-title"><span class="kss-ref">13.0</span> - Base Type</h1>
           
             
                 
@@ -102,55 +102,116 @@
         
           
            <section class="kss-depth-3">
-            <h1 class="kss-title"><span class="kss-ref">1.1.0</span> - STACKS SETUP</h1>
+            <h1 class="kss-title"><span class="kss-ref">13.1.0</span> - TYPE HEADING BASE</h1>
           
             
+                <div class="kss-box"><p>Typography base classes which can be used and extended to bring reusable type styling.
+typeHeading styles that is used to add constant styling to typeHeadings.
+
+</p>
+<p>DEPENDENCIES </br>
+- none
+
+</p>
+<p>EXTENDS </br>
+- %typeHeading </br>
+- %typeHeading-1 </br>
+- %typeHeading-2 </br>
+- %typeHeading-3 </br>
+- %typeHeading-4 </br>
+- %typeHeading-5
+
+</p>
+<p>VARIABLES </br>
+- $c-typeHeading-fontFamily: false !default; </br>
+- $c-typeHeading-fontWeight: $FontWeight-bold !default; </br>
+- $c-typeHeading-margin: $Margin-heading !default;
+
+</p>
+<ul>
+<li>$c-typeHeading1-fontSize: false !default; //set in normalise </br></li>
+<li>$c-typeHeading1-fontWeight: false !default; </br></li>
+<li><p>$c-typeHeading1-lineHeight: $LineHeight-h1 !default;</p>
+</li>
+<li><p>$c-typeHeading2-fontSize: $FontSize-h2 !default; </br></p>
+</li>
+<li>$c-typeHeading2-fontWeight: false !default; </br></li>
+<li><p>$c-typeHeading2-lineHeight: $LineHeight-h2 !default;</p>
+</li>
+<li><p>$c-typeHeading3-fontSize: $FontSize-h3 !default; </br></p>
+</li>
+<li>$typeHeading3-fontWeight: false !default; </br></li>
+<li><p>$typeHeading3-lineHeight: $LineHeight-h3 !default;</p>
+</li>
+<li><p>$c-typeHeading5-fontSize: $FontSize-h4 !default; </br></p>
+</li>
+<li>$c-typeHeading4-fontWeight: false !default; </br></li>
+<li><p>$c-typeHeading4-lineHeight: $LineHeight-h4 !default;</p>
+</li>
+<li><p>$c-typeHeading5-fontSize: $FontSize-h5 !default; </br></p>
+</li>
+<li>$c-typeHeading5-fontWeight: false !default; </br></li>
+<li>$c-typeHeading5-lineHeight: $LineHeight-h5 !default;</li>
+</ul>
+</div>
+                <table class="kss-mod-list">
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>Default styling</p></td>
+                    <td class="kss-mod-name"></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div class="typeHeading {$modifiers}">Heading styling</div></td>
+                  </tr>
                 
-                  <p>The basic stacks setup. Stack styling can be conditional loaded or removed
-to create a slick base. If a module is set to false extends can still be
-used and only classes and elements will be removed.
-
-</p>
-<p>CONDITIONAL STYLE LOADING </br>
-
-</p>
-<p>Base Setup </br>
-- $use-base-aspect: true !default; </br>
-- $use-base-buttons: true !default; </br>
-- $use-base-formfields: true !default; </br>
-- $use-base-input: false !default; </br>
-- $use-base-lists: true !default; </br>
-- $use-base-lists--noBullet: true !default; </br>
-- $use-base-lists--inline: true !default; </br>
-- $use-base-normalize: false !default; </br>
-- $use-base-reset: true !default; </br>
-- $use-base-sizing: true !default; </br>
-- $use-base-offset: true !default; </br>
-- $use-base-typography: true !default; </br>
-- $use-base-typography--headings: true !default; </br>
-- $use-base-typography--copy: true !default; </br>
-- $use-base-typographyUtils: true !default; </br>
-
-</p>
-<p>Element Setup </br>
-- $use-element-links: true !default; </br>
-- $use-element-lists: true !default; </br>
-
-</p>
-<p>Component Setup </br>
-- $use-component-grid: true !default; </br>
-- $use-component-gridCover: true !default; </br>
-- $use-component-gridUtils: true !default; </br>
-- $show-grid: false !default; </br>
-- $use-component-layers: true !default; </br>
-- $use-component-mediaElement: true !default; </br>
-- $use-component-nav: true !default; </br>
-- $use-component-navList: true !default; </br>
-- $use-component-navList--inline: true !default; </br>
-- $use-component-navBar: true !default; </br>
-- $use-component-navTabs: true !default; </br></p>
-
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>H1 heading style</p>
+</td>
+                    <td class="kss-mod-name"><p>.typeHeading-1</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div class="typeHeading typeHeading-1">Heading styling</div></td>
+                  </tr>
                 
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>H2 heading style</p>
+</td>
+                    <td class="kss-mod-name"><p>.typeHeading-2</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div class="typeHeading typeHeading-2">Heading styling</div></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>H3 heading style</p>
+</td>
+                    <td class="kss-mod-name"><p>.typeHeading-3</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div class="typeHeading typeHeading-3">Heading styling</div></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>H4 heading style</p>
+</td>
+                    <td class="kss-mod-name"><p>.typeHeading-4</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div class="typeHeading typeHeading-4">Heading styling</div></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>H5 heading style</p>
+</td>
+                    <td class="kss-mod-name"><p>.typeHeading-5</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><div class="typeHeading typeHeading-5">Heading styling</div></td>
+                  </tr>
+                
+                </table>
+                <div class="kss-markup">
+                  <pre class="prettyprint lang-html">&lt;div class=&quot;typeHeading {$modifiers}&quot;&gt;Heading styling&lt;/div&gt;</pre>
+                </div>
             
           
             </section>

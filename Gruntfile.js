@@ -140,6 +140,20 @@ module.exports = function(grunt) {
 			}
 		},
 
+		'copy-part-of-file': {
+			simple_replace_scripts: {
+				options: {
+					sourceFileStartPattern: '// VARIABLES START ->',
+					sourceFileEndPattern: '// VARIABLES END <-',
+					destinationFileStartPattern: '// ------------------------------------------------------------------------->',
+					destinationFileEndPattern: '// <------------------------------------------------------------------------'
+				},
+				files: {
+					'src/stacks/_setupStacks.scss': ['<%= project.scssDir %>/base/_buttons.scss','<%= project.scssDir %>/base/_clearfix.scss','<%= project.scssDir %>/base/_formfields.scss','<%= project.scssDir %>/base/_input.scss','<%= project.scssDir %>/base/_lists.scss','<%= project.scssDir %>/base/_sizing.scss','<%= project.scssDir %>/base/_type.scss',]
+				}
+			}
+		},
+
 
 		/**
 			* Opens the web server in the browser
@@ -212,7 +226,8 @@ module.exports = function(grunt) {
 		'clean',
 		'kss',
 		'sass',
-		'autoprefixer'
+		'autoprefixer',
+		// 'copy-part-of-file'
 	]);
 
 };

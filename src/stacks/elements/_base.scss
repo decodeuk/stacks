@@ -1,7 +1,7 @@
 // BASE ELEMENTS
 //
 // Some styling for base html elements.
-// Elements include html, element and a * catch all box-sizing.
+// Elements include html, element and a conditional * catch all box-sizing.
 //
 // DEPENDENCIES </br>
 // - none
@@ -20,7 +20,7 @@
 // - $body-fontFamily: $FontFamily-copy !default; </br>
 // - $body-fontColour: $Colour-base !default;
 //
-// Styleguide 8.0.0.
+// Styleguide 15.1.0.
 
 /*
  * TODO:
@@ -67,23 +67,25 @@ $c-body-backgroundColour: false !default;
 // STYLING
 // --------------------------------------------------------------------------
 
-* {
-	@include conditional( $c-global-boxSizing ) { box-sizing: $c-global-boxSizing };
-}
+@if $use-element-base == true {
+	* {
+		@include conditional( $c-global-boxSizing ) { box-sizing: $c-global-boxSizing };
+	}
 
-html {
-	font-size: $html-fontSize;
-}
+	html {
+		font-size: $html-fontSize;
+	}
 
-body {
-	@include conditional( $c-body-backgroundColour ) { background-color: $c-body-backgroundColour };
+	body {
+		@include conditional( $c-body-backgroundColour ) { background-color: $c-body-backgroundColour };
 
-	font-size: convert-to-em($body-fontSize, $body-fontSize);
-	line-height: $body-lineHeight;
-	font-weight: $body-fontWeight;
-	font-family: $body-fontFamily;
-	color: $body-fontColour;
+		font-size: convert-to-em($body-fontSize, $body-fontSize);
+		line-height: $body-lineHeight;
+		font-weight: $body-fontWeight;
+		font-family: $body-fontFamily;
+		color: $body-fontColour;
 
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+	}
 }

@@ -1,20 +1,4 @@
 @charset "UTF-8";
-/*
- * Modular sizing setup
- * The extends can be used in conjunction witht he grid to build a semantic
- * grid
- */
-/*
- * Modular typography setup
- * $use-base-typography controls turning all typography styles on and off
- * If $use-base-typography is set to false you can control the modular type
- * settings independatly
- */
-/*
- * Modular grid setup
- * You can turn off the grid and use the grid and sizing extends to build a 
- * semantic grid
- */
 /**
  * Using normalize.css we have added in some variables so that the base
  * styling can be customised.
@@ -98,7 +82,7 @@ table {
  * TODO: Create a generator mixin which can be used to create custom aspects
  */
 .aspect {
-  wdth: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -107,7 +91,7 @@ table {
   height: 100%;
 }
 
-.button, input[type="submit"], .Nav-itemToggleLabel, input[type="email"],
+.button, button, input[type="submit"], .Nav-itemToggleLabel, input[type="email"],
 input[type="number"],
 input[type="search"],
 input[type="text"],
@@ -126,7 +110,7 @@ select {
   border-radius: 4px;
 }
 
-.button, input[type="submit"], .Nav-itemToggleLabel {
+.button, button, input[type="submit"], .Nav-itemToggleLabel {
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -136,7 +120,7 @@ select {
   font-weight: 700;
   color: #549CEF;
 }
-.button:hover, input[type="submit"]:hover, .Nav-itemToggleLabel:hover, .button:focus, input[type="submit"]:focus, .Nav-itemToggleLabel:focus {
+.button:hover, button:hover, input[type="submit"]:hover, .Nav-itemToggleLabel:hover, .button:focus, button:focus, input[type="submit"]:focus, .Nav-itemToggleLabel:focus {
   color: #444;
 }
 
@@ -282,25 +266,25 @@ select {
   line-height: 1.25;
 }
 
-.typeHeading-size--2, h2 {
+.typeHeading-2, h2 {
   font-size: 36px;
   font-size: 2.57143rem;
   line-height: 1.3;
 }
 
-.typeHeading-size--3, h3 {
+.typeHeading-3, h3 {
   font-size: 24px;
   font-size: 1.71429rem;
   line-height: 1.4;
 }
 
-.typeHeading-size--4, h4 {
+.typeHeading-4, h4 {
   font-size: 20px;
   font-size: 1.42857rem;
   line-height: 1.5;
 }
 
-.typeHeading-size--5, h5 {
+.typeHeading-5, h5 {
   font-size: 20px;
   font-size: 1.42857rem;
   line-height: 1.5;
@@ -378,6 +362,22 @@ select {
 /**
  * Label Notes
  */
+/**
+ * Float left styling
+ * 
+ */
+.pullLeft {
+  float: left;
+}
+
+/**
+ * Float right styling
+ * 
+ */
+.pullRight {
+  float: right;
+}
+
 /*
  * TODO:
  */
@@ -397,6 +397,24 @@ body {
   color: #444;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/*
+ * TODO:
+ */
+blockquote {
+  font-size: 18px;
+  font-size: 1.28571rem;
+  margin: 0;
+  padding: 12px 18px;
+  font-style: italic;
+  position: relative;
+}
+blockquote footer {
+  font-size: 11px;
+  font-size: 0.78571rem;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /*
@@ -573,6 +591,32 @@ li {
  * -
  * 
  */
+/**
+ * Text element styling
+ *
+ *
+ * DEPENDENCIES
+ * - 
+ *
+ *
+ * USED WITH
+ * -
+ * 
+ */
+b,
+strong {
+  font-weight: 700;
+}
+
+i,
+cite,
+em,
+var,
+address,
+dfn {
+  font-style: italic;
+}
+
 /**
  * The grid is used for layout and structure. It should ideally be used to
  * wrap elements rather than alongside elements/components.
