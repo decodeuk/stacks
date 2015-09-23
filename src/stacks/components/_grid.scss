@@ -216,7 +216,7 @@ $Column-gutter: ($Leading * 4) !default;
 
 
 @if $use-component-gridUtils == true {
-	.Grid-center {
+	.Grid--center {
 		.Grid-column {
 			float: none;
 			margin-left: auto;
