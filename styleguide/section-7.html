@@ -125,8 +125,9 @@
                     <td class="kss-mod-name"></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><button href="#" class="input">Base button styling</button>
-<input type="text" class="input" placeholder="Base input styling" /></td>
+                    <td colspan="2"><textarea class="input input--multiline" placeholder="Base input styling"></textarea>
+<button href="#" class="input">Base button styling</button>
+<input type="text" class="input {$modifiers}" placeholder="Base input styling" /></td>
                   </tr>
                 
                   <tr class="kss-mod-desc-group">
@@ -135,14 +136,27 @@
                     <td class="kss-mod-name"><p>.input</p></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><button href="#" class="input">Base button styling</button>
-<input type="text" class="input" placeholder="Base input styling" /></td>
+                    <td colspan="2"><textarea class="input input--multiline" placeholder="Base input styling"></textarea>
+<button href="#" class="input">Base button styling</button>
+<input type="text" class="input input" placeholder="Base input styling" /></td>
+                  </tr>
+                
+                  <tr class="kss-mod-desc-group">
+                    <td class="kss-mod-desc"><p>multi line styling</p>
+</td>
+                    <td class="kss-mod-name"><p>.input--multiline</p></td>
+                  </tr>
+                  <tr class="kss-mod-example">
+                    <td colspan="2"><textarea class="input input--multiline" placeholder="Base input styling"></textarea>
+<button href="#" class="input">Base button styling</button>
+<input type="text" class="input input--multiline" placeholder="Base input styling" /></td>
                   </tr>
                 
                 </table>
                 <div class="kss-markup">
-                  <pre class="prettyprint lang-html">&lt;button href=&quot;#&quot; class=&quot;input&quot;&gt;Base button styling&lt;/button&gt;
-&lt;input type=&quot;text&quot; class=&quot;input&quot; placeholder=&quot;Base input styling&quot; /&gt;</pre>
+                  <pre class="prettyprint lang-html">&lt;textarea class=&quot;input input--multiline&quot; placeholder=&quot;Base input styling&quot;&gt;&lt;/textarea&gt;
+&lt;button href=&quot;#&quot; class=&quot;input&quot;&gt;Base button styling&lt;/button&gt;
+&lt;input type=&quot;text&quot; class=&quot;input {$modifiers}&quot; placeholder=&quot;Base input styling&quot; /&gt;</pre>
                 </div>
             
           

@@ -49,9 +49,7 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
-$inputForm-height: $Leading * 3 !default;  // TODO: need to fix to match up to base input styling
-$multilineInputForm-height: $inputForm-height * 4 !default;
-
+// $inputForm-height: $Leading * 3 !default;  // TODO: need to fix to match up to base input styling
 $c-inputForm-backgroundColour: $Colour-white !default;
 $inputForm-borderColour: $Colour-border !default;
 $c-inputForm-borderColour--focus: $Colour-base !default;
@@ -193,7 +191,8 @@ $inputFormPlaceholder-colour: $Colour-inactive !default;
 	 */
 
 	textarea {
-		// @extend %input-base;
-		height: $multilineInputForm-height;
+		// height: $multilineInputForm-multiplier;
+		
+		@extend %input--multiline;
 	}
 }

@@ -13,10 +13,12 @@
 // - 
 //
 // .input						- input styling
+// .input--multiline			- multi line styling
 //
 // Markup:
+// <textarea class="input input--multiline" placeholder="Base input styling"></textarea>
 // <button href="#" class="input">Base button styling</button>
-// <input type="text" class="input" placeholder="Base input styling" />
+// <input type="text" class="input {$modifiers}" placeholder="Base input styling" />
 //
 // Styleguide 7.1.0.
 
@@ -27,14 +29,18 @@
 // INPUT VARIABLES
 // --------------------------------------------------------------------------
 
-$input-padding: ($Leading * 1.25) ($Leading * 2.5) !default;
+$input-paddingVertical: $Leading * 1.25 !default;
+$input-paddingHorizontal: $Leading * 2.5 !default;
 $c-input-fontSize: $FontSize-small !default;
-$c-input-lineHeight: 17 / strip-unit($FontSize-small) !default;
+$c-input-lineHeight: 17 / strip-unit($c-input-fontSize) !default;
 $c-input-borderRadius: 4px !default;
 $input-border: 1px solid $Colour-primary !default;
+$input-align: top !default;
 $input-outline: none !default;
 
 $input-backgroundColour: transparent !default;
+
+$inputMulti-multiplier: 4 !default;
 
 
 // VARIABLES END <-
@@ -59,15 +65,20 @@ $input-backgroundColour: transparent !default;
 // --------------------------------------------------------------------------
 
 %input {
-	padding: $input-padding;
+	padding: $input-paddingVertical $input-paddingHorizontal;
 	@include font-size($c-input-fontSize);
 	line-height: $c-input-lineHeight;
 	outline: $input-outline;
+	vertical-align: $input-align;
 	@include conditional( $c-global-boxSizing, false ) { box-sizing: border-box; }
 
 	background-color: $input-backgroundColour;
 	border: $input-border;
 	@include conditional( $c-input-borderRadius ) { border-radius: $c-input-borderRadius; }
+}
+
+%input--multiline {
+	height: (($c-input-lineHeight * $c-input-fontSize) * $inputMulti-multiplier) + ($input-paddingVertical * 2);
 }
 
 
@@ -80,5 +91,10 @@ $input-backgroundColour: transparent !default;
 
 	.input {
 	  @extend %input;
+	}
+
+
+	.input--multiline {
+	  @extend %input--multiline;
 	}
 }

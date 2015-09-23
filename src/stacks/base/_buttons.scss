@@ -44,7 +44,7 @@
 // BUTTON VARIABLES
 // --------------------------------------------------------------------------
 
-$button-paddingSides: ($Leading * 3.75) !default;
+$button-paddingSides: $input-paddingHorizontal * 1.5 !default;
 $c-button-textColour: $Colour-primary !default;
 $c-button-textColour--hover: $Colour-base !default;
 $c-button-fontSize: $FontSize-small !default;

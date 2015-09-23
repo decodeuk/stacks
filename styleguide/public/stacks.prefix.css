@@ -196,9 +196,14 @@ select {
   font-size: 0.78571rem;
   line-height: 1.54545;
   outline: none;
+  vertical-align: top;
   background-color: transparent;
   border: 1px solid #549CEF;
   border-radius: 4px;
+}
+
+textarea {
+  height: 83px;
 }
 
 .button,
@@ -545,7 +550,7 @@ label {
 }
 
 html {
-  font-size: 100%;
+  font-size: 87.5%;
 }
 
 body {
@@ -694,10 +699,6 @@ select :-ms-input-placeholder {
  * Textarea Notes
  * 
  */
-
-textarea {
-  height: 72px;
-}
 
 /**
  * Intro text
@@ -896,7 +897,7 @@ dfn {
   vertical-align: top;
 }
 
-.Grid-center .Grid-column {
+.Grid--center .Grid-column {
   float: none;
   margin-left: auto;
   margin-right: auto;

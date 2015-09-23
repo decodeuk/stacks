@@ -73,7 +73,7 @@ $c-body-backgroundColour: false !default;
 	}
 
 	html {
-		font-size: $body-fontSize / 16;
+		font-size: percentage(strip-unit($body-fontSize) / 16);
 	}
 
 	body {
