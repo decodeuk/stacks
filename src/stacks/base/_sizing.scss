@@ -195,3 +195,111 @@
 		@extend %offset-threeQuarters;
 	}
 }
+
+
+
+@if $use-base-sizingResponsive == true {
+	@include conditional( $c-Break-alpha ) {
+		@include respond-to($c-Break-alpha) {
+			
+			.oneWhole--#{$Break-alpha-namespace} {
+				width: percentage(1 / 1);
+			}
+
+			.oneHalf--#{$Break-alpha-namespace} {
+				width: percentage(1 / 2);
+			}
+
+			.oneThird--#{$Break-alpha-namespace} {
+				width: percentage(1 / 3);
+			}
+
+			.twoThirds--#{$Break-alpha-namespace} {
+				width: percentage(2 / 3);
+			}
+
+			.oneQuarter--#{$Break-alpha-namespace} {
+				width: percentage(1 / 4);
+			}
+
+			.twoQuarters--#{$Break-alpha-namespace} {
+				width: percentage(2 / 4);
+			}
+
+			.threeQuarters--#{$Break-alpha-namespace} {
+				width: percentage(3 / 4);
+			}
+			
+		}
+	};
+
+
+	@include conditional( $c-Break-beta ) {
+		@include respond-to($c-Break-beta) {
+			
+			.oneWhole--#{$Break-beta-namespace} {
+				width: percentage(1 / 1);
+			}
+
+			.oneHalf--#{$Break-beta-namespace} {
+				width: percentage(1 / 2);
+			}
+
+			.oneThird--#{$Break-beta-namespace} {
+				width: percentage(1 / 3);
+			}
+
+			.twoThirds--#{$Break-beta-namespace} {
+				width: percentage(2 / 3);
+			}
+
+			.oneQuarter--#{$Break-beta-namespace} {
+				width: percentage(1 / 4);
+			}
+
+			.twoQuarters--#{$Break-beta-namespace} {
+				width: percentage(2 / 4);
+			}
+
+			.threeQuarters--#{$Break-beta-namespace} {
+				width: percentage(3 / 4);
+			}
+			
+		}
+	};
+
+
+	@include conditional( $c-Break-gamma ) {
+		@include respond-to($c-Break-gamma) {
+			
+			.oneWhole--#{$Break-gamma-namespace} {
+				width: percentage(1 / 1);
+			}
+
+			.oneHalf--#{$Break-gamma-namespace} {
+				width: percentage(1 / 2);
+			}
+
+			.oneThird--#{$Break-gamma-namespace} {
+				width: percentage(1 / 3);
+			}
+
+			.twoThirds--#{$Break-gamma-namespace} {
+				width: percentage(2 / 3);
+			}
+
+			.oneQuarter--#{$Break-gamma-namespace} {
+				width: percentage(1 / 4);
+			}
+
+			.twoQuarters--#{$Break-gamma-namespace} {
+				width: percentage(2 / 4);
+			}
+
+			.threeQuarters--#{$Break-gamma-namespace} {
+				width: percentage(3 / 4);
+			}
+			
+		}
+	};
+}

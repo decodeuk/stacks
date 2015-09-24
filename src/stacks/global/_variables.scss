@@ -56,6 +56,13 @@
 
 
 // --------------------------------------------------------------------------
+// Global Variables
+// --------------------------------------------------------------------------
+
+$c-global-boxSizing: border-box !default;
+
+
+// --------------------------------------------------------------------------
 // Colour Variables
 // --------------------------------------------------------------------------
 
@@ -72,6 +79,7 @@ $Colour-primary--darken: #4784CB !default;
 $Colour-border: #ddd !default;
 
 $Colour-inactive: #999 !default;
+$Colour-error: #EA4E35 !default;
 
 
 
@@ -119,3 +127,16 @@ $Margin-copy: 0.67em 0 !default;
 
 $Leading: 6px !default;
 // $Leading: 0.5em;  // TODO: Decide if this should use a different unit
+
+
+// --------------------------------------------------------------------------
+// Breakpoint Variables
+// --------------------------------------------------------------------------
+
+$c-Break-alpha: 720px !default;
+$c-Break-beta: false !default;
+$c-Break-gamma: false !default;
+
+$Break-alpha-namespace: alpha !default;
+$Break-beta-namespace: beta !default;
+$Break-gamma-namespace: gamma !default;

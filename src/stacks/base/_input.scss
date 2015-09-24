@@ -32,7 +32,7 @@
 $input-paddingVertical: $Leading * 1.25 !default;
 $input-paddingHorizontal: $Leading * 2.5 !default;
 $c-input-fontSize: $FontSize-small !default;
-$c-input-lineHeight: 17 / strip-unit($c-input-fontSize) !default;
+$c-input-lineHeight: ($c-input-fontSize / ($c-input-fontSize * 0 + 1)) / 17 !default;
 $c-input-borderRadius: 4px !default;
 $input-border: 1px solid $Colour-primary !default;
 $input-align: top !default;

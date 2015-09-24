@@ -61,6 +61,7 @@ $use-base-normalize: false !default;
 $use-base-reset: true !default;
 
 $use-base-sizing: true !default;
+$use-base-sizingResponsive: true !default;
 $use-base-offset: true !default;
 
 $use-base-typography: true !default;
@@ -103,14 +104,3 @@ $use-component-navList: true !default;
 $use-component-navList--inline: true !default;
 $use-component-navBar: true !default;
 $use-component-navTabs: true !default;
-
-
-
-
-
-
-// --------------------------------------------------------------------------
-// VARIABLES
-// --------------------------------------------------------------------------
-
-$c-global-boxSizing: border-box !default;
