@@ -39,6 +39,7 @@ $c-nav-textTransform: uppercase !default;
 
 $c-nav-textDecoration: none !default;
 $c-nav-textDecoration--hover: underline !default;
+$c-nav-textColour: false !default;
 $c-nav-textColour--hover: false !default;
 
 $c-navList-flushSide: true !default;
@@ -63,6 +64,7 @@ $navBar-brandImageRepeat: no-repeat !default;
 $navBar-brandImagePosition: left center !default;
 $c-navBar-brandImageWidth: false !default;
 $c-navBar-brandImageHeight: false !default;
+$c-Nav-itemBrandMarginRight: $navLink-paddingVertical !default;
 $c-navBar-background: false !default;
 $c-navBar-borderTop: false !default;
 $c-navBar-borderRight: false !default;
@@ -115,6 +117,7 @@ $navBar-breakpoint: 1120px !default;
 		a {
 			display: $navLink-display;
 			padding: $navLink-paddingVertical $navLink-paddingHorizonal;
+			@include conditional( $c-nav-textColour ) { color: $c-nav-textColour };
 
 			@include conditional( $c-nav-textDecoration ) { 
 				text-decoration: $c-nav-textDecoration;
