@@ -26,13 +26,9 @@
 $c-list-ulStyle: circle !default;
 $c-list-olStyle: false !default;
 
-$c-list-paddingLeft: false !default;
+$c-list-paddingLeft: 2rem !default;
 $c-list-marginTop: false !default;
 $c-list-marginBottom: false !default;
-
-$c-listElement-paddingTop: ($Leading / 2) !default;
-$c-listElement-paddingBottom: ($Leading / 2) !default;
-
 
 
 // --------------------------------------------------------------------------
@@ -74,12 +70,6 @@ $c-listElement-paddingBottom: ($Leading / 2) !default;
 		@include conditional( $c-list-marginTop ) { margin-top: $c-list-marginTop; }
 		@include conditional( $c-list-marginBottom ) { margin-bottom: $c-list-marginBottom; }
 		@include conditional( $c-list-paddingLeft ) { padding-left: $c-list-paddingLeft; }
-	}
-	
-
-	li {
-		@include conditional( $c-listElement-paddingTop ) { padding-top: $c-listElement-paddingTop; }
-		@include conditional( $c-listElement-paddingBottom ) { padding-bottom: $c-listElement-paddingBottom; }
 	}
 
 }

@@ -783,9 +783,9 @@ ul {
   list-style: circle;
 }
 
-li {
-  padding-top: 3px;
-  padding-bottom: 3px;
+ol,
+ul {
+  padding-left: 2rem;
 }
 
 /**
@@ -1035,15 +1035,24 @@ dfn {
   text-transform: uppercase;
 }
 
-.Nav a {
+.Nav a,
+.Nav button {
   display: inline-block;
   padding: 12px 15px;
   text-decoration: none;
 }
 
 .Nav a:hover,
-.Nav a:focus {
+.Nav a:focus,
+.Nav button:hover,
+.Nav button:focus {
   text-decoration: underline;
+}
+
+.Nav button,
+.Nav .button {
+  padding: 8px 15px;
+  margin: 4px 15px;
 }
 
 /*
@@ -1081,9 +1090,11 @@ dfn {
   vertical-align: middle;
 }
 
-.Nav-bar a {
+.Nav-bar a,
+.Nav-bar button {
   font-size: 14px;
   font-size: 1rem;
+  line-height: 1.4;
 }
 
 .Nav-bar .Nav-item {
@@ -1101,6 +1112,7 @@ dfn {
 .Nav-itemBrand {
   display: inline-block;
   vertical-align: middle;
+  margin-right: 12px;
 }
 
 .Nav-itemBrand a {

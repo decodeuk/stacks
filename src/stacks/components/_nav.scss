@@ -114,7 +114,8 @@ $navBar-breakpoint: 1120px !default;
 		@include conditional( $c-nav-fontWeight ) { font-weight: $c-nav-fontWeight };
 		@include conditional( $c-nav-textTransform ) { text-transform: $c-nav-textTransform };
 
-		a {
+		a,
+		button {
 			display: $navLink-display;
 			padding: $navLink-paddingVertical $navLink-paddingHorizonal;
 			@include conditional( $c-nav-textColour ) { color: $c-nav-textColour };
@@ -128,6 +129,12 @@ $navBar-breakpoint: 1120px !default;
 					@include conditional( $c-nav-textColour--hover ) { color: $c-nav-textColour--hover };
 				}
 			}
+		}
+
+		button,
+		.button {
+			padding: ($navLink-paddingVertical - 4px) $navLink-paddingHorizonal;
+			margin: 4px $navLink-paddingHorizonal;
 		}
 	}
 
@@ -174,7 +181,6 @@ $navBar-breakpoint: 1120px !default;
 				//<li class="Nav-item Nav-itemBrand"><a href="#">Stacks</a></li>
 				//<li class="Nav-item"><a href="#">Item styling</a></li>
 				//<li class="Nav-item"><a href="">Nav item</a></li>
-				//<li class="Nav-item"><a href="">Another one</a></li>
 				//<li class="Nav-item"><a href="" class="button">Button</a></li>
 				//<li class="Nav-item Nav-itemToggle">
 					//<label for="Nav-itemToggle" class="Nav-itemToggleLabel">Menu</label>
@@ -202,8 +208,10 @@ $navBar-breakpoint: 1120px !default;
 				@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
 			}
 
-			a {
+			a,
+			button {
 				@include conditional( $c-navBar-fontSize ) { @include font-size($c-navBar-fontSize) };
+				line-height: 1.4;
 				@include conditional( $c-navBar-itemColour ) { color: $c-navBar-itemColour };
 			}
 
