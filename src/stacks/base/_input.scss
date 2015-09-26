@@ -30,9 +30,13 @@
 // --------------------------------------------------------------------------
 
 $input-paddingVertical: $Leading * 1.25 !default;
+$input-paddingVertical--small: $Leading * 1 !default;
 $input-paddingHorizontal: $Leading * 2.5 !default;
+$input-paddingHorizontal--small: $Leading * 1.5 !default;
 $c-input-fontSize: $FontSize-small !default;
+$c-input-fontSize--small: $FontSize-tiny !default;
 $c-input-lineHeight: ($c-input-fontSize / ($c-input-fontSize * 0 + 1)) / 17 !default;
+$c-input-lineHeight--small: ($c-input-fontSize--small / ($c-input-fontSize--small * 0 + 1)) / 15 !default;
 $c-input-borderRadius: 4px !default;
 $input-border: 1px solid $Colour-primary !default;
 $input-align: top !default;
@@ -77,6 +81,12 @@ $inputMulti-multiplier: 4 !default;
 	@include conditional( $c-input-borderRadius ) { border-radius: $c-input-borderRadius; }
 }
 
+%input--small {
+	padding: $input-paddingVertical--small $input-paddingHorizontal--small;
+	@include font-size($c-input-fontSize--small);
+	line-height: $c-input-lineHeight--small;
+}
+
 %input--multiline {
 	height: (($c-input-lineHeight * $c-input-fontSize) * $inputMulti-multiplier) + ($input-paddingVertical * 2);
 }
@@ -91,6 +101,10 @@ $inputMulti-multiplier: 4 !default;
 
 	.input {
 	  @extend %input;
+	}
+
+	.input--small {
+		@extend %input--small;
 	}
 
 

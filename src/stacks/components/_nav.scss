@@ -13,20 +13,15 @@
 // VARIABLES </br>
 // -
 //
+// .Nav-list			- Nav List
 // .Nav-listInline		- Inline List
-// .Nav-bar				- Navbar
 //
 // Markup:
 //<nav>
-//		<input type="checkbox" id="Nav-itemToggle" class="Nav-itemToggleCheck">
 //		<ul class="Nav {$modifiers}">
-			//<li class="Nav-item Nav-itemBrand"><a href="#">Stacks</a></li>
 			//<li class="Nav-item"><a href="#">Default nav item styling</a></li>
 			//<li class="Nav-item"><a href="">Nav item</a></li>
 			//<li class="Nav-item"><a href="">Another one</a></li>
-			//<li class="Nav-item Nav-itemToggle">
-				//<label for="Nav-itemToggle" class="Nav-itemToggleLabel">Menu</label>
-			//</li>
 //		</ul>
 //	</nav>
 //
@@ -46,23 +41,26 @@ $c-nav-textDecoration: none !default;
 $c-nav-textDecoration--hover: underline !default;
 $c-nav-textColour--hover: false !default;
 
-$c-navBar-verticalAlign: false !default;
+$c-navList-flushSide: true !default;
 
 $navLink-display: inline-block !default;
-$navLink-paddingTop: $Leading !default;
-$navLink-paddingBottom: $Leading !default;
+$navLink-paddingVertical: ($Leading * 2) !default;
+$navLink-paddingHorizonal: ($Leading * 2.5) !default;
 
 $navBar-padding: ($Leading * 2) ($Leading * 4) !default;
 $c-navBar-maxWidth: false !default;
 $c-navBar-fontSize: $FontSize-b !default;
-$c-navBar-textShadow: false !default;
-$c-navBar-marginRight: $Leading * 5 !default;
+$c-navBar-marginRight: $Leading * 3 !default;
 $c-navBar-verticalAlign: middle !default;
 $c-navBar-brandFontSize: $FontSize-h3 !default;
 $c-navBar-brandColour: $Colour-base !default;
 $c-navBar-itemColour: false !default;
 
-$c-navBar-brandImage: false !default;
+$c-navBar-brandImageSrc: false !default;
+$c-navBar-brandImageSrcBackup: false !default;
+$c-navBar-brandImagePortrait: false !default;
+$navBar-brandImageRepeat: no-repeat !default;
+$navBar-brandImagePosition: left center !default;
 $c-navBar-brandImageWidth: false !default;
 $c-navBar-brandImageHeight: false !default;
 $c-navBar-background: false !default;
@@ -116,8 +114,7 @@ $navBar-breakpoint: 1120px !default;
 
 		a {
 			display: $navLink-display;
-			padding-top: $navLink-paddingTop;
-			padding-bottom: $navLink-paddingBottom;
+			padding: $navLink-paddingVertical $navLink-paddingHorizonal;
 
 			@include conditional( $c-nav-textDecoration ) { 
 				text-decoration: $c-nav-textDecoration;
@@ -138,7 +135,9 @@ $navBar-breakpoint: 1120px !default;
 	 */
 
 	@if $use-component-navList == true {
-
+		.Nav-list {
+			@include conditional( $c-navList-flushSide ) { margin-left: -($navLink-paddingHorizonal) };
+		}
 	}
 
 
@@ -150,7 +149,11 @@ $navBar-breakpoint: 1120px !default;
 	@if $use-component-navList--inline == true {
 		
 		.Nav-listInline {
-			@extend %list-inline;
+			@include conditional( $c-navList-flushSide ) { margin-left: -($navLink-paddingHorizonal) };
+
+			li {
+				display: inline-block;
+			}
 		}
 
 	}
@@ -161,14 +164,26 @@ $navBar-breakpoint: 1120px !default;
 	 * Nav bar styling
 	 */
 
+	// Markup:
+	//<nav>
+	//		<input type="checkbox" id="Nav-itemToggle" class="Nav-itemToggleCheck">
+	//		<ul class="Nav Nav-bar">
+				//<li class="Nav-item Nav-itemBrand"><a href="#">Stacks</a></li>
+				//<li class="Nav-item"><a href="#">Item styling</a></li>
+				//<li class="Nav-item"><a href="">Nav item</a></li>
+				//<li class="Nav-item"><a href="">Another one</a></li>
+				//<li class="Nav-item"><a href="" class="button">Button</a></li>
+				//<li class="Nav-item Nav-itemToggle">
+					//<label for="Nav-itemToggle" class="Nav-itemToggleLabel">Menu</label>
+				//</li>
+	//		</ul>
+	//	</nav>
+	//
+	// Styleguide 27.1.1.
+
 	@if $use-component-navBar == true {
 
 		.Nav-bar {
-			@extend %list-inline;
-			@include conditional( $c-navBar-fontSize ) { @include font-size($c-navBar-fontSize) };
-			@include conditional( $c-navBar-textShadow ) { text-shadow: $c-navBar-textShadow };
-			@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
-			
 			position: relative;
 			padding: $navBar-padding;
 			margin: 0;
@@ -179,18 +194,24 @@ $navBar-breakpoint: 1120px !default;
 			@include conditional( $c-navBar-borderBottom ) { border-bottom: $c-navBar-borderBottom };
 			@include conditional( $c-navBar-borderLeft ) { border-left: $c-navBar-borderLeft };
 
+			li {
+				display: inline-block;
+				@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
+			}
+
 			a {
+				@include conditional( $c-navBar-fontSize ) { @include font-size($c-navBar-fontSize) };
 				@include conditional( $c-navBar-itemColour ) { color: $c-navBar-itemColour };
 			}
 
 			.Nav-item {
 				@include conditional( $c-navBar-marginRight ) { margin-right: $c-navBar-marginRight };
-				@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
 
 				display: none;
 
 				@include respond-to($navBar-breakpoint) {
 					display: inline-block;
+					@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
 				}
 			}
 
@@ -201,23 +222,27 @@ $navBar-breakpoint: 1120px !default;
 		.Nav-itemBrand {
 			display: inline-block;
 			@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
-			@include conditional( $c-navBar-brandFontSize ) { @include font-size($c-navBar-brandFontSize) };
 
-			@include conditional( $c-navBar-brandImage ) {
-				background: $c-navBar-brandImage;
+			@include conditional( $c-navBar-brandImageSrc ) {
+				@include conditional( $c-navBar-brandImageSrcBackup ) { background-image: url($c-navBar-brandImageSrcBackup) };
+				background-image: url($c-navBar-brandImageSrc);
+				background-repeat: $navBar-brandImageRepeat;
+				background-position: $navBar-brandImagePosition;
 				text-indent: -9999px;
+				
+				@if ($c-navBar-brandImagePortrait == true) {
+					background-size: auto 100%;
+				} @else {
+					background-size: 100% auto;
+				}				
 
-				@include conditional( $c-navBar-brandImageWidth ) {
-					background-size: $c-navBar-brandImageWidth auto;
-					width: $c-navBar-brandImageWidth;
-					height: auto;
-				};
-
+				@include conditional( $c-navBar-brandImageWidth ) { width: $c-navBar-brandImageWidth; };
 				@include conditional( $c-navBar-brandImageHeight ) { height: $c-navBar-brandImageHeight; };
 
 			};
 			
 			a {
+				@include conditional( $c-navBar-brandFontSize ) { @include font-size($c-navBar-brandFontSize) };
 				@include conditional( $c-navBar-brandColour ) { color: $c-navBar-brandColour };
 			}
 		}

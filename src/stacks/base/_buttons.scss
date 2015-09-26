@@ -45,9 +45,11 @@
 // --------------------------------------------------------------------------
 
 $button-paddingSides: $input-paddingHorizontal * 1.5 !default;
+$button-paddingSides--small: $input-paddingHorizontal * 1 !default;
 $c-button-textColour: $Colour-primary !default;
 $c-button-textColour--hover: $Colour-base !default;
 $c-button-fontSize: $FontSize-small !default;
+$c-button-fontSize--small: $FontSize-tiny !default;
 $c-button-fontWeight: $FontWeight-bold !default;
 $c-button-lineHeight: 1 !default;
 $c-button-backgroundColour--hover:  false !default;
@@ -105,6 +107,11 @@ $c-button-borderColour--primaryHover: $Colour-primary !default;
 	}
 }
 
+%button--small {
+	padding-left: ($button-paddingSides--small);
+	padding-right: ($button-paddingSides--small);
+}
+
 %button--primary {
 	@include conditional( $c-button-textColour--primary ) { color: $c-button-textColour--primary; }
 	@include conditional( $c-button-backgroundColour--primary ) { background-color: $c-button-backgroundColour--primary; }
@@ -130,6 +137,9 @@ $c-button-borderColour--primaryHover: $Colour-primary !default;
 	  @extend %button;
 	}
 
+	.button--small {
+	  @extend %button--small;
+	}
 
 	.button--primary {
 		@extend %button--primary;

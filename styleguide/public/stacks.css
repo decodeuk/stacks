@@ -103,7 +103,7 @@ select {
   padding: 7.5px 15px;
   font-size: 11px;
   font-size: 0.78571rem;
-  line-height: 1.54545;
+  line-height: 0.64706;
   outline: none;
   vertical-align: top;
   background-color: transparent;
@@ -112,7 +112,7 @@ select {
 }
 
 textarea {
-  height: 83px;
+  height: 43.47059px;
 }
 
 .button, button, input[type="submit"], .Nav-itemToggleLabel {
@@ -127,6 +127,11 @@ textarea {
 }
 .button:hover, button:hover, input[type="submit"]:hover, .Nav-itemToggleLabel:hover, .button:focus, button:focus, input[type="submit"]:focus, .Nav-itemToggleLabel:focus {
   color: #444;
+}
+
+.button--small {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .button--primary {
@@ -176,13 +181,12 @@ textarea {
   list-style: none;
 }
 
-.list-inline li, .Nav-listInline li, .Nav-bar li {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 12px;
+.list-inline {
+  margin-left: -15px;
 }
-.list-inline li:last-of-type, .Nav-listInline li:last-of-type, .Nav-bar li:last-of-type {
-  margin-right: 0;
+.list-inline li {
+  display: inline-block;
+  padding: 12px 15px;
 }
 
 /*
@@ -250,6 +254,35 @@ textarea {
   margin-left: 75%;
 }
 
+@media only screen and (min-width: 720px) {
+  .oneWhole--alpha {
+    width: 100%;
+  }
+
+  .oneHalf--alpha {
+    width: 50%;
+  }
+
+  .oneThird--alpha {
+    width: 33.33333%;
+  }
+
+  .twoThirds--alpha {
+    width: 66.66667%;
+  }
+
+  .oneQuarter--alpha {
+    width: 25%;
+  }
+
+  .twoQuarters--alpha {
+    width: 50%;
+  }
+
+  .threeQuarters--alpha {
+    width: 75%;
+  }
+}
 /*
  * TODO: Rename %typeLabel so it has a more reusable name
  * TODO: Fix H1 font size is duplication in normalise and the extend
@@ -812,8 +845,7 @@ dfn {
 }
 .Nav a {
   display: inline-block;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 12px 15px;
   text-decoration: none;
 }
 .Nav a:hover, .Nav a:focus {
@@ -823,35 +855,54 @@ dfn {
 /*
  * Nav list styling
  */
+.Nav-list {
+  margin-left: -15px;
+}
+
 /*
  * Nav list horizontal styling
  */
+.Nav-listInline {
+  margin-left: -15px;
+}
+.Nav-listInline li {
+  display: inline-block;
+}
+
 /*
  * Nav bar styling
  */
 .Nav-bar {
-  font-size: 14px;
-  font-size: 1rem;
   position: relative;
   padding: 12px 24px;
   margin: 0;
 }
+.Nav-bar li {
+  display: inline-block;
+  vertical-align: middle;
+}
+.Nav-bar a {
+  font-size: 14px;
+  font-size: 1rem;
+}
 .Nav-bar .Nav-item {
-  margin-right: 30px;
+  margin-right: 18px;
   display: none;
 }
 @media only screen and (min-width: 1120px) {
   .Nav-bar .Nav-item {
     display: inline-block;
+    vertical-align: middle;
   }
 }
 
 .Nav-itemBrand {
   display: inline-block;
-  font-size: 24px;
-  font-size: 1.71429rem;
+  vertical-align: middle;
 }
 .Nav-itemBrand a {
+  font-size: 24px;
+  font-size: 1.71429rem;
   color: #444;
 }
 

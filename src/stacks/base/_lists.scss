@@ -31,8 +31,11 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
-$listInline-verticalAlign: top !default;
-$listInline-rightSpacing: $Leading * 2 !default;
+$listInline-rightSpacing: 0 !default;
+$listInline-padding: $Leading ($Leading * 2) !default;
+
+$listInline-paddingVertical: ($Leading * 2) !default;
+$listInline-paddingHorizonal: ($Leading * 2.5) !default;
 
 
 
@@ -59,14 +62,13 @@ $listInline-rightSpacing: $Leading * 2 !default;
 
 
 %list-inline {
+	@if ($listInline-paddingHorizonal != 0) {
+		margin-left: -($listInline-paddingHorizonal);
+	}
+	
 	li {
 		display: inline-block;
-		vertical-align: $listInline-verticalAlign;
-		margin-right: $listInline-rightSpacing;
-
-		&:last-of-type {
-			margin-right: 0;
-		}
+		padding: $listInline-paddingVertical $listInline-paddingHorizonal;
 	}
 }
 
