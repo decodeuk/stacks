@@ -48,7 +48,7 @@ $navLink-display: inline-block !default;
 $navLink-paddingVertical: ($Leading * 2) !default;
 $navLink-paddingHorizonal: ($Leading * 2.5) !default;
 
-$navBar-padding: ($Leading * 2) ($Leading * 4) !default;
+$c-navBar-padding: ($Leading * 2) ($Leading * 4) !default;
 $c-navBar-maxWidth: false !default;
 $c-navBar-fontSize: $FontSize-b !default;
 $c-navBar-marginRight: $Leading * 3 !default;
@@ -188,7 +188,7 @@ $navBar-breakpoint: 1120px !default;
 
 		.Nav-bar {
 			position: relative;
-			padding: $navBar-padding;
+			@include conditional( $c-navBar-padding ) { padding: $c-navBar-padding };
 			margin: 0;
 			
 			@include conditional( $c-navBar-background ) { background: $c-navBar-background };
@@ -225,6 +225,7 @@ $navBar-breakpoint: 1120px !default;
 		.Nav-itemBrand {
 			display: inline-block;
 			@include conditional( $c-navBar-verticalAlign ) { vertical-align: $c-navBar-verticalAlign };
+			@include conditional( $c-Nav-itemBrandMarginRight ) { margin-right: $c-Nav-itemBrandMarginRight };
 
 			@include conditional( $c-navBar-brandImageSrc ) {
 				@include conditional( $c-navBar-brandImageSrcBackup ) { background-image: url($c-navBar-brandImageSrcBackup) };
