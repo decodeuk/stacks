@@ -83,6 +83,7 @@ $inputMulti-multiplier: 4 !default;
 }
 
 %input--small {
+	height: round($c-input-lineHeight--small * $c-input-fontSize--small) + ($input-paddingVertical--small * 2);
 	padding: $input-paddingVertical--small $input-paddingHorizontal--small;
 	@include font-size($c-input-fontSize--small);
 	line-height: $c-input-lineHeight--small;
