@@ -31,10 +31,7 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
-$listInline-rightSpacing: 0 !default;
-
-$listInline-paddingVertical: ($Leading * 2) !default;
-$listInline-paddingHorizonal: ($Leading * 2.5) !default;
+$c-listInline-rightSpacing: $Leading !default;
 
 
 
@@ -61,13 +58,9 @@ $listInline-paddingHorizonal: ($Leading * 2.5) !default;
 
 
 %list-inline {
-	@if ($listInline-paddingHorizonal != 0) {
-		margin-left: -($listInline-paddingHorizonal);
-	}
-	
 	li {
 		display: inline-block;
-		padding: $listInline-paddingVertical $listInline-paddingHorizonal;
+		@include conditional ( $c-listInline-rightSpacing ) { margin-right: $c-listInline-rightSpacing };
 	}
 }
 

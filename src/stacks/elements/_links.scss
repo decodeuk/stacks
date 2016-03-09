@@ -23,8 +23,8 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
-$link-colour: $Colour-primary !default;
-$link-colour--hover: $Colour-base !default;
+$c-link-colour: $Colour-primary !default;
+$c-link-colour--hover: $Colour-base !default;
 
 $c-link-outline: 0;
 
@@ -47,13 +47,12 @@ $c-link-outline: 0;
 // --------------------------------------------------------------------------
 
 %link {
-	color: $link-colour;
+	@include conditional( $c-link-colour ) { color: $c-link-colour };
 
 	&:hover,
 	&:focus {
 		@include conditional( $c-link-outline ) { outline: $c-link-outline };
-
-		color: $link-colour--hover;
+		@include conditional( $c-link-colour--hover ) { color: $c-link-colour--hover };
 	}
 }
 

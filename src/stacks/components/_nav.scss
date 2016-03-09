@@ -43,10 +43,12 @@ $c-nav-textColour: false !default;
 $c-nav-textColour--hover: false !default;
 
 $c-navList-flushSide: true !default;
+$navListLink-paddingVertical: $Leading !default;
+$navListLink-paddingHorizontal: $Leading * 1.5 !default;
 
 $navLink-display: inline-block !default;
 $navLink-paddingVertical: ($Leading * 2) !default;
-$navLink-paddingHorizonal: ($Leading * 2.5) !default;
+$navLink-paddingHorizontal: ($Leading * 2.5) !default;
 
 $c-navBar-padding: ($Leading * 2) ($Leading * 4) !default;
 $c-navBar-maxWidth: false !default;
@@ -109,33 +111,37 @@ $navBar-breakpoint: 1120px !default;
 
 	.Nav {
 		@extend %list-noBullet;
+	}
 
+	.Nav-item,
+	.Nav button {
+		display: $navLink-display;
+		padding: $navLink-paddingVertical $navLink-paddingHorizontal;
+		@include conditional( $c-nav-textColour ) { color: $c-nav-textColour };
+
+		@include conditional( $c-nav-textDecoration ) { 
+			text-decoration: $c-nav-textDecoration;
+
+			&:hover,
+			&:focus {
+				text-decoration: $c-nav-textDecoration--hover;
+				@include conditional( $c-nav-textColour--hover ) { color: $c-nav-textColour--hover };
+			}
+		}
+	}
+
+
+	.Nav-item {
 		@include conditional( $c-nav-fontSize ) { @include font-size($c-nav-fontSize) };
 		@include conditional( $c-nav-fontWeight ) { font-weight: $c-nav-fontWeight };
 		@include conditional( $c-nav-textTransform ) { text-transform: $c-nav-textTransform };
+	}
 
-		a,
-		button {
-			display: $navLink-display;
-			padding: $navLink-paddingVertical $navLink-paddingHorizonal;
-			@include conditional( $c-nav-textColour ) { color: $c-nav-textColour };
 
-			@include conditional( $c-nav-textDecoration ) { 
-				text-decoration: $c-nav-textDecoration;
-
-				&:hover,
-				&:focus {
-					text-decoration: $c-nav-textDecoration--hover;
-					@include conditional( $c-nav-textColour--hover ) { color: $c-nav-textColour--hover };
-				}
-			}
-		}
-
-		button,
-		.button {
-			padding: ($navLink-paddingVertical - 4px) $navLink-paddingHorizonal;
-			margin: 4px $navLink-paddingHorizonal;
-		}
+	.Nav button,
+	.Nav .button {
+		padding: ($navLink-paddingVertical - 5px) $navLink-paddingHorizontal;
+		margin: 4px $navLink-paddingHorizontal;
 	}
 
 
@@ -146,7 +152,12 @@ $navBar-breakpoint: 1120px !default;
 
 	@if $use-component-navList == true {
 		.Nav-list {
-			@include conditional( $c-navList-flushSide ) { margin-left: -($navLink-paddingHorizonal) };
+			@include conditional( $c-navList-flushSide ) { margin-left: -($navListLink-paddingHorizontal) };
+
+			a,
+			button {
+				padding: $navListLink-paddingVertical $navListLink-paddingHorizontal;
+			}
 		}
 	}
 
@@ -159,7 +170,7 @@ $navBar-breakpoint: 1120px !default;
 	@if $use-component-navList--inline == true {
 		
 		.Nav-listInline {
-			@include conditional( $c-navList-flushSide ) { margin-left: -($navLink-paddingHorizonal) };
+			@include conditional( $c-navList-flushSide ) { margin-left: -($navLink-paddingHorizontal) };
 
 			li {
 				display: inline-block;
@@ -202,6 +213,11 @@ $navBar-breakpoint: 1120px !default;
 			@include conditional( $c-navBar-borderRight ) { border-right: $c-navBar-borderRight };
 			@include conditional( $c-navBar-borderBottom ) { border-bottom: $c-navBar-borderBottom };
 			@include conditional( $c-navBar-borderLeft ) { border-left: $c-navBar-borderLeft };
+			
+
+			.#{$FixedGrid-namespace} & {
+				@include conditional( $c-FixedGrid-rowWidth ) { width: $c-FixedGrid-rowWidth; }
+			}
 
 			li {
 				display: inline-block;

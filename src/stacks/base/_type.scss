@@ -185,11 +185,11 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 %typeHeading-layout {
 	@include conditional( $c-typeHeading-margin ) { margin: $c-typeHeading-margin };
 
-	@include conditional( $c-typeHeading-marginFirstChild ) {
-		&:first-child {
-			margin: $c-typeHeading-marginFirstChild
-		}
-	};
+	// @include conditional( $c-typeHeading-marginFirstChild ) {
+	// 	&:first-child {
+	// 		margin: $c-typeHeading-marginFirstChild
+	// 	}
+	// };
 }
 
 
@@ -364,6 +364,7 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 */
 
 	.typeHeading-1 {
+		@extend %typeHeading;
 		@extend %typeHeading-size--1;
 	}
 
@@ -373,6 +374,7 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 */
 
 	.typeHeading-2 {
+		@extend %typeHeading;
 		@extend %typeHeading-size--2;
 	}
 
@@ -382,6 +384,7 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 */
 
 	.typeHeading-3 {
+		@extend %typeHeading;
 		@extend %typeHeading-size--3;
 	}
 
@@ -390,6 +393,7 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 */
 
 	.typeHeading-4 {
+		@extend %typeHeading;
 		@extend %typeHeading-size--4;
 	}
 
@@ -399,6 +403,53 @@ $c-typeLabel-colour: $Colour-baseFont--light !default;
 	 */
 
 	.typeHeading-5 {
+		@extend %typeHeading;
+		@extend %typeHeading-size--5;
+	}
+
+	
+	/**
+	 * H1 Notes
+	 * - Font size set by Normalize
+	 * - Margin set by Normalize
+	 */
+
+	.type-1 {
+		@extend %typeHeading-size--1;
+	}
+
+
+	/**
+	 * H2 Notes
+	 */
+
+	.type-2 {
+		@extend %typeHeading-size--2;
+	}
+
+
+	/**
+	 * H3 Notes
+	 */
+
+	.type-3 {
+		@extend %typeHeading-size--3;
+	}
+
+	/**
+	 * H4 Notes
+	 */
+
+	.type-4 {
+		@extend %typeHeading-size--4;
+	}
+
+
+	/**
+	 * H5 Notes
+	 */
+
+	.type-5 {
 		@extend %typeHeading-size--5;
 	}
 

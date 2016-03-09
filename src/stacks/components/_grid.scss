@@ -28,10 +28,14 @@ $Row-maxWidth: false !default;
 $Row-margin: 0 auto !default;
 $Row-gutter: false !default; // If not false then set gutter value
 
+$FixedGrid-namespace: Grid--fixed !default;
+$c-FixedGrid-rowWidth: false !default;
+
 $Column-namespace: Grid-column !default;
 $ColumnCover-namespace: GridCover-column !default;
-$Column-padding: 0 ($Leading * 4) !default;
 $Column-gutter: ($Leading * 4) !default;
+$Column-padding: 0 $Column-gutter !default;
+
 
 
 
@@ -95,6 +99,20 @@ $Column-gutter: ($Leading * 4) !default;
 
 @if $use-component-grid == true {
 	
+	@include conditional( $c-FixedGrid-rowWidth ) {
+		.#{$FixedGrid-namespace} {
+			.#{$Row-namespace} {
+				width: $c-FixedGrid-rowWidth;
+				
+				// NESTED ROWS SHOULD STILL BE FLUID WIDTHS
+				.#{$Row-namespace} {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	
 	/**
 	 * Row Notes
 	 * - Extends clearfix to stop floated children collapsing the container
@@ -114,6 +132,16 @@ $Column-gutter: ($Leading * 4) !default;
 		@if $Row-gutter != false {
 			padding-left: $Row-gutter;
 			padding-right: $Row-gutter;
+		}
+	}
+
+	.#{$Row-namespace}--nested {
+		margin-left: -($Row-gutter * 2);
+		margin-right: -($Row-gutter * 2);
+
+		@if $Row-gutter != false {
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 

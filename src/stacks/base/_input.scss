@@ -69,6 +69,7 @@ $inputMulti-multiplier: 4 !default;
 // --------------------------------------------------------------------------
 
 %input {
+	height: round($c-input-lineHeight * $c-input-fontSize) + ($input-paddingVertical * 2);
 	padding: $input-paddingVertical $input-paddingHorizontal;
 	@include font-size($c-input-fontSize);
 	line-height: $c-input-lineHeight;
@@ -88,7 +89,7 @@ $inputMulti-multiplier: 4 !default;
 }
 
 %input--multiline {
-	height: (($c-input-lineHeight * $c-input-fontSize) * $inputMulti-multiplier) + ($input-paddingVertical * 2);
+	height: round(($c-input-lineHeight * $c-input-fontSize) * $inputMulti-multiplier) + ($input-paddingVertical * 2);
 }
 
 
