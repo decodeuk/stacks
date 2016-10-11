@@ -23,6 +23,7 @@
 // VARIABLES
 // --------------------------------------------------------------------------
 
+$Grid-namespace: Grid !default;
 $Row-namespace: Grid-row !default;
 $Row-maxWidth: false !default;
 $Row-margin: 0 auto !default;
@@ -120,7 +121,7 @@ $Column-padding: 0 $Column-gutter !default;
 	 * - Adds a row gutter if set
 	 */
 
-	.#{$Row-namespace} {
+	.#{$Grid-namespace} {
 		@extend %clearfix;
 
 		width: 100%;
@@ -132,6 +133,36 @@ $Column-padding: 0 $Column-gutter !default;
 			// margin-left: auto;
 			// margin-right: auto;
 		}
+
+		@if $Row-gutter != false {
+			padding-left: $Row-gutter;
+			padding-right: $Row-gutter;
+		}
+
+		.#{$Row-namespace} {
+			margin-left: -($Column-gutter);
+			margin-right: -($Column-gutter);
+
+			@if $Row-gutter != false {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	/**
+	 * Row Notes
+	 * - Extends clearfix to stop floated children collapsing the container
+	 * - Sets a max width if set and also adds left and right margins to center align
+	 * - Adds a row gutter if set
+	 */
+
+	.#{$Row-namespace} {
+		@extend %clearfix;
+
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
 
 		@if $Row-gutter != false {
 			padding-left: $Row-gutter;
