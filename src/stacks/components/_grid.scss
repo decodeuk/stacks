@@ -123,25 +123,29 @@ $Column-padding: 0 $Column-gutter !default;
 	.#{$Row-namespace} {
 		@extend %clearfix;
 
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
 		@if $Row-maxWidth != false {
 			max-width: $Row-maxWidth;
-			margin-left: auto;
-			margin-right: auto;
+			// margin-left: auto;
+			// margin-right: auto;
 		}
 
 		@if $Row-gutter != false {
 			padding-left: $Row-gutter;
 			padding-right: $Row-gutter;
 		}
-	}
 
-	.#{$Row-namespace}--nested {
-		margin-left: -($Row-gutter * 2);
-		margin-right: -($Row-gutter * 2);
+		.#{$Row-namespace} {
+			margin-left: -($Column-gutter);
+			margin-right: -($Column-gutter);
 
-		@if $Row-gutter != false {
-			padding-left: 0;
-			padding-right: 0;
+			@if $Row-gutter != false {
+				padding-left: 0;
+				padding-right: 0;
+			}
 		}
 	}
 
