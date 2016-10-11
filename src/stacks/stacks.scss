@@ -86,12 +86,6 @@
 @import "base/_lists.scss";
 
 
-// Base Sizing
-//
-// Styleguide 12.
-@import "base/_sizing.scss";
-
-
 // Base Type
 //
 // Styleguide 13.
@@ -196,3 +190,11 @@
 //
 // Styleguide 28.
 @import "components/_stacks.scss";
+
+
+
+// Add sizing at the bottom for specificityyyy
+// Base Sizing
+//
+// Styleguide 12.
+@import "base/_sizing.scss";
