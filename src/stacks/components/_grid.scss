@@ -102,11 +102,11 @@ $Column-padding: 0 $Column-gutter !default;
 	
 	@include conditional( $c-FixedGrid-rowWidth ) {
 		.#{$FixedGrid-namespace} {
-			.#{$Row-namespace} {
+			.#{$Grid-namespace} {
 				width: $c-FixedGrid-rowWidth;
 				
 				// NESTED ROWS SHOULD STILL BE FLUID WIDTHS
-				.#{$Row-namespace} {
+				.#{$Grid-namespace} {
 					width: 100%;
 				}
 			}
@@ -139,7 +139,7 @@ $Column-padding: 0 $Column-gutter !default;
 			padding-right: $Row-gutter;
 		}
 
-		.#{$Row-namespace} {
+		.#{$Grid-namespace} {
 			margin-left: -($Column-gutter);
 			margin-right: -($Column-gutter);
 
